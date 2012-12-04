@@ -1,0 +1,24 @@
+<h2> Documents</h2>
+<%= form_for @document, :url => new_document_url , :html =>{:class => "margin-bottom-30"} do |f|%>
+<%= f.file_field :document, :class => 'margin-bottom-5'%><br />
+<div class='margin-bottom-5'>
+<%= f.text_field :titol, :class => 'margin-right-5'%><%= f.label :titol, 'Titol'%>
+</div>
+<div class='margin-bottom-5'>
+<%= f.text_field :descripcio, :class => 'margin-right-5'%><%=f.label :descripcio, 'Descripcio'%>
+</div>
+<%= f.submit 'Afageix'%>
+<%end%>
+<%if @documents.empty?%>
+<p class='red'> - No hi ha documents per aquest cas.</p>
+<%else%>
+<table class="margin-bottom-60 lined full-width">
+		<tr>
+			<th>Nom</th>
+			<th>Descripció</th>
+			<th>Accions</th>
+		</tr>
+		
+	<%= render :partial => "admin/documents/document", :collection => @documents%>
+</table>
+<%end%>

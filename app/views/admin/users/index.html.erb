@@ -1,0 +1,19 @@
+<%# render :partial => "admin/shared/flash_notification", :object => :user%>
+
+	
+<p class="margin-bottom-30"><%= link_to "Nuevo usuario", new_user_url%></p>	
+
+<h1>Professors</h1>
+<p class="margin-bottom-30 gray">Tenen accés a l'administració total de la web'</p>
+
+<ul class="text-only-objects margin-bottom-30">
+	<%=render :partial => '/admin/users/user', :collection => @professors%>
+</ul>
+
+
+<h1>Alumnes</h1>
+<p class="margin-bottom-30 gray">Poden veure els casos, afegir documentació i fer preguntes així com comentaris</p>
+
+<ul class="text-only-objects margin-bottom-30">
+	<%=render :partial => '/admin/users/user', :collection => @alumnes%>
+</ul>

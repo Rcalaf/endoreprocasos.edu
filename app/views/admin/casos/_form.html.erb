@@ -1,0 +1,14 @@
+<%=form_for @cas,:url => (params[:action] == "new" ? new_cas_url : edit_cas_url(@cas)), :html =>{:class => "margin-bottom-45"} do |f|%>
+
+	<div class="margin-bottom-30">
+		<h3>Titol</h3>
+		<%= f.text_field :titol, :class => "text m"%>
+	</div>
+	
+	<div class="margin-bottom-30">
+		<h3>Descripció</h3>
+		<%=f.text_area :descripcio, :rows => 8,:cols=> 80%>
+	</div>
+	
+	<%= f.submit "Guardar cas", :class => "margin-right-15"%><%= link_to "cancelar", users_url,:class => "red hovering"%>
+<%end%>

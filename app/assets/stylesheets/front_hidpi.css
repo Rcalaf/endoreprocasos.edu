@@ -1,0 +1,32 @@
+a#logo {
+	background: url(/assets/front/hidpi/logo_icor_43x35.png) no-repeat;
+}
+
+#main {
+	background: white url(/assets/front/hidpi/footer_bg_60x180.png) repeat-x 0 bottom;
+}
+
+#logos {
+	background: url(/assets/front/hidpi/logos_530x44.png) no-repeat;
+}
+
+#footer {
+	background: #d8dbde url(/assets/front/hidpi/after_footer_bg_60x60.png) repeat;
+}
+
+#footer:after {
+	background: #d8dbde url(/assets/front/hidpi/after_footer_bg_60x60.png) repeat;
+
+}
+
+.contents a.download {
+	background: url(/assets/front/hidpi/download_icon_25x31.png) no-repeat;
+}
+
+.slideshow_nav a {
+	background: url(/assets/front/hidpi/slideshow_page.png) no-repeat;
+}
+
+.slideshow_nav a.activeSlide {
+	background: url(/assets/front/hidpi/slideshow_page_active.png) no-repeat;
+}

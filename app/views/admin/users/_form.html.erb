@@ -1,0 +1,40 @@
+<%# render :partial => "admin/shared/form_errors_notification", :object => @user%>
+
+<%=form_for @user,:url => (params[:action] == "new" ? new_user_url : edit_user_url(@user)), :html =>{:class => "margin-bottom-45"} do |f|%>
+
+	<div class="margin-bottom-30">
+		<h3>Nombre</h3>
+		<%= f.text_field :name, :class => "text m"%>
+	</div>
+	
+	<div class="margin-bottom-30">
+		<h3>Cognom</h3>
+		<%= f.text_field :last_name, :class => "text m"%><br />
+	</div>
+	
+	<div class="margin-bottom-30">
+		<h3>Email</h3>
+		<%= f.text_field :email, :class => "text m"%><br />
+		<%= f.text_field :email_confirmation, :class => "text m"%>
+		<label>repetir</label><br />
+	</div>
+	
+	<div class="margin-bottom-30">
+		<h3>Tipus</h3>
+		<%= f.radio_button :status, "professor"%>
+		<label>Professor</label>
+		<%= f.radio_button :status, "alumne"%>
+		<label>Alumne</label><br />
+	</div>
+	
+	<div class="margin-bottom-30">
+		<h3>Contraseña</h3>
+		<%= f.password_field :proxy_password, :class => "text m"%>
+		<label>mínimo 8 caracteres, una mayúscula, una minúscula y un número</label><br />
+		
+		<%= f.password_field :proxy_password_confirmation, :class => "text m"%>
+		<label>repetir</label><br />
+	</div>
+	
+	<%= f.submit "Guardar usuario", :class => "margin-right-15"%><%= link_to "cancelar", users_url,:class => "red hovering"%>
+<%end%>

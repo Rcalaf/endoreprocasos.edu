@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  email: MyString
+  password: MyString
+  salt: MyString
+  token: MyString
+  token_valid_until: 2012-12-01 18:11:01
+  failed_login_attempts: 1
+  login_blocked_until: 2012-12-01 18:11:01
+
+two:
+  email: MyString
+  password: MyString
+  salt: MyString
+  token: MyString
+  token_valid_until: 2012-12-01 18:11:01
+  failed_login_attempts: 1
+  login_blocked_until: 2012-12-01 18:11:01

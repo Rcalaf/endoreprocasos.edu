@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  titol: MyString
+  cas_id: 1
+
+two:
+  titol: MyString
+  cas_id: 1
