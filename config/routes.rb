@@ -29,7 +29,7 @@ EndoreprocasosEdu::Application.routes.draw do
   
    match "admin/cas/nou" => "admin/casos#new", :as => "new_cas"
    
-   match 'admin/cas/:cas_slug' => 'admin/casos#show', :as => 'show_cas'
+   match 'admin/cas/:cas_id' => 'admin/casos#show', :as => 'show_cas'
    
    match 'admin/cas/:cas_id/editar' => 'admin/casos#edit', :as => "edit_cas"
    
@@ -56,6 +56,7 @@ EndoreprocasosEdu::Application.routes.draw do
    match 'admin/cas/:cas_id/pregunta/:pregunta_id/resposta/:resposta_id' => 'admin/respostes#edit', :as => 'edit_resposta'
    
    match 'admin/cas/:cas_id/pregunta/:pregunta_id/resposta/:resposta_id/eliminar' => 'admin/respostes#delete', :as => 'delete_resposta'
+   
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

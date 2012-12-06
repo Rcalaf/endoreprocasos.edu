@@ -1,6 +1,7 @@
 # encoding: UTF-8
 class Admin::UsersController < ApplicationController
-  layout 'admin'
+  #layout 'admin'
+  layout 'roger'
   #before_filter :authorize_prof
   def index
     @professors = User.professors

@@ -1,8 +1,10 @@
 # encoding: UTF-8
 class Admin::CasosController < ApplicationController
-  layout 'admin'
+  #layout 'admin'
+  layout 'roger'
   def index
     @casos = Cas.all
+    @cas = @casos.first
   end
 
   def new
@@ -26,10 +28,11 @@ class Admin::CasosController < ApplicationController
   
   def show
     @cas = Cas.find(params[:cas_id])
+    @casos = Cas.all
     @documents = @cas.documents
-    @posts = @cas.posts
-    @post = Post.new
-    @comentari = Comentari.new
+    @preguntes = @cas.preguntes
+    @pregunta = Pregunta.new
+    @resposta = Resposta.new
   end
   
   def delete

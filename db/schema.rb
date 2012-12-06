@@ -11,19 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121202170704) do
+ActiveRecord::Schema.define(:version => 20121202175048) do
 
   create_table "cas", :force => true do |t|
     t.string   "titol"
     t.text     "descripcio"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "comentaris", :force => true do |t|
-    t.integer  "post_id"
-    t.integer  "user_id"
-    t.string   "text"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -40,21 +32,20 @@ ActiveRecord::Schema.define(:version => 20121202170704) do
     t.string   "descripcio"
   end
 
-  create_table "posts", :force => true do |t|
+  create_table "pregunta", :force => true do |t|
     t.text     "text"
-    t.integer  "cas_id"
     t.integer  "user_id"
+    t.integer  "cas_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
   create_table "resposta", :force => true do |t|
-    t.integer  "cas_id"
-    t.integer  "user_id"
-    t.integer  "post_id"
     t.text     "text"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "user_id"
+    t.integer  "pregunta_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "users", :force => true do |t|

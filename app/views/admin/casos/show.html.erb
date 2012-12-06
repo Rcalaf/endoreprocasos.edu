@@ -1,0 +1,23 @@
+<div class="cas">
+<h1><%= @cas.titol%></h1>
+<p class="descripcio"><%= @cas.descripcio%></p>
+	<div>
+		<h2>Material</h2>
+		<%if @documents.empty?%>
+		<p class='red'> - No hi ha documents per aquest cas.</p>
+		<%else%>
+		<table class="margin-bottom-60 lined full-width">
+				<tr>
+					<th>Nom</th>
+					<th>Descripció</th>
+					<th>Accions</th>
+				</tr>
+
+			<%= render :partial => "admin/documents/document", :collection => @documents%>
+		</table>
+		<%end%>
+	</div>
+</div>
+
+<div class="clear"></div>
+
