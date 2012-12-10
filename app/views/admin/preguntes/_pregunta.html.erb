@@ -1,0 +1,12 @@
+<div class="pregunta">
+<div class="margin-bottom-15 bold"><%=pregunta.user.name%> <%= pregunta.user.last_name%> <%=raw "#{'<span class="red">(Pregunta sense RESPOSTA)</span>' if pregunta.resposta.nil?}"%></div>
+<%=pregunta.text%>
+<div class="clear"></div>
+	<%if params[:action] == 'edit'%>
+		<%= render :partial => 'admin/respostes/edit_resposta', :object => pregunta%>
+	<%else%>
+		<%unless pregunta.resposta.nil?%>
+			<%= render :partial => "admin/respostes/resposta", :object => pregunta.resposta%>
+		<%end%>
+	<%end%>
+</div>

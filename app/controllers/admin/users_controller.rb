@@ -1,5 +1,5 @@
 # encoding: UTF-8
-class Admin::UsersController < ApplicationController
+class Admin::UsersController < Admin::AdminController
   #layout 'admin'
   layout 'roger'
   #before_filter :authorize_prof

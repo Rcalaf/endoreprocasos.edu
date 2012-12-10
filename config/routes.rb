@@ -3,59 +3,63 @@ EndoreprocasosEdu::Application.routes.draw do
 
       #---------------------------------SESSION------------------------------------
 
-   match "admin" => "admin/session#login", :as => "login"
+   match "login" => "admin/session#login", :as => "login"
 
-   match "admin/logout" => "admin/session#logout", :as => "logout"
+   match "logout" => "admin/session#logout", :as => "logout"
 
-   match "admin/forgot-password" => "admin/session#reset_password", :as => "reset_password"
+   match "forgot-password" => "admin/session#reset_password", :as => "reset_password"
 
-   match "admin/forgot-password/check-email" => "admin/session#check_mail", :as => "reset_password_check_mail"
+   match "forgot-password/check-email" => "admin/session#check_mail", :as => "reset_password_check_mail"
 
-   match "admin/reset-password" => "admin/session#enter_new_password",:as => "new_password"
+   match "reset-password" => "admin/session#enter_new_password",:as => "new_password"
 
       #---------------------------------USERS--------------------------------------
 
-   match "admin/users" => "admin/users#index", :as => "users"
+   match "users" => "admin/users#index", :as => "users"
 
-   match "admin/user/new" => "admin/users#new", :as => "new_user"
+   match "user/new" => "admin/users#new", :as => "new_user"
 
-   match "admin/user/:user_id" => "admin/users#edit", :as => "edit_user"
+   match "user/:user_id" => "admin/users#edit", :as => "edit_user"
 
-   match "admin/user/:user_id/delete" => "admin/users#delete", :as => "delete_user"
+   match "user/:user_id/delete" => "admin/users#delete", :as => "delete_user"
    
       #---------------------------------CASOS--------------------------------------
   
-   match 'admin/casos' => 'admin/casos#index', :as => 'casos'
+   match 'casos' => 'admin/casos#index', :as => 'casos'
   
-   match "admin/cas/nou" => "admin/casos#new", :as => "new_cas"
+   match "cas/nou" => "admin/casos#new", :as => "new_cas"
    
-   match 'admin/cas/:cas_id' => 'admin/casos#show', :as => 'show_cas'
+   match 'cas/:cas_id' => 'admin/casos#show', :as => 'show_cas'
    
-   match 'admin/cas/:cas_id/editar' => 'admin/casos#edit', :as => "edit_cas"
+   match 'cas/:cas_id/editar' => 'admin/casos#edit', :as => "edit_cas"
    
-   match 'admin/cas/:cas_id/delete' => 'admin/casos#delete', :as => "delete_cas"
+   match 'cas/:cas_id/delete' => 'admin/casos#delete', :as => "delete_cas"
    
       #---------------------------------DOCUMENTS--------------------------------------
       
-   match 'admin/cas/:cas_id/document/nou' => 'admin/documents#new', :as => 'new_document'
+   match 'cas/:cas_id/document/nou' => 'admin/documents#new', :as => 'new_document'
    
-   match 'admin/cas/:cas_id/document/:document_id' => 'admin/documents#delete', :as => 'delete_document'
+   match 'cas/:cas_id/document/:document_id' => 'admin/documents#delete', :as => 'delete_document'
    
       #---------------------------------PREGUNTES--------------------------------------
+    
+   match 'preguntes' => 'admin/preguntes#index', :as => 'preguntes'
    
-   match 'admin/cas/:cas_id/pregunta/nova' => 'admin/preguntes#new', :as => 'new_pregunta'
+   match 'cas/:cas_id/pregunta/nova' => 'admin/preguntes#new', :as => 'new_pregunta'
    
-   match 'admin/cas/:cas_id/pregunta/:pregunta_id' => 'admin/preguntes#edit', :as => 'edit_pregunta'
+   match 'cas/:cas_id/pregunta/:pregunta_id' => 'admin/preguntes#edit', :as => 'edit_pregunta'
    
-   match 'admin/cas/:cas_id/pregunta/:pregunta_id/eliminar' => 'admin/preguntes#delete', :as => 'delete_pregunta'
+   match 'cas/:cas_id/pregunta/:pregunta_id/show' => 'admin/preguntes#show', :as => 'show_pregunta'
+   
+   match 'cas/:cas_id/pregunta/:pregunta_id/eliminar' => 'admin/preguntes#delete', :as => 'delete_pregunta'
       
       #---------------------------------RESPOSTES--------------------------------------
       
-   match 'admin/cas/:cas_id/pregunta/:pregunta_id/resposta/nova' => 'admin/respostes#new', :as => 'new_resposta'
+   match 'cas/:cas_id/pregunta/:pregunta_id/resposta/nova' => 'admin/respostes#new', :as => 'new_resposta'
    
-   match 'admin/cas/:cas_id/pregunta/:pregunta_id/resposta/:resposta_id' => 'admin/respostes#edit', :as => 'edit_resposta'
+   match 'cas/:cas_id/pregunta/:pregunta_id/resposta/:resposta_id' => 'admin/respostes#edit', :as => 'edit_resposta'
    
-   match 'admin/cas/:cas_id/pregunta/:pregunta_id/resposta/:resposta_id/eliminar' => 'admin/respostes#delete', :as => 'delete_resposta'
+   match 'cas/:cas_id/pregunta/:pregunta_id/resposta/:resposta_id/eliminar' => 'admin/respostes#delete', :as => 'delete_resposta'
    
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -106,7 +110,7 @@ EndoreprocasosEdu::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-   root :to => 'admin/users#index'
+   root :to => 'front/pages#index'
 
   # See how all your routes lay out with "rake routes"
 

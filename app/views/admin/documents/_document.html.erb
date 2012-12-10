@@ -1,5 +1,7 @@
 <tr>
-	<td><%= document.titol %></th>
+	<td><%= document.titol%></td>
 	<td><%= document.descripcio%></th>
-	<td><%=link_to '',delete_document_url(@cas,document),:class => 'delete'%>
+	<%if session[:professor_id]%>
+		<td><%=link_to '',delete_document_url(@cas,document),:class => 'delete'%>
+	<%end%>
 </tr>

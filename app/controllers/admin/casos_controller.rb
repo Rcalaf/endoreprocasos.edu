@@ -1,5 +1,5 @@
 # encoding: UTF-8
-class Admin::CasosController < ApplicationController
+class Admin::CasosController < Admin::AdminController
   #layout 'admin'
   layout 'roger'
   def index
@@ -21,6 +21,7 @@ class Admin::CasosController < ApplicationController
     @cas = Cas.find(params[:cas_id])
     @document = Document.new
     @documents = @cas.documents
+    @preguntes = @cas.preguntes
     if request.put? 
       @cas.update_attributes(params[:cas])
     end
@@ -36,7 +37,7 @@ class Admin::CasosController < ApplicationController
   end
   
   def delete
-    cas = Cas.find(params[:cas])
+    cas = Cas.find(params[:cas_id])
     if cas.delete
       redirect_to casos_url
     end

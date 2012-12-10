@@ -1,0 +1,7 @@
+
+<div class="awnser-box">
+	<div class="text-undelined">Resposta: <%=resposta.user.name%> <%=resposta.user.last_name%></div>
+	<div class="margin-top-10 margin-bottom-15">
+		<%=raw RDiscount.new(resposta.text).to_html%>
+	</div>
+</div>

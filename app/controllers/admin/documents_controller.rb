@@ -1,4 +1,4 @@
-class Admin::DocumentsController < ApplicationController
+class Admin::DocumentsController < Admin::AdminController
   layout 'admin'
   def new
     cas = Cas.find(params[:cas_id])

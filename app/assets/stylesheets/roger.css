@@ -1,6 +1,5 @@
 /* @group General Settings 
 *= require reset
-*= require simple_tree
 *= require_self
 */
 @import url(http://fonts.googleapis.com/css?family=Droid+Serif:400,400italic,700italic);
@@ -105,7 +104,7 @@ h3, h3 a {
 				padding: 5px 0 5px 0;
 				background: rgba(50,143,206,1);
 				font-weight: bold;
-				color: white;
+				color: black;
 				font-size: 1em;
 			}
 			
@@ -124,6 +123,21 @@ h3, h3 a {
 			/*	background-color: #ededed;*/
 			}
 
+
+.login {
+	width: 160px;
+	margin: 0 auto;
+	border: 2px solid #328fce;
+	padding: 5px 50px;
+}
+
+.session {
+	width: 300px;
+	margin: 0 auto;
+	border: 2px solid #328fce;
+	padding: 5px 50px;	
+}
+
 /* @group ul */
 ul.inline {
 	padding-left: 60px;
@@ -141,6 +155,22 @@ ul.inline li:last-of-type {
 
 /* @end */
 
+.pregunta {
+	width: 100%;
+	border-top: 1px solid silver;
+	margin-bottom: 30px;
+	padding-top: 20px;
+	padding-left: 30px;
+}
+
+.awnser-box {
+	width: 500px;
+/*	border-top: 1px solid silver;*/
+	margin-top: 15px;
+	margin-left: 30px;
+	padding: 10px 30px;
+	
+}
 
 /* @group Cas */
 
@@ -170,7 +200,10 @@ ul.inline li:last-of-type {
 
 }
 
-p.descripcio {
+.descripcio {
+	-moz-column-count:2; /* Firefox */
+	-webkit-column-count:2; /* Safari and Chrome */
+	column-count:2;
 	margin-bottom: 30px;
 }
 
@@ -251,6 +284,18 @@ p.descripcio {
 
 .align-text-top {
 	vertical-align: text-top;
+}
+
+.align-text-right {
+	text-align: right;
+}
+
+.text-undelined {
+	text-decoration: underline;
+}
+
+.bold {
+	font-weight: bold;
 }
 
 /* @end */
@@ -380,6 +425,10 @@ p.descripcio {
 
 .margin-left-15 {
 	margin-left: 15px;
+}
+
+.margin-left-30 {
+	margin-left: 30px;
 }
 
 .inline-spacer {
@@ -661,3 +710,15 @@ a.cancel {
 }
 
 /* @end */
+
+/* @group Slideshow */
+
+.slideshow, .slideshow img {
+	
+	width: 640px;
+	height: 390px;
+	padding-left: 110px;
+	
+}
+
+/* @end */  

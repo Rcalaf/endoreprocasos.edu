@@ -15,10 +15,9 @@
 	
 	<link rel="shortcut icon" href="/assets/admin/admin_favicon.ico" type="image/ico">
 	
-	<%# javascript_include_tag 'admin' %>
+	<%= javascript_include_tag 'admin' %>
 	<%= csrf_meta_tags %>
 	<%= yield :js%>
-	<%= yield :flash%>
 
 </head>
 	<body>
@@ -26,6 +25,7 @@
 		<div class="container">
 			
 			<div class="banner">
+				<a href='/'>
 				<div class="title">
 				<span class="logo">
 					CURSO PRÁCTICO DE ENDOCRINOLOGÍA GINECOLÓGICA Y REPRODUCCIÓN HUMANA BASADO EN EL CASO
@@ -34,24 +34,31 @@
 				Barcelona, 12, 13 y 14 de Diciembre del 2012
 				</span>
 				</div>
-				
+				</a>
 			</div>
 			<div id="menu">
 				<ul class="inline float-left">
+				<%if @user%>
 					<li><%=link_to "Casos",casos_url,:class => params[:controller] == 'admin/casos' ? "active" : nil%></li>
+					<%if session[:professor_id]%>
 					<li><%=link_to "Usuaris", users_url,:class => params[:controller] == 'admin/users' ? "active" : nil%></li>
+					<%end%>
+				<%end%>
 				</ul>
 				<ul class="inline float-right">
-					<li><%=link_to "Login",login_url,:class => params[:controller] == 'admin/login' ? "active" : nil%></li>
+					<%unless @user%>
+					<li><%=link_to "Login",login_url,:class => params[:controller] == 'admin/session' ? "active" : nil%></li>
+					<%else%>
+					<li>Hola <%=@user.name%>, <%= link_to "logout",logout_url%></li>
+					<%end%>
 				</ul>
 				<div class="clear"></div>
 			</div>
 			
 			<div id="main">
 				<%=yield%>
-
 			</div>
-			
+
 			<div class="footer">
 			</div>
 		</div>

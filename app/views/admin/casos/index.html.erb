@@ -1,7 +1,19 @@
-<h2>Casos</h2>
-<ul class="text-only-objects margin-bottom-30">
-	<li><a class="new"></a><%= link_to "Afagir nou cas",new_cas_url%></li>
-	<%=render :partial => 'cas', :collection => @casos%>
-</ul>
+<h2 class="float-left">Casos</h2>
+<%if session[:professor_id]%>
+<p class="float-right"><%= link_to "Afagir nou cas",new_cas_url%></p>
+<%end%>
+<div class="clear"></div>
+<table class="margin-bottom-60 lined full-width">
+	<tr>
+		<th>Nom</th>
+		<th>Descripció</th>
+		<th>Preguntes</th>
+		<%if session[:professor_id]%>
+		<th>Accions</th>
+		<%end%>
+	</tr>
+	<%= render :partial => 'cas', :collection => @casos%>
+</table>
+
 
 

@@ -1,6 +1,6 @@
 <div class="cas">
-<h1><%= @cas.titol%></h1>
-<p class="descripcio"><%= @cas.descripcio%></p>
+	<h1><%= @cas.titol%></h1>
+	<div class="descripcio marign-bottom-30"><%=raw RDiscount.new(@cas.descripcio).to_html%></div>
 	<div>
 		<h2>Material</h2>
 		<%if @documents.empty?%>
@@ -10,14 +10,17 @@
 				<tr>
 					<th>Nom</th>
 					<th>Descripció</th>
+					<%if session[:professor_id]%>
 					<th>Accions</th>
+					<%end%>
 				</tr>
 
 			<%= render :partial => "admin/documents/document", :collection => @documents%>
 		</table>
 		<%end%>
 	</div>
+	<%= render :partial => 'admin/preguntes/index'%>
 </div>
 
-<div class="clear"></div>
+
 

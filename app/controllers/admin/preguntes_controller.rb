@@ -1,11 +1,15 @@
-class Admin::PreguntesController < ApplicationController
+class Admin::PreguntesController < Admin::AdminController
+  layout 'roger'
+  
+  def index
+    @preguntes = Pregunta.all
+  end
+  
   def new
     @pregunta = Pregunta.new
     if request.post?
-      params[:pregunta][:user_id] = session[:alumne_id]
-      params[:pregunta][:cas_id] = params[:cas_id]
       @pregunta = Pregunta.create(params[:pregunta])
-      if pregunta.valid? 
+      if @pregunta.valid? 
         redirect_to show_cas_url(params[:cas_id])
       end
     end
@@ -16,6 +20,11 @@ class Admin::PreguntesController < ApplicationController
     if request.post?
       @pregunta.update_attributes(params[:pregunta])
     end
+  end
+  
+  def show
+    @pregunta = Pregunta.find(params[:pregunta_id])
+    @respostes = @pregunta.respostes
   end
   
   def delete

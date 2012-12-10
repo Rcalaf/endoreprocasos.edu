@@ -1,0 +1,19 @@
+<div class="login">
+	<%if flash[:notice]%>
+	<ul class="red margin-bottom-30">
+		<li><%=flash[:notice]%></li>
+	</ul>
+	<%end%>
+	<%= form_tag login_url do %>
+	<h3>Login</h3>
+		<ul class="margin-bottom-15">
+			<li class="email margin-bottom-15"><%=email_field_tag 'email','',:placeholder => "email",:class=>"text"%></li>
+			<li class="password"><%=password_field_tag 'proxy_password', '',:placeholder => "contraseña",:class=>"text"%></li>
+		</ul>
+
+		<%= hidden_field_tag "url", params[:url]%>
+		<%= link_to '¿Has oblidat la clau de pas?',reset_password_url, :class=>"margin-right-15"%><br />
+		<%= submit_tag 'Entrar',:class => "float-right"%>
+		<div class="clear"></div>
+	<%end%>
+</div>
