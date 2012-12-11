@@ -41,7 +41,9 @@
 				<%if @user%>
 					<li><%=link_to "Casos",casos_url,:class => params[:controller] == 'admin/casos' ? "active" : nil%></li>
 					<%if session[:professor_id]%>
-					<li><%=link_to "Usuaris", users_url,:class => params[:controller] == 'admin/users' ? "active" : nil%></li>
+					<li><%=link_to "Usuarios", users_url,:class => params[:controller] == 'admin/users' ? "active" : nil%></li>
+					<%elsif session[:alumne_id]%>
+					<li><%=link_to "Perfil", edit_user_url(@user),:class => params[:controller] == 'admin/users' ? "active" : nil%></li>
 					<%end%>
 				<%end%>
 				</ul>
@@ -60,6 +62,15 @@
 			</div>
 
 			<div class="footer">
+				<div class="big-logos float-left margin-right-30">
+					<%= image_tag('front/hsp.png',:class => "margin-left-15", :width => 102, :height => 55)%>
+					<%= image_tag('front/uab.png',:class => "margin-left-15", :width => 102, :height => 41)%>
+					<%= image_tag('front/sef.png',:class => "margin-left-15", :width => 102, :height => 91)%>
+				</div>
+				<div class="small-logos margin-top-90 float-left">
+					<%= image_tag('front/small_sponsor.png', :width => 205, :height => 28)%>
+				</div>
+				<div class="clear"></div>
 			</div>
 		</div>
 	

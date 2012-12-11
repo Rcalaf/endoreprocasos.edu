@@ -123,6 +123,18 @@ h3, h3 a {
 			/*	background-color: #ededed;*/
 			}
 
+.big-logos{
+	width: 357px;
+	height: 91px;
+	margin-top: 30px;
+}
+
+.small-logos {
+	width: 205px;
+	height: 28px;
+	margin-top: 94px;
+}
+
 
 .login {
 	width: 160px;
@@ -397,6 +409,10 @@ ul.inline li:last-of-type {
 
 .margin-bottom-90 {
 	margin-bottom: 90px;
+}
+
+.margin-bottom-120 {
+	margin-bottom: 120px;
 }
 
 .margin-right-5 {

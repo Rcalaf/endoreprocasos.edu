@@ -18,7 +18,7 @@
 		<%= f.text_field :email_confirmation, :class => "text m"%>
 		<label>repetir</label><br />
 	</div>
-	
+	<%if session[:professor_id]%>
 	<div class="margin-bottom-30">
 		<h3>Tipus</h3>
 		<%= f.radio_button :status, "professor"%>
@@ -26,6 +26,7 @@
 		<%= f.radio_button :status, "alumne"%>
 		<label>Alumne</label><br />
 	</div>
+	<%end%>
 	
 	<div class="margin-bottom-30">
 		<h3>Contraseña</h3>
@@ -36,5 +37,5 @@
 		<label>repetir</label><br />
 	</div>
 	
-	<%= f.submit "Guardar usuario", :class => "margin-right-15"%><%= link_to "cancelar", users_url,:class => "red hovering"%>
+	<%= f.submit "Guardar usuario", :class => "margin-right-15"%><%= link_to "cancelar", (session[:professor_id] ? users_url : edit_user_url(@user)),:class => "red hovering"%>
 <%end%>
