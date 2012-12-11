@@ -55,12 +55,6 @@ deploy.task :restart, :roles => :app do
   run "touch #{current_path}/tmp/restart.txt"
 end
 
-desc "Clean all data created by page_cache"
-deploy.task :clean_cache, :roles => :app do
- run "cd #{current_path}; rake cache:clean RAILS_ENV='production'"
-end
-
-after "deploy:update", "deploy:clean_cache"
 ##
 # Setup mantenance options, upload conf, remove conf, etc..
 #
