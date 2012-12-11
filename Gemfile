@@ -8,6 +8,8 @@ gem 'rails', '3.2.8'
 gem 'mysql2'
 gem 'paperclip'
 gem 'rdiscount'
+#gem 'execjs'
+#gem 'therubyracer'
 
 
 # Gems used only for assets and not required
