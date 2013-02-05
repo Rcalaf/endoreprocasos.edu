@@ -1,8 +1,8 @@
 ActionMailer::Base.smtp_settings = {
   :enable_starttls_auto => true,
   :address => 'mail.endoreprocasos.es',
-  :port => 587,
-  #:port => 25,
+  #:port => 587,
+  :port => 25,
   :domain => 'endoreprocasos.es',
   :authentication => :plain,
   #:authentication => :login,
