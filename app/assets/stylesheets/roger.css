@@ -137,9 +137,9 @@ h3, h3 a {
 
 
 .login {
-	width: 160px;
+	width: 180px;
 	margin: 0 auto;
-	border: 2px solid #328fce;
+	/*border: 2px solid #328fce;*/
 	padding: 5px 50px;
 }
 
@@ -433,6 +433,10 @@ ul.inline li:last-of-type {
 
 .margin-right-30 {
 	margin-right: 30px;
+}
+
+.margin-right-50 {
+	margin-right: 50px;
 }
 
 .margin-left-7 {

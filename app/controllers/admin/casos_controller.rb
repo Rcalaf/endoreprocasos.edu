@@ -1,9 +1,9 @@
 # encoding: UTF-8
 class Admin::CasosController < Admin::AdminController
-  #layout 'admin'
   layout 'roger'
+  
   def index
-    @casos = Cas.all
+    @casos = session[:professor_id] ? Cas.all : Cas.today
     @cas = @casos.first
   end
 

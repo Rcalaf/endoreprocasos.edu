@@ -25,7 +25,6 @@ class Admin::SessionController < Admin::AdminController
      end
    end 
   
-
    def reset_password
      @title = "Restablecer contraseña"
      @token = set_token(71) 

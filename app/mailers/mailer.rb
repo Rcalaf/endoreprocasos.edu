@@ -1,6 +1,6 @@
 # encoding: UTF-8
 class Mailer < ActionMailer::Base
-  default from: 'noreply@endoreprocasos.net'
+  default from: 'info@endoreprocasos.es'
 
   def new_password_mail(user)
     @user = user

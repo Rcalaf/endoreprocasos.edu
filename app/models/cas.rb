@@ -3,4 +3,7 @@ class Cas < ActiveRecord::Base
 
   has_many :preguntes, :class_name => "Pregunta", :dependent => :destroy
   has_many :documents, :dependent => :destroy
+  
+  scope :today, where("created_at > ?", "#{Time.now.year}-1-1") 
+  
 end

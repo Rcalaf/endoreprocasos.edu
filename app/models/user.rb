@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :failed_login_attempts, :login_blocked_until, :password, :salt, :token, :token_valid_until, :proxy_password, :proxy_password_confirmation, :email_confirmation, :name, :last_name, :status
 
   before_validation :downcase_email
-=begin
+
   validates :email, :presence => {:presence => true,:message => "Escribe un email", :if => :enable_email_validations}
   validates :email, :uniqueness => {:uniqueness => true,:message => "Ya existe un usuario con este email",:if => :enable_email_validations}
   validates :email, :format => {:with => /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,:message => "El email no tiene el formato correcto", :if => :enable_email_validations }
@@ -12,12 +12,12 @@ class User < ActiveRecord::Base
 
   validates :proxy_password, :presence => {:presence => true,:message => "Escribe una contraseña", :if => :enable_password_validations}
   validates :proxy_password, :length => { :in => 8..60,:message => "La contraseña debe tener 8 caracteres mínimo", :if => :enable_password_validations }
-  validates :proxy_password, :format => {:with =>  /([a-z]+[A-Z]+[0-9]+|[A-Z]+[a-z]+[0-9]+|[A-Z]+[0-9]+[a-z]+|[0-9]+[a-z]+[A-Z]+|[a-z]+[0-9]+[A-Z]+|[0-9]+[A-Z]+[a-z]+)/,:message => "La contraseña debe tener mínimo una mayúscula, una minúscula y un número", :if => :enable_password_validations }
+  #validates :proxy_password, :format => {:with =>  /([a-z]+[A-Z]+[0-9]+|[A-Z]+[a-z]+[0-9]+|[A-Z]+[0-9]+[a-z]+|[0-9]+[a-z]+[A-Z]+|[a-z]+[0-9]+[A-Z]+|[0-9]+[A-Z]+[a-z]+)/,:message => "La contraseña debe tener mínimo una mayúscula, una minúscula y un número", :if => :enable_password_validations }
   validates :proxy_password, :confirmation => {:confirmation => true,:message => "Las contraseñas no coinciden", :if => :enable_password_validations }
   validates :proxy_password_confirmation, :presence => {:presence => true,:message => "Debes confirmar la contraseña", :if => :enable_password_validations }
 
   validates_uniqueness_of :token, :message => "", :if => :enable_token_validation
-=end
+
   attr_accessor :proxy_password_confirmation, :email_confirmation
 
   def proxy_password
@@ -99,7 +99,7 @@ class User < ActiveRecord::Base
    def create_new_salt
      self.salt = self.object_id.to_s + rand.to_s
    end
-=begin
+
    def enable_password_validations
      self.password_changed? || self.password.nil? || (self.proxy_password_confirmation && !self.proxy_password_confirmation.empty?)
    end
@@ -111,5 +111,5 @@ class User < ActiveRecord::Base
    def enable_token_validation
      self.token
    end
-=end
+
 end
