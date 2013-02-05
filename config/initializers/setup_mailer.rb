@@ -1,8 +1,8 @@
-#ActionMailer::Base.delivery_method = :smtp
+ActionMailer::Base.delivery_method = :smtp
 ActionMailer::Base.smtp_settings = {
   :enable_starttls_auto => true,
-  #:address => 'smtp.endoreprocasos.es',
-  :address => 'ssl0.ovh.net',
+  :address => 'smtp.endoreprocasos.es',
+  #:address => 'ssl0.ovh.net',
   #:port => 587,
   :port => 465,
   :domain => 'endoreprocasos.es',
