@@ -1,7 +1,7 @@
 ActionMailer::Base.delivery_method = :smtp
 ActionMailer::Base.smtp_settings = {
   :enable_starttls_auto => true,
-  :address => 'mail.endoreprocasos.es',
+  :address => 'stmp.endoreprocasos.es',
   :port => 587,
   #:port => 26,
   :domain => 'endoreprocasos.es',
