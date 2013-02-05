@@ -5,8 +5,8 @@ ActionMailer::Base.smtp_settings = {
   :port => 587,
   #:port => 26,
   :domain => 'endoreprocasos.es',
-  #:authentication => :plain,
-  :authentication => :login,
+  :authentication => :plain,
+  #:authentication => :login,
   :user_name => 'info%endoreprocasos.es',
   :password => 'DgQxXRna5z'
 }
