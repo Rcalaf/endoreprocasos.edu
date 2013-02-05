@@ -1,4 +1,4 @@
-ActionMailer::Base.delivery_method = :smtp
+#ActionMailer::Base.delivery_method = :smtp
 ActionMailer::Base.smtp_settings = {
   :enable_starttls_auto => false,
   :address => 'smtp.endoreprocasos.es',
@@ -8,7 +8,7 @@ ActionMailer::Base.smtp_settings = {
   :domain => 'endoreprocasos.es',
   #:authentication => :plain,
   :authentication => :login,
-  :user_name => 'info%endoreprocasos.es',
+  :user_name => 'info@endoreprocasos.es',
   :password => 'HSP001'
 }
 
