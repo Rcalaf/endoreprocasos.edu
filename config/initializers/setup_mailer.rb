@@ -1,6 +1,6 @@
 ActionMailer::Base.delivery_method = :smtp
 ActionMailer::Base.smtp_settings = {
-  :address => 'smtp.endoreprocasos.es',
+  :address => 'https://ssl0.ovh.net/fr/owa/',
   :port => 587,
   :domain => 'endoreprocasos.es',
   :authentication => :plain,
