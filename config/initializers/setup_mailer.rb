@@ -1,16 +1,12 @@
-#ActionMailer::Base.delivery_method = :smtp
+ActionMailer::Base.delivery_method = :smtp
 ActionMailer::Base.smtp_settings = {
-  #:tls => true,
- #:enable_starttls_auto => true,
   :address => 'smtp.endoreprocasos.es',
-  #:address => 'ssl0.ovh.net',
-  #:port => 26,
-  :port => 465,
+  :port => 587,
   :domain => 'endoreprocasos.es',
-  #:authentication => :plain,
-   :authentication => :ntlm,
+  :authentication => :login,
   :user_name => 'info@endoreprocasos.es',
-  :password => 'HSP001'
+  :password => 'HSP001',
+  :enable_starttls_auto => true
 }
 
 ActionMailer::Base.default_url_options[:host] = "endoreprocasos.es"
