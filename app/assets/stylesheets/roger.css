@@ -146,7 +146,7 @@ h3, h3 a {
 .session {
 	width: 300px;
 	margin: 0 auto;
-	border: 2px solid #328fce;
+	/*border: 2px solid #328fce;*/
 	padding: 5px 50px;	
 }
 
