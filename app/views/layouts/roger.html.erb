@@ -38,7 +38,7 @@
 			</div>
 			<div id="menu">
 				<ul class="inline float-left">
-				<%if @user%>
+				<%if session[:professor_id] || session[:alumne_id]%>
 					<li><%=link_to "Casos",casos_url,:class => params[:controller] == 'admin/casos' ? "active" : nil%></li>
 					<%if session[:professor_id]%>
 					<li><%=link_to "Usuarios", users_url,:class => params[:controller] == 'admin/users' ? "active" : nil%></li>
@@ -48,7 +48,7 @@
 				<%end%>
 				</ul>
 				<ul class="inline float-right">
-					<%unless @user%>
+					<%unless session[:professor_id] || session[:alumne_id]%>
 					<li><%=link_to "Login",login_url,:class => params[:controller] == 'admin/session' ? "active" : nil%></li>
 					<%else%>
 					<li>Hola <%=@user.name%>, <%= link_to "logout",logout_url%></li>
