@@ -1,6 +1,21 @@
 <%# render :partial => "admin/shared/form_errors_notification", :object => @user%>
+<% content_for :js do%>
+<% if params[:action] == "new"%>
+<script type="text/javascript" charset="utf-8">
+$(document).ready(function () {
+	$('.alumni').click(function(){
+		$('.password').hide('slow');
+	});
+	
+	$('.teacher').click(function(){
+		$('.password').show('slow');
+	});
+});
 
-<%=form_for @user,:url => (params[:action] == "new" ? new_user_url : edit_user_url(@user)), :html =>{:class => "margin-bottom-45"} do |f|%>
+</script>
+<%end%>
+<%end%>
+<%=form_for @new_user,:url => (params[:action] == "new" ? new_user_url : edit_user_url(@new_user)), :html =>{:class => "margin-bottom-45"} do |f|%>
 
 	<div class="margin-bottom-30">
 		<h3>Nombre</h3>
@@ -8,7 +23,7 @@
 	</div>
 	
 	<div class="margin-bottom-30">
-		<h3>Cognom</h3>
+		<h3>Apellido</h3>
 		<%= f.text_field :last_name, :class => "text m"%><br />
 	</div>
 	
@@ -20,15 +35,15 @@
 	</div>
 	<%if session[:professor_id]%>
 	<div class="margin-bottom-30">
-		<h3>Tipus</h3>
-		<%= f.radio_button :status, "professor"%>
+		<h3>Tipo</h3>
+		<%= f.radio_button :status, "professor", :class => 'teacher'%>
 		<label>Professor</label>
-		<%= f.radio_button :status, "alumne"%>
+		<%= f.radio_button :status, "alumne", :class => 'alumni'%>
 		<label>Alumne</label><br />
 	</div>
 	<%end%>
 	
-	<div class="margin-bottom-30">
+	<div class="margin-bottom-30 password">
 		<h3>Contraseña</h3>
 		<%= f.password_field :proxy_password, :class => "text m"%>
 		<label>mínimo 8 caracteres, una mayúscula, una minúscula y un número</label><br />
@@ -37,5 +52,5 @@
 		<label>repetir</label><br />
 	</div>
 	
-	<%= f.submit "Guardar usuario", :class => "margin-right-15"%><%= link_to "cancelar", (session[:professor_id] ? users_url : edit_user_url(@user)),:class => "red hovering"%>
+	<%= f.submit "Guardar usuario", :class => "margin-right-15"%><%= link_to "cancelar", (session[:professor_id] ? users_url : edit_user_url(@new_user)),:class => "red hovering"%>
 <%end%>

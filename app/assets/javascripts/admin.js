@@ -11,6 +11,10 @@ jQuery(function() {
 	$('#new-question').click(function(){
 		$('.question-form').toggle('slow');
 	})
+	
+
+	
+
 	/*
 	$('.pregunta').click(self,function(event){
 		$('.respostes').hide('slow');

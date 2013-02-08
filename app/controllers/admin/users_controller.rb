@@ -8,20 +8,25 @@ class Admin::UsersController < Admin::AdminController
   end
 
   def new
-    @user = User.new
+   @new_user = User.new
     if request.post?
-      @user = User.create(params[:user])
-      if @user.valid? 
+      if params[:user][:status] == "alumne"
+        pass = SecureRandom.hex(4)
+        params[:user][:proxy_password] = params[:user][:proxy_password_confirmation] = pass
+        params[:user][:token] = SecureRandom.hex(35)
+      end
+      @new_user = User.create(params[:user])
+      if @new_user.valid? 
+        Mailer.new_password_mail(@new_user).deliver if @new_user.status == "alumne"
         redirect_to users_url
       end
-      puts @user.errors.messages
     end
   end
 
   def edit
-    @user = User.find(params[:user_id])
+    @new_user = User.find(params[:user_id])
     if request.put?
-      @user.update_attributes(params[:user])
+      @new_user.update_attributes(params[:user])
     end
   end
 

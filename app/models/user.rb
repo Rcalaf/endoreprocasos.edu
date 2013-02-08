@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   validates :email, :format => {:with => /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,:message => "El email no tiene el formato correcto", :if => :enable_email_validations }
   validates :email, :confirmation => {:confirmation => true,:message => "Los emails no coinciden", :if => :enable_email_validations }
   validates :email_confirmation, :presence => {:presence => true, :message => "Confirma el email",:if => :enable_email_validations }
+  validates :status, :presence => {:presence => true,:message => "Elige un tipo de usuario"}
 
   validates :proxy_password, :presence => {:presence => true,:message => "Escribe una contraseña", :if => :enable_password_validations}
   validates :proxy_password, :length => { :in => 8..60,:message => "La contraseña debe tener 8 caracteres mínimo", :if => :enable_password_validations }
