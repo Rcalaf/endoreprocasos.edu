@@ -59,7 +59,7 @@ h3, h3 a {
 		
 	}
 		.banner {
-			background: url('http://upload.wikimedia.org/wikipedia/commons/0/0d/Hospital_de_Sant_Pau_(new_building_north_of_the_old_one).JPG') center center;
+			background: url(/assets/front/hsp_banner.jpeg) center center;
 			background-size: cover;
 			height: 200px;
 			position: relative;
