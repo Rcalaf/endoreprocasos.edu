@@ -231,10 +231,10 @@ ul.inline li:last-of-type {
 				
 .footer {
 	border-top: 1px solid silver;
-	padding-top: 15px;
-	padding-bottom: 120px;
-	background: #3d3d3d;
-	color: #888888;
+	padding-top: 30px;
+	padding-bottom: 50px;
+	/*background: #3d3d3d;*/
+	/*color: #888888;*/
 }
 
 .footer a {
