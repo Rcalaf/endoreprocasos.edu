@@ -1,10 +1,19 @@
 class Admin::RespostesController < Admin::AdminController
   def new
-    @resposta = Resposta.new
     if request.post?
       @resposta = Resposta.create(params[:resposta])
-      if @resposta.valid? 
-        redirect_to edit_cas_url(params[:cas_id])
+      unless @resposta.valid? 
+        flash[:resposta_errors] = @resposta.errors
+      end  
+      redirect_to edit_cas_url(params[:cas_id],:anchor => 'respuestas')
+    end
+  end
+  
+  def edit
+    @resposta = Resposta.find(params[:resposta_id])
+    if request.put?
+      if @resposta.update_attributes(params[:resposta])
+         redirect_to edit_cas_url(params[:cas_id])
       end
     end
   end

@@ -1,0 +1,13 @@
+
+<%if form_errors_notification%>
+<div class="validation-errors" style="display:none">
+	Por favor, corrige estos errores: 
+	<ul>
+		<% form_errors_notification.each do |key,value| %>
+			<%if !value.empty?%>
+			<li><%=value.class == Array ? value.first : value%></li>
+			<%end%>
+		<%end%>
+	</ul>
+</div>
+<%end%>

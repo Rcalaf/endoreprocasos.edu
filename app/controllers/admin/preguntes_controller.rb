@@ -9,10 +9,11 @@ class Admin::PreguntesController < Admin::AdminController
     @pregunta = Pregunta.new
     if request.post?
       @pregunta = Pregunta.create(params[:pregunta])
-      if @pregunta.valid? 
-        redirect_to show_cas_url(params[:cas_id])
+      unless @pregunta.valid? 
+        flash[:errors] = @pregunta.errors
       end
     end
+    redirect_to show_cas_url(params[:cas_id], :anchor => 'preguntas')  
   end
   
   def edit

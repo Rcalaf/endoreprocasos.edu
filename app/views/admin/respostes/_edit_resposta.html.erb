@@ -1,9 +1,11 @@
-<%= form_for (edit_resposta.resposta.nil? ? edit_resposta.build_resposta : edit_resposta.resposta), :url => new_resposta_url(@cas.id,edit_resposta.id) , :html =>{:class => "margin-bottom-30"} do |f|%>
+<a name='respuestas'>
+<%= render :partial => 'admin/shared/form_errors_notification', :object => flash[:resposta_errors]%>
+<%= form_for (edit_resposta.resposta.nil? ? edit_resposta.build_resposta : edit_resposta.resposta), :url => edit_resposta.resposta.new_record? ? new_resposta_url(@cas.id,edit_resposta) : edit_resposta_url(@cas.id,edit_resposta,edit_resposta.resposta), :html =>{:class => "margin-bottom-30"} do |f|%>
 <%= f.hidden_field :user_id, :value => session[:professor_id]%>
 <%= f.hidden_field :pregunta_id, :value => edit_resposta.id%>
 <div class='margin-bottom-5'>
 <%= f.text_area :text, :rows => 3,:cols=> 40,:class => 'margin-right-5'%>
 </div>
 
-<%= f.submit "#{edit_resposta.resposta.new_record? ? 'Afageix' : 'Edita'}", :class => 'margin-right-5'%><%= link_to('eliminar',delete_resposta_url(@cas.id,edit_resposta.id,edit_resposta.resposta.id), :class => 'red') unless edit_resposta.resposta.new_record?%>
+<%= f.submit "#{edit_resposta.resposta.new_record? ? 'Crea respuesta' : 'Edita respuesta'}", :class => 'margin-right-5'%><%= link_to('eliminar',delete_resposta_url(@cas.id,edit_resposta.id,edit_resposta.resposta.id), :class => 'red', :confirm => "Esta respuesta serà eliminada.") unless edit_resposta.resposta.new_record?%>
 <%end%>

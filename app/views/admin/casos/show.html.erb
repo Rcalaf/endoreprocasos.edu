@@ -4,14 +4,16 @@
 	<div>
 		<h2>Material</h2>
 		<%if @documents.empty?%>
-		<p class='red'> - No hi ha documents per aquest cas.</p>
+		<div class="margin-bottom-60">
+			<p class='red'> - No hi ha documents per aquest cas.</p>
+		</div>
 		<%else%>
 		<table class="margin-bottom-60 lined full-width">
 				<tr>
-					<th>Nom</th>
-					<th>Descripció</th>
+					<th>Nombre</th>
+					<th>Descripción</th>
 					<%if session[:professor_id]%>
-					<th>Accions</th>
+					<th>Acciones</th>
 					<%end%>
 				</tr>
 

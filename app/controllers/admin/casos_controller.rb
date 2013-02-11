@@ -3,7 +3,8 @@ class Admin::CasosController < Admin::AdminController
   layout 'roger'
   
   def index
-    @casos = session[:professor_id] ? Cas.all : Cas.today
+   # @casos = session[:professor_id] ? Cas.all : Cas.this_year
+    @casos = Cas.all
     @cas = @casos.first
   end
 

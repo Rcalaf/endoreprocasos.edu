@@ -1,7 +1,9 @@
-<h2 class="float-left">Documents</h2>
-<a href="javascript:void(0);" id="new-question" class="float-right">nou document</a>
+<a name="material">
+<h2 class="float-left">Material</h2>
+<a href="javascript:void(0);" id="new-question" class="float-right">Nuevo documento</a>
 <div class="clear"></div>
-<div class="question-form" style="display:none">
+<div class="question-form" style="display:<%=flash[:errors] ? '' : 'none'%>">
+	<%= render :partial => 'admin/shared/form_errors_notification', :object => flash[:errors]%>
 	<%= form_for @document, :url => new_document_url , :html =>{:class => "margin-bottom-30"} do |f|%>
 	<%= f.file_field :document, :class => 'margin-bottom-5'%><br />
 	<div class='margin-bottom-5'>
@@ -10,18 +12,20 @@
 	<div class='margin-bottom-5'>
 	<%= f.text_field :descripcio, :class => 'margin-right-5'%><%=f.label :descripcio, 'Descripcio'%>
 	</div>
-	<%= f.submit 'Afageix'%>
+	<%= f.submit 'Crea documento'%>
 	<%end%>
 </div>
 <%if @documents.empty?%>
-<p class='red'> - No hi ha documents per aquest cas.</p>
+<div class="margin-bottom-60">
+	<p class='red'> - No hay documentos pera este caso.</p>
+</div>
 <%else%>
 <table class="margin-bottom-60 lined full-width">
 		<tr>
-			<th>Nom</th>
-			<th>Descripció</th>
+			<th>Nombre</th>
+			<th>Descripción</th>
 			<%if session[:professor_id]%>
-			<th>Accions</th>
+			<th>Acciones</th>
 			<%end%>
 		</tr>
 		

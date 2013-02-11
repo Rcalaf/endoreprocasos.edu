@@ -1,7 +1,9 @@
-<h2 class="float-left">Preguntes</h2>
-<a href="javascript:void(0);" id="new-question" class="float-right">crea una pregunta</a>
+<a name="preguntas">
+<h2 class="float-left">Preguntas</h2>
+<a href="javascript:void(0);" id="new-question" class="float-right">Nueva una pregunta</a>
 <div class="clear"></div>
-<div class="question-form" style="display:none">
+<div class="question-form" style="display:<%=flash[:errors] ? '' : 'none'%>">
+	<%= render :partial => 'admin/shared/form_errors_notification', :object => flash[:errors]%>
 	<%= form_for @pregunta, :url => new_pregunta_url , :html =>{:class => "margin-bottom-30"} do |f|%>
 	<%= f.hidden_field :user_id, :value => session[:alumne_id] || session[:professor_id]%>
 	<%= f.hidden_field :cas_id, :value => @cas.id%>
@@ -9,12 +11,14 @@
 	<%= f.text_area :text, :rows => 8,:cols=> 80,:class => 'margin-right-5'%>
 	</div>
 	
-	<%= f.submit 'Afageix'%>
+	<%= f.submit 'Crea pregunta'%>
 	<%end%>
 </div>
 
 <%if @preguntes.empty?%>
-<p class='red'> - No hi ha documents per aquest cas.</p>
+<div class='margin-bottom-60'> 
+<p class='red'> - No hay documentos para este caso.</p>
+</div>
 <%else%>
 <div>
 	<%= render :partial => "admin/preguntes/pregunta", :collection => @preguntes%>

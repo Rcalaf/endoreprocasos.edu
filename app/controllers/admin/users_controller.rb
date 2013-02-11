@@ -17,7 +17,7 @@ class Admin::UsersController < Admin::AdminController
       end
       @new_user = User.create(params[:user])
       if @new_user.valid? 
-        Mailer.new_password_mail(@new_user).deliver if @new_user.status == "alumne"
+        Mailer.new_user_mail(@new_user).deliver if @new_user.status == "alumne"
         redirect_to users_url
       end
     end

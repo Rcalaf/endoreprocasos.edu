@@ -1,6 +1,6 @@
-<h2>Preguntes</h2>
+<h2>Preguntas</h2>
 <%if @preguntes.empty?%>
-<p class='red'> - No hi ha documents per aquest cas.</p>
+<p class='red'> - No hay documentos para este caso.</p>
 <%else%>
 <div>
 	<%= render :partial => "admin/preguntes/pregunta", :collection => @preguntes%>

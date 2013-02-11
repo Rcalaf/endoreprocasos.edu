@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body style="font-family: Helvetica, Arial, Geneva, sans-serif; font-size: 12px; line-height: 17px;">
+	
+	<p>Bienvenido a <a href="http://endoreprocasos.net">endoreprocasos.net</a></p>
+	
+	<p>Han creado una cuenta para <%= @user.name%> <%= @user.last_name%></p>
+	
+	<p>Para crear tu contraseña <%= link_to 'haz click aquí',new_password_url(:token => @user.token)%></p>
+
+	<p>Muchas gracias!<br />
+	<a href="http://endoreprocasos.net">endoreprocasos.net</a></p>
+
+</body>
+</html>

@@ -4,7 +4,12 @@ class Mailer < ActionMailer::Base
 
   def new_password_mail(user)
     @user = user
-    mail(:to => user.email, :subject => "Restablir clau d'accés")
+    mail(:to => user.email, :subject => "Restablecer contraseña")
+  end
+  
+  def new_user_mail(user)
+    @user = user
+    mail(:to => user.email, :subject => "Bienvenido a Endoreprocasos.es")
   end
  
 end

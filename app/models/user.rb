@@ -2,6 +2,8 @@
 class User < ActiveRecord::Base
   attr_accessible :email, :failed_login_attempts, :login_blocked_until, :password, :salt, :token, :token_valid_until, :proxy_password, :proxy_password_confirmation, :email_confirmation, :name, :last_name, :status
 
+  has_many :preguntes, :class_name => "Pregunta", :dependent => :destroy
+  
   before_validation :downcase_email
 
   validates :email, :presence => {:presence => true,:message => "Escribe un email", :if => :enable_email_validations}
@@ -18,6 +20,8 @@ class User < ActiveRecord::Base
   validates :proxy_password_confirmation, :presence => {:presence => true,:message => "Debes confirmar la contraseña", :if => :enable_password_validations }
 
   validates_uniqueness_of :token, :message => "", :if => :enable_token_validation
+  
+  
 
   attr_accessor :proxy_password_confirmation, :email_confirmation
 

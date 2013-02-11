@@ -2,14 +2,16 @@ class Admin::DocumentsController < Admin::AdminController
   layout 'admin'
   def new
     cas = Cas.find(params[:cas_id])
-    @document = Document.new
     if request.post?
       @document = Document.create(params[:document])
       if @document.valid?
         cas.documents << @document
-        redirect_to edit_cas_url(cas)
+      else
+        flash[:errors] = @document.errors
       end
+      
     end
+    redirect_to edit_cas_url(cas,:anchor => 'material')
   end
   
   def delete
