@@ -1,4 +1,4 @@
-<%# render :partial => "admin/shared/form_errors_notification", :object => @user%>
+<%= render :partial => "admin/shared/form_errors_notification", :object => flash[:errors]%>
 <% content_for :js do%>
 <% if params[:action] == "new"%>
 <script type="text/javascript" charset="utf-8">

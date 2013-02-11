@@ -5,7 +5,7 @@
 	<ul>
 		<% form_errors_notification.each do |key,value| %>
 			<%if !value.empty?%>
-			<li><%=value.class == Array ? value.first : value%></li>
+			<li><%=value%></li>
 			<%end%>
 		<%end%>
 	</ul>
