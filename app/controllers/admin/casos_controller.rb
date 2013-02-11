@@ -21,8 +21,8 @@ class Admin::CasosController < Admin::AdminController
   end
   
   def edit
-    @title = "Endoreprocasos | Editar caso #{@cas.titol}"
     @cas = Cas.find(params[:cas_id])
+    @title = "Endoreprocasos | Editar caso #{@cas.titol}"
     @document = Document.new
     @documents = @cas.documents
     @preguntes = @cas.preguntes
@@ -32,8 +32,9 @@ class Admin::CasosController < Admin::AdminController
   end
   
   def show
-    @title = "Endoreprocasos | #{@cas.titol}"
+    
     @cas = Cas.find(params[:cas_id])
+    @title = "Endoreprocasos | #{@cas.titol}"
     @casos = Cas.all
     @documents = @cas.documents
     @preguntes = @cas.preguntes
