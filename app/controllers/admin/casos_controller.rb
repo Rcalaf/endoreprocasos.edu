@@ -3,12 +3,14 @@ class Admin::CasosController < Admin::AdminController
   layout 'roger'
   
   def index
+    @title = "Endoreprocasos | Casos"
    # @casos = session[:professor_id] ? Cas.all : Cas.this_year
     @casos = Cas.all
     @cas = @casos.first
   end
 
   def new
+    @title = "Endoreprocasos | Nuevo caso"
     @cas = Cas.new
     if request.post? 
       @cas = Cas.create(params[:cas])
@@ -19,6 +21,7 @@ class Admin::CasosController < Admin::AdminController
   end
   
   def edit
+    @title = "Endoreprocasos | Editar caso #{@cas.titol}"
     @cas = Cas.find(params[:cas_id])
     @document = Document.new
     @documents = @cas.documents
@@ -29,6 +32,7 @@ class Admin::CasosController < Admin::AdminController
   end
   
   def show
+    @title = "Endoreprocasos | #{@cas.titol}"
     @cas = Cas.find(params[:cas_id])
     @casos = Cas.all
     @documents = @cas.documents

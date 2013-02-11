@@ -3,11 +3,13 @@ class Admin::UsersController < Admin::AdminController
   layout 'roger'
  
   def index
+    @title = "Endoreprocasos | Usuarios"
     @professors = User.professors
     @alumnes = User.alumnes
   end
 
   def new
+   @title = "Endoreprocasos | Nuevo usuario"
    @new_user = User.new
     if request.post?
       if params[:user][:status] == "alumne"
@@ -26,6 +28,7 @@ class Admin::UsersController < Admin::AdminController
   end
 
   def edit
+    @title = "Endoreprocasos | Editar usuario #{@new_user.name} #{@new_user.last_name}"
     @new_user = User.find(params[:user_id])
     if request.put?
       @new_user.update_attributes(params[:user])
