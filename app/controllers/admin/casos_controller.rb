@@ -32,7 +32,6 @@ class Admin::CasosController < Admin::AdminController
   end
   
   def show
-    
     @cas = Cas.find(params[:cas_id])
     @title = "Endoreprocasos | #{@cas.titol}"
     @casos = Cas.all
