@@ -1,6 +1,6 @@
 <div class="pregunta">
 <% if session[:professor_id] && params[:action] == 'edit'%>
-<div class="float-right"><%= link_to '',delete_pregunta_url(pregunta.cas,pregunta),:class => 'delete', :confirm => 'Esta pregunta se eliminara'%></div>
+<div class="float-right"><%= link_to '',delete_pregunta_url(pregunta.cas,pregunta),:class => 'delete', :confirm => 'Desea eliminar esta pregunta?'%></div>
 <%end%>
 <div class="margin-bottom-15 bold"><%=pregunta.user.name%> <%= pregunta.user.last_name%> <%=raw "#{'<span class="red">(Pregunta sin RESPUESTA)</span>' if pregunta.resposta.nil? && session[:professor_id]}"%></div>
 <%=pregunta.text%>

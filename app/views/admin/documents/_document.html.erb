@@ -2,6 +2,6 @@
 	<td><%= link_to document.titol, document.document.url%></td>
 	<td><%= document.descripcio%></th>
 	<%if session[:professor_id]%>
-		<td><%=link_to '',delete_document_url(@cas,document),:class => 'delete'%>
+		<td><%=link_to '',delete_document_url(@cas,document),:class => 'delete', :confirm => "Desea eliminar este material?"%>
 	<%end%>
 </tr>

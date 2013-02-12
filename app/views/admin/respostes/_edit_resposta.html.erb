@@ -7,5 +7,5 @@
 <%= f.text_area :text, :rows => 3,:cols=> 40,:class => 'margin-right-5'%>
 </div>
 
-<%= f.submit "#{edit_resposta.resposta.new_record? ? 'Crea respuesta' : 'Edita respuesta'}", :class => 'margin-right-5'%><%= link_to('eliminar',delete_resposta_url(@cas.id,edit_resposta.id,edit_resposta.resposta.id), :class => 'red', :confirm => "Esta respuesta serà eliminada.") unless edit_resposta.resposta.new_record?%>
+<%= f.submit "#{edit_resposta.resposta.new_record? ? 'Crea respuesta' : 'Edita respuesta'}", :class => 'margin-right-5'%><%= link_to('eliminar',delete_resposta_url(@cas.id,edit_resposta.id,edit_resposta.resposta.id), :class => 'red', :confirm => "Desea eliminar la respuesta?") unless edit_resposta.resposta.new_record?%>
 <%end%>
