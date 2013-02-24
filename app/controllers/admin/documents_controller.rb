@@ -1,5 +1,5 @@
 class Admin::DocumentsController < Admin::AdminController
-  layout 'admin'
+  layout 'application'
   def new
     cas = Cas.find(params[:cas_id])
     if request.post?

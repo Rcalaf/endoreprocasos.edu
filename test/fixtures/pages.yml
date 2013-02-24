@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  menu_title: MyString
+
+two:
+  title: MyString
+  menu_title: MyString

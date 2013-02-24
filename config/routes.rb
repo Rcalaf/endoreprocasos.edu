@@ -23,6 +23,17 @@ EndoreprocasosEdu::Application.routes.draw do
 
    match "user/:user_id/delete" => "admin/users#delete", :as => "delete_user"
    
+   
+      #---------------------------------PAGES--------------------------------------
+
+   match "pages" => "admin/pages#index", :as => "pages"
+
+   match "page/new" => "admin/pages#new", :as => "new_page"
+
+   match "page/:page_id" => "admin/pages#edit", :as => "edit_page"
+
+   match "page/:page_id/delete" => "admin/pages#delete", :as => "delete_page"
+   
       #---------------------------------CASOS--------------------------------------
   
    match 'casos' => 'admin/casos#index', :as => 'casos'

@@ -1,0 +1,15 @@
+<%=form_for @page,:url => (params[:action] == "new" ? new_page_url : edit_page_url(@page)), :html =>{:class => "margin-bottom-45"} do |f|%>
+
+	<div class="margin-bottom-30">
+		<h3>Titulo</h3>
+		<%= f.text_field :titol, :class => "text m"%>
+	</div>
+	
+	
+	<div class="margin-bottom-30">
+		<h3>Titulo del menú</h3>
+		<%=f.text_field :menu_title, :class => "text s"%>
+	</div>
+	
+	<%= f.submit "Guardar pregunta", :class => "margin-right-15"%><%= link_to "cancelar", preguntass_url,:class => "red hovering"%>
+<%end%>

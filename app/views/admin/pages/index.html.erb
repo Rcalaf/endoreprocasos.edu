@@ -1,0 +1,9 @@
+<p class="margin-bottom-30"><%= link_to "Nueva página",new_page_url%></p>
+
+<h2>Páginas del menú</h2>
+<p class="margin-bottom-15 gray">Arrastrar para ordenar (los cambios se guardan automáticamente)</p>
+
+
+<ul class="text-only-objects margin-bottom-30" id="sort-pages">
+	<%=render :partial => '/admin/pages/page', :collection => @pages%>
+</ul>

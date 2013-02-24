@@ -1,5 +1,5 @@
 class Admin::PreguntesController < Admin::AdminController
-  layout 'roger'
+  layout 'application'
   
   def index
     @preguntes = Pregunta.all

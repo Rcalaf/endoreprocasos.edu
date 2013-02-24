@@ -13,7 +13,21 @@ jQuery(function() {
 	})
 	
 
-	
+	$('#sort-pages').sortable({
+		 update : function () {		
+			var order = $("#sort-pages").sortable('serialize');
+			$("input#sort_data").val(order);
+		  }
+	});
+
+	/*
+	$('#sort-slideshow-images').sortable({
+		 update : function () {		
+			var order = $("#sort-slideshow-images").sortable('serialize');
+			$("input#sort_data").val(order);
+		  }
+	});
+	*/
 
 	/*
 	$('.pregunta').click(self,function(event){

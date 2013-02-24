@@ -11,11 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121202175048) do
+ActiveRecord::Schema.define(:version => 20130224161209) do
 
   create_table "cas", :force => true do |t|
     t.string   "titol"
     t.text     "descripcio"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "contents", :force => true do |t|
+    t.text     "text"
+    t.text     "mini_text"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -30,6 +37,14 @@ ActiveRecord::Schema.define(:version => 20121202175048) do
     t.integer  "document_file_size"
     t.datetime "document_updated_at"
     t.string   "descripcio"
+  end
+
+  create_table "pages", :force => true do |t|
+    t.string   "title"
+    t.string   "menu_title"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.boolean  "home"
   end
 
   create_table "pregunta", :force => true do |t|
