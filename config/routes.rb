@@ -34,6 +34,16 @@ EndoreprocasosEdu::Application.routes.draw do
 
    match "page/:page_id/delete" => "admin/pages#delete", :as => "delete_page"
    
+   
+   #-----------------------CONTENTS--------------------------------
+
+     match '/admin/page/:page_id/content/new/' => 'admin/pages/contents#new', :as => 'new_content'
+     
+     match '/admin/page/:page_id/contents/sort/' => 'admin/page/contents#sort', :as => 'sort_contents'
+     
+     match '/admin/page/:page_id/content/:content_id' => 'admin/pages/contents#edit', :as => 'edit_content'
+     
+     match '/admin/page/:page_id/content/:content_id/delete/' => 'admin/pages/contents#destroy', :as => 'delete_content'
       #---------------------------------CASOS--------------------------------------
   
    match 'casos' => 'admin/casos#index', :as => 'casos'

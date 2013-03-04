@@ -1,0 +1,22 @@
+<a class="named-anchor" name="contents"></a>
+
+<h2>Contenidos de la página</h2>
+<%if @contents.empty?%>
+<p class="margin-bottom-45 margin-top-15 gray">- Aun no hay contenidos. <%= link_to "Añadir contenido.", new_content_url(@page)%></p>
+<%else%>
+	<p class="margin-bottom-30 gray"><%= link_to "Añadir contenido.", new_content_url(@page)%> Arrastrar para ordenar.</p>
+	
+	<%# render :partial => 'admin/shared/form_errors_notification', :object => :content%>
+	
+	<%=form_tag sort_contents_url(@page.id),:class =>"margin-bottom-45" do %>
+
+
+		<div class="contents margin-bottom-30" id="sort-contents">
+			<%= render :partial => "admin/pages/contents/toolbox", :collection => @contents%>
+		</div>
+	
+		<%= hidden_field_tag "sort_data"%>
+		<%= submit_tag "Actualizar orden", :class => "margin-right-15"%><%= link_to "cancelar",edit_page_url(@page,:anchor => 'contents'),:class => "red hovering"%>
+
+	<%end%>
+<%end%>

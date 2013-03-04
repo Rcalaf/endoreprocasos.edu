@@ -17,6 +17,7 @@ class Admin::PagesController < Admin::AdminController
   
   def edit
     @page = Page.find(params[:page_id])
+    @contents = @page.contents
     if request.put?
       @page.update_attributes(params[:page])
     end

@@ -1,0 +1,21 @@
+<%if content.content_type == "text"%>
+	<%= raw RDiscount.new(content.text).to_html%>
+<%elsif content.content_type == "embed"%>
+	<div class="margin-bottom-30">
+		<%= raw RDiscount.new(content.embed_code).to_html%>
+	</div>
+
+<%elsif content.content_type == "small-image"%>
+	<%=image_tag content.image.url(:small), :class => "margin-bottom-30 float-left"%>	
+	<div class="small-image-text column-305 float-right">
+		<%= raw RDiscount.new(content.small_image_text).to_html%>
+	</div>
+	<div class="clear"></div>
+<%elsif content.content_type == "big-image"%>
+	<%if content.big_image_text.empty?%>
+		<%= image_tag content.image.url(:big), :class => "margin-bottom-30"%>
+	<%else%>
+		<%= image_tag content.image.url(:big), :class => "margin-bottom-15"%>
+		<%= raw RDiscount.new(content.big_image_text).to_html%>
+	<%end%>
+<%end%>

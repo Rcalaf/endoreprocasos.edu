@@ -3,7 +3,9 @@ class Document < ActiveRecord::Base
   attr_accessible :cas_id, :titol, :document, :descripcio
   belongs_to :cas
   
-  has_attached_file :document
+  has_attached_file :document,:url => "/system/:class/:attachment/:name_:style.:extension"
+
+  
   #validates_attachment_content_type :document, :content_type => ["application/pdf","application/zip"], :message => "Solo se admiten archivos PDF o ZIP (español)", :if => :activate_download_validation
   validates_attachment_presence :document, :message => "Selecciona un archivo."
   validates :descripcio, :presence => {:presence => true,:message => "Escribe una descripción para el documento."}

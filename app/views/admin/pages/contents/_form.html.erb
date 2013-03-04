@@ -1,0 +1,81 @@
+
+
+<%# render :partial => "admin/shared/form_errors_notification", :object => (flash[:content_image] ? flash[:content_image] : @content)%>
+<%# render :partial => "admin/shared/flash_notification", :object => :content%>
+
+	
+<%= form_for @content, :url => (params[:action] == "edit" ? edit_content_path(params[:page_id],@content.id) : new_content_path(params[:page_id])), :html => {:multipart => true} do |f|%>
+
+<div class="margin-bottom-30">
+	<%= select_tag "content[content_type]",options_for_select([["Texto/HTML","text"],["Código embed (Youtube, Vimeo, Google Maps, etc)","embed"],["Imagen grande","big-image"],["Imagen pequeña (con texto al lado)","small-image"]],@content.content_type),:id=>"content-type"%>
+
+</div>
+
+<h2>Contenido de la página: <%= link_to @page.menu_title, edit_page_url(@page)%></h2>
+
+		<div class="margin-bottom-30 content-type-form" id="text">
+			<p class="margin-bottom-30 gray">Introduce el texto o el código HTML para ambos idiomas. Puedes usar convenciones markdown (<a href="/admin/help" target="_blank">ver ayuda</a>)</p>
+			
+			<div>	
+				<%=f.label :text, "Texto"%><br />
+				<%=f.text_area :text, :rows => 8,:cols=> 80%>
+			</div>
+		
+		</div>
+	
+	
+		<div class="margin-bottom-30 content-type-form" id="embed">
+			<p class="margin-bottom-30 gray">Ancho recomendado para los embeds (como Youtube o Google Maps): 640 px</p>
+			
+			<div>	
+				<%=f.label :embed_code, "Codigo"%><br />
+				<%=f.text_area :embed_code, :rows => 8,:cols=> 80%>
+			</div>
+
+		</div>
+	
+		<div class="margin-bottom-30 content-type-form" id="big-image">
+			<p class="margin-bottom-30">Sube una imagen jpg <span class="gray">(espacio RGB, 1.5 Mb máx). Se escalará automáticamente a 640 px de ancho</span></p>
+				
+			<div class="margin-bottom-30">
+				<%=f.file_field :image %>
+			</div>
+			
+			<%if @content.image? && File.exist?(@content.image.path)%>
+				<%=image_tag(@content.image.url(:big),:class => "border") %>
+			<%else%>
+				<div class="big-image-placeholder border"></div>
+			<%end%>
+			
+			<h3 class="margin-bottom-15 margin-top-30">Texto al pie <span class="gray">(opcional)</span></h3>
+			
+			<div>	
+				<%=f.text_area :big_image_text, :rows => 8,:cols=> 80%>
+			</div>
+			
+		</div>
+	
+		<div class="margin-bottom-30 content-type-form" id="small-image">
+			<p class="margin-bottom-30">Sube una imagen jpg <span class="gray">(RGB, 1.5 Mb máx). Se escalará a 305 px de ancho. Puedes escribir texto al lado (markdown <a href="/admin/help" target="_blank">?</a>)</span></p>
+				
+			<div class="margin-bottom-30">
+				<%=f.file_field :image %>
+			</div>
+			
+			<div class="<%='small-image-placeholder border ' unless @content.image? && File.exist?(@content.image.path)%>float-left margin-right-30"><%=image_tag(@content.image.url(:small),:class => "border") if @content.image? && File.exist?(@content.image.path)%></div>
+			
+			<div class="float-left">
+				<label>texto (markdown <a href="/admin/help" target="_blank">?</a>)</label><br />
+				<%=f.text_area :small_image_text , :rows => 14,:cols=> 40, :class => "column-305"%>
+			</div>
+			
+			<div class="clear"></div>
+		</div>
+
+
+	<%= raw('<div id="save-content-submit">') if params[:action] == 'edit'%>
+		<p class="margin-bottom-30"><%= f.submit  params[:action] == "edit" ? "Guardar contenido" : "Crear contenido",:class=>"margin-right-15"%>
+		<%=link_to "cancelar", edit_page_url(@page.id),:class => "red hovering"%></p>
+	<%= raw('</div>') if params[:action] == 'edit'%>
+		
+<%end%>

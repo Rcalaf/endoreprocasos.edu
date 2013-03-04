@@ -1,0 +1,10 @@
+
+<%=link_to image_tag(summary_child.summary_image.url(:thumb),:class => "margin-bottom-30 float-left border"),show_page_url(summary_child)%>
+<div class="small-image-text column-305 float-right description">
+	<h3><%= summary_child.menu_title_es%></h3>
+	<%= raw RDiscount.new(summary_child.summary_description_es).to_html%>
+
+	<%= link_to "Más información",show_page_url(summary_child)%>
+
+</div>
+<div class="clear"></div>

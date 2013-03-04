@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130224161209) do
+ActiveRecord::Schema.define(:version => 20130303210349) do
 
   create_table "cas", :force => true do |t|
     t.string   "titol"
@@ -22,9 +22,18 @@ ActiveRecord::Schema.define(:version => 20130224161209) do
 
   create_table "contents", :force => true do |t|
     t.text     "text"
-    t.text     "mini_text"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.text     "embed_code"
+    t.text     "big_image_text"
+    t.text     "small_image_text"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.integer  "page_id"
+    t.string   "content_type"
+    t.integer  "position"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "documents", :force => true do |t|
