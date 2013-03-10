@@ -1,25 +1,27 @@
 class Admin::PagesController < Admin::AdminController
-  layout 'application'
+  layout 'admin'
   
   def index
     @pages = Page.all
   end
   
   def new
-    @page = Page.new
+    
     if request.post?
-      @page = Page.create(params[:page])
-      if @page.valid? 
-        redirect_to edit_page_url(@page)
+      @owner = Page.create(params[:page])
+      if @owner.valid? 
+        redirect_to edit_page_url(@owner)
       end
     end
+    @page = Page.new
   end
   
   def edit
-    @page = Page.find(params[:page_id])
-    @contents = @page.contents
+    @owner = Page.find(params[:page_id])
+    @contents = @owner.contents
+    @content = Content.new(:page_id => @owner.id)
     if request.put?
-      @page.update_attributes(params[:page])
+      @owner.update_attributes(params[:page])
     end
   end
   

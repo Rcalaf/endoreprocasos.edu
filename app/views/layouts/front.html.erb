@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>CURSO</title>
+		
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+		
+
+		<%= stylesheet_link_tag 'general' %>
+		<%= javascript_include_tag 'admin' %>
+		<%= csrf_meta_tags %>
+	 
+		<script type="text/javascript">
+
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-38998248-1']);
+		  _gaq.push(['_setDomainName', 'endoreprocasos.es']);
+		  _gaq.push(['_setAllowLinker', true]);
+		  _gaq.push(['_trackPageview']);
+
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+
+		</script>  
+	</head>
+    <body>
+    	<div class="container_main">
+			<div class="top_head">
+				<div class="header">
+					<ul class="top_nav">
+						<li><%= link_to 'Home', root_url%></li>
+						<%= render :partial => 'shared/menu_tab', :collection => @public_pages%>
+					</ul>
+				</div>
+			</div>
+	   		<div class="site_content">
+	   			<div class="intro_zone">
+		   			<p class="org_header">CURSO PRÁCTICO DE ENDOCRINOLOGÍA GINECOLÓGICA Y REPRODUCCIÓN HUMANA BASADO EN EL CASO </p>
+		   			<p class="org_when">Barcelona, December 12, 13, 14</p>
+	   			</div>
+	   			<div class="login_zone">
+					<%= form_tag login_url do %>
+					<div class="input_holder">
+						<input type="text" name='email' value="e-mail"/>
+					</div>
+					<div class="input_holder">
+						<input type="password" name='proxy_password' value="password"/>
+					</div>
+					<input type="submit" value="login" class="submit_button"/>
+					
+					<%= link_to '¿olvidaste tu password?',reset_password_url, :remote => true%>
+				
+					<%end%>
+				</div>
+				<%= yield%>
+	   		</div>
+	   		<div class="footer"></div>
+        </div>
+	</body>
+</html>

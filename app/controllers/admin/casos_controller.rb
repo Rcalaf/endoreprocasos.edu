@@ -1,6 +1,6 @@
 # encoding: UTF-8
 class Admin::CasosController < Admin::AdminController
-  layout 'application'
+  
   
   def index
     @title = "Endoreprocasos | Casos"
@@ -11,32 +11,35 @@ class Admin::CasosController < Admin::AdminController
 
   def new
     @title = "Endoreprocasos | Nuevo caso"
-    @cas = Cas.new
+    @owner = Cas.new
     if request.post? 
-      @cas = Cas.create(params[:cas])
+      @owner = Cas.create(params[:cas])
       if @cas.valid? 
-        redirect_to edit_cas_url(@cas)
+        redirect_to edit_cas_url(@owner)
       end
     end
   end
   
   def edit
-    @cas = Cas.find(params[:cas_id])
-    @title = "Endoreprocasos | Editar caso #{@cas.titol}"
+    @owner = Cas.find(params[:cas_id])
+    @title = "Endoreprocasos | Editar caso #{@owner.titol}"
     @document = Document.new
-    @documents = @cas.documents
-    @preguntes = @cas.preguntes
+    @documents = @owner.documents
+    @preguntes = @owner.preguntes
+    @contents = @owner.contents
+    @content = Content.new(:cas_id => @owner.id)
     if request.put? 
-      @cas.update_attributes(params[:cas])
+      @owner.update_attributes(params[:cas])
     end
+   
   end
   
   def show
     @cas = Cas.find(params[:cas_id])
     @title = "Endoreprocasos | #{@cas.titol}"
-    @casos = Cas.all
     @documents = @cas.documents
     @preguntes = @cas.preguntes
+    @contents = @cas.contents
     @pregunta = Pregunta.new
     @resposta = Resposta.new
   end

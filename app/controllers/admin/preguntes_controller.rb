@@ -6,6 +6,7 @@ class Admin::PreguntesController < Admin::AdminController
   end
   
   def new
+    #jquey
     @pregunta = Pregunta.new
     if request.post?
       @pregunta = Pregunta.create(params[:pregunta])
@@ -21,11 +22,6 @@ class Admin::PreguntesController < Admin::AdminController
     if request.post?
       @pregunta.update_attributes(params[:pregunta])
     end
-  end
-  
-  def show
-    @pregunta = Pregunta.find(params[:pregunta_id])
-    @respostes = @pregunta.respostes
   end
   
   def delete

@@ -20,17 +20,27 @@ set :user, "deploy"
 # Deploy settings
 #
 
-set :application, "endoreprocasos.es"
+set :application, "endoreprocasos2.es"
 set :local_app, "endoreprocasos.edu"
 set :deploy_to, "/home/#{user}/#{application}"
 
 ### 
 # Git settings
 #
+#set :scm, :git
+#set :repository, "git@github.com:Rcalaf/endoreprocasos.edu.git"  #point to github CLONE URL.
+#set :branch, "master"
+#set :deploy_via, :remote_cache
+
+### 
+# Git settings
+#
 set :scm, :git
-set :repository, "git@github.com:Rcalaf/endoreprocasos.edu.git"  #point to github CLONE URL.
-set :branch, "master"
-set :deploy_via, :remote_cache
+set :repository,  "."  #point to github CLONE URL.
+set :copy_strategy, :export
+set :copy_compression, :gzip
+set :deploy_via, :copy
+
 
 
 ###

@@ -1,19 +1,8 @@
-<h2 class="float-left">Casos</h2>
-<%if session[:professor_id]%>
-<p class="float-right"><%= link_to "Crear nuevo caso",new_cas_url%></p>
-<%end%>
-<div class="clear"></div>
-<table class="margin-bottom-60 lined full-width">
-	<tr>
-		<th>Nombre</th>
-		<th>Descripción</th>
-		<th>Preguntas</th>
-		<%if session[:professor_id]%>
-		<th>Acciones</th>
-		<%end%>
-	</tr>
+<ul class="cases">
 	<%= render :partial => 'cas', :collection => @casos%>
-</table>
-
+</ul>
+<%if session[:professor_id]%>
+<%= link_to "Nuevo caso",new_cas_url,:class => "submit_button n_case"%>
+<%end%>
 
 

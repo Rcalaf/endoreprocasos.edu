@@ -29,21 +29,23 @@ EndoreprocasosEdu::Application.routes.draw do
    match "pages" => "admin/pages#index", :as => "pages"
 
    match "page/new" => "admin/pages#new", :as => "new_page"
+   
+   match "page/:page_id" => "admin/pages#show", :as => "show_page"
 
-   match "page/:page_id" => "admin/pages#edit", :as => "edit_page"
+   match "page/:page_id/editar" => "admin/pages#edit", :as => "edit_page"
 
    match "page/:page_id/delete" => "admin/pages#delete", :as => "delete_page"
    
    
    #-----------------------CONTENTS--------------------------------
 
-     match '/admin/page/:page_id/content/new/' => 'admin/pages/contents#new', :as => 'new_content'
+     match '/admin/:owner_type/:owner_id/content/new' => 'admin/contents#new', :as => 'new_content'
      
-     match '/admin/page/:page_id/contents/sort/' => 'admin/page/contents#sort', :as => 'sort_contents'
+     match '/admin/:owner_type/:owner_id/contents/sort/' => 'admin/contents#sort', :as => 'sort_contents'
      
-     match '/admin/page/:page_id/content/:content_id' => 'admin/pages/contents#edit', :as => 'edit_content'
+     match '/admin/:owner_type/:owner_id/content/:content_id' => 'admin/contents#edit', :as => 'edit_content'
      
-     match '/admin/page/:page_id/content/:content_id/delete/' => 'admin/pages/contents#destroy', :as => 'delete_content'
+     match '/admin/:owner_type/:owner_id/content/:content_id/delete/' => 'admin/contents#destroy', :as => 'delete_content'
       #---------------------------------CASOS--------------------------------------
   
    match 'casos' => 'admin/casos#index', :as => 'casos'

@@ -1,9 +1,8 @@
-<tr>
-	<td><%= link_to cas.titol,show_cas_url(cas)%></td>
-	<td><%= truncate(cas.descripcio,:length => 70)%></td>
-	<td><%= cas.preguntes.size%></td>
-	<%if session[:professor_id]%>	
-	<td><%=link_to '',edit_cas_url(cas),:class => 'edit margin-right-5'%>
-	<%=link_to '',delete_cas_url(cas),:class => 'delete',:confirm => "Desea eliminar el caso?"%></td>
+<li>
+	<p class="title"><%= link_to cas.titol,show_cas_url(cas)%></p>
+	<p class="description"><%= truncate(cas.descripcio,:length => 70)%></p>
+	<%= link_to cas.preguntes.size,show_cas_url(cas, :anchor => 'preguntas'),:class => 'comments'%>
+	<%if session[:professor_id]%>
+	<%=link_to '',delete_cas_url(cas),:class => 'remove button',:confirm => "Desea eliminar el caso?"%>
 	<%end%>	
-</tr>
+</li>

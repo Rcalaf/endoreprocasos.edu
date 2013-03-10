@@ -1,28 +1,26 @@
-<div class="cas">
-	<h1><%= @cas.titol%></h1>
-	<div class="descripcio marign-bottom-30"><%=raw RDiscount.new(@cas.descripcio).to_html%></div>
-	<div>
-		<h2>Material</h2>
-		<%if @documents.empty?%>
-		<div class="margin-bottom-60">
-			<p class='gray'> - No hay material en este caso.</p>
-		</div>
-		<%else%>
-		<table class="margin-bottom-60 lined full-width">
-				<tr>
-					<th>Nombre</th>
-					<th>Descripción</th>
-					<%if session[:professor_id]%>
-					<th>Acciones</th>
-					<%end%>
-				</tr>
-
-			<%= render :partial => "admin/documents/document", :collection => @documents%>
-		</table>
-		<%end%>
-	</div>
-	<%= render :partial => 'admin/preguntes/index'%>
+<div class="content_top">
+	<p class="header"><%= @cas.titol%></p>
+	<%if session[:professor_id]%>
+		<%=link_to '',edit_cas_url(@cas),:class => 'edit'%>
+	<%end%>
+</div>
+<div class="content_main">
+	<%= render :partial => "shared/content", :collection => @contents%>
+</div>
+<div class="content_secondary">
+	<ul class="attachments">
+	<%= render :partial => "admin/documents/document", :collection => @documents%>
+	</ul>
+	<a name="preguntas"></a>
 </div>
 
+<div class="content_comments">
+	<ul class="main_questions">
+		<div class="textarea_holder">
+			<textarea>Enter your question here...</textarea>
+			<input type="submit" class="submit_button f_right" value="ask"/>
+		</div>
+	</ul>
+</div>
 
 

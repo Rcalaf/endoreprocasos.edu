@@ -1,6 +1,6 @@
 # encoding: UTF-8
 class Admin::UsersController < Admin::AdminController
-  layout 'application'
+  layout 'admin'
  
   def index
     @title = "Endoreprocasos | Usuarios"
@@ -28,8 +28,9 @@ class Admin::UsersController < Admin::AdminController
   end
 
   def edit
-    @title = "Endoreprocasos | Editar usuario #{@new_user.name} #{@new_user.last_name}"
+    
     @new_user = User.find(params[:user_id])
+    @title = "Endoreprocasos | Editar usuario #{@new_user.name} #{@new_user.last_name}"
     if request.put?
       @new_user.update_attributes(params[:user])
     end

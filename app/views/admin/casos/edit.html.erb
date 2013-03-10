@@ -1,3 +1,10 @@
-<%= render :partial => "form"%>
-<%= render :partial => 'admin/documents/index'%>
-<%= render :partial => 'admin/preguntes/index_edit_cas'%>
+<div class="content_top">
+	<%= render :partial => "form"%>
+</div>
+<div class="content_main edit_mode"> 
+	<%= render :partial => "admin/contents/index"%>
+	<%= render :partial => 'admin/contents/form'%>
+</div>
+<div class="content_secondary edit_mode">
+	<%= render :partial => "admin/documents/index"%>
+</div>

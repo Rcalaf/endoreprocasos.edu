@@ -1,8 +1,9 @@
 class Page < ActiveRecord::Base
-  attr_accessible :menu_title, :title, :home
+  attr_accessible :menu_title, :title, :home, :slug
   
   has_many :contents, :dependent => :destroy
   
+  before_validation :set_slug
   after_save :update_home_status
   
   private
@@ -12,5 +13,9 @@ class Page < ActiveRecord::Base
       page = Page.find_by_home(true)
       page.update_attribute(:home,false) if page != self
     end
+  end
+  
+  def set_slug
+    self.slug = self.menu_title.parameterize
   end
 end

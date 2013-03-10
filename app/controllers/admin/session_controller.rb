@@ -28,16 +28,24 @@ class Admin::SessionController < Admin::AdminController
    def reset_password
      @title = "Restablecer contraseña"
      @token = set_token(71) 
+     respond_to do |format|
+       format.js { render :layout=>false }
+       #format.html 
+     end
    end
 
    def check_mail
-    @title = "Comprueba tu correo"
-    user = User.find_by_email(params[:email])
-    if user 
-      if user.update_attribute("token",params[:token])
-        Mailer.new_password_mail(user).deliver
+      @title = "Comprueba tu correo"
+      user = User.find_by_email(params[:email])
+      if user 
+        if user.update_attribute("token",params[:token])
+          Mailer.new_password_mail(user).deliver
+        end
       end
-    end
+      respond_to do |format|
+         format.js { render :layout=>false }
+         #format.html 
+      end
    end
 
    def enter_new_password
@@ -47,7 +55,7 @@ class Admin::SessionController < Admin::AdminController
       if request.put? 
         params[:user][:token] = nil
         if @user.update_attributes(params[:user])
-          redirect_to login_url        
+          redirect_to root_url        
         end
       end
    end
@@ -55,6 +63,6 @@ class Admin::SessionController < Admin::AdminController
   def logout 
     session[:professor_id] = nil
     session[:alumne_id] = nil
-    redirect_to casos_url
+    redirect_to root_url
   end
 end

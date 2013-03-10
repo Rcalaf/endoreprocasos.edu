@@ -1,10 +1,26 @@
 class Content < ActiveRecord::Base
-  attr_accessible :content_type, :embed_code, :big_image_text, :small_image_text, :page_id, :text
+  attr_accessible :content_type, :embed_code, :image , :page_id, :text, :cas_id
   
   belongs_to :page
+  belongs_to :cas
   
-   acts_as_list :scope => :page
+  #before_validation :set_type
+  
+  #acts_as_list :scope => :page
+ # acts_as_list :scope => :cas
 
-   has_attached_file :image, :styles => { :small => "305x", :big => "640x" }, :convert_options => {:all => ["-strip", "-colorspace RGB"]},:url => "/system/:class/:attachment/:name_:style.:extension"
+  has_attached_file :image, :styles => { :small => "305x", :big => "640x" }, :convert_options => {:all => ["-strip", "-colorspace RGB"]}
+  
+  private 
+  
+  def set_type
+    if self.text
+      self.content_type = 'text'
+    elsif self.image
+      self.content_type = 'image'
+    else
+      self.content_type = 'embed'
+    end
+  end
   
 end

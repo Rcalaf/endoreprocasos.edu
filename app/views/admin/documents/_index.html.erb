@@ -1,34 +1,13 @@
-<a name="material">
-<h2 class="float-left">Material</h2>
-<a href="javascript:void(0);" id="new-question" class="float-right">Nuevo documento</a>
-<div class="clear"></div>
-<div class="question-form" style="display:<%=flash[:errors] ? '' : 'none'%>">
-	<%= render :partial => 'admin/shared/form_errors_notification', :object => flash[:errors]%>
-	<%= form_for @document, :url => new_document_url , :html =>{:class => "margin-bottom-30"} do |f|%>
-	<%= f.file_field :document, :class => 'margin-bottom-5'%><br />
-	<div class='margin-bottom-5'>
-	<%= f.text_field :titol, :class => 'margin-right-5'%><%= f.label :titol, 'Titol'%>
-	</div>
-	<div class='margin-bottom-5'>
-	<%= f.text_field :descripcio, :class => 'margin-right-5'%><%=f.label :descripcio, 'Descripcio'%>
-	</div>
-	<%= f.submit 'Crea documento'%>
+<ul class="attachments">
+	<%= render :partial => 'admin/documents/document', :collection => @documents%>
+	<div class="input_holder_newfile">
+	<%= form_for @document, :url => new_document_url, :html => {:multipart => true}  do |f|%>
+		<%=f.file_field :document, :class => "file_attach"%>
+		<input type="submit" class="submit_button n_content" value="material"/>
 	<%end%>
-</div>
-<%if @documents.empty?%>
-<div class="margin-bottom-60">
-	<p class='red'> - No hay documentos pera este caso.</p>
-</div>
-<%else%>
-<table class="margin-bottom-60 lined full-width">
-		<tr>
-			<th>Nombre</th>
-			<th>Descripción</th>
-			<%if session[:professor_id]%>
-			<th>Acciones</th>
-			<%end%>
-		</tr>
+	</div>
+</ul>
+
+
+
 		
-	<%= render :partial => "admin/documents/document", :collection => @documents%>
-</table>
-<%end%>

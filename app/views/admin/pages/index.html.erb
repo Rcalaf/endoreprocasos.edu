@@ -1,9 +1,10 @@
-<p class="margin-bottom-30"><%= link_to "Nueva página",new_page_url%></p>
-
-<h2>Páginas del menú</h2>
-<p class="margin-bottom-15 gray">Arrastrar para ordenar (los cambios se guardan automáticamente)</p>
-
-
-<ul class="text-only-objects margin-bottom-30" id="sort-pages">
+<div class="pages"><p class="header">Arrastrar para ordenar (los cambios se guardan automáticamente)</p></div>
+<ul class="pages-list" id="sort-pages">
 	<%=render :partial => '/admin/pages/page', :collection => @pages%>
 </ul>
+
+<%= link_to "Página",new_page_url,:class => "submit_button n_case"%>
+
+
+
+

@@ -1,56 +1,55 @@
-<%= render :partial => "admin/shared/form_errors_notification", :object => flash[:errors]%>
-<% content_for :js do%>
-<% if params[:action] == "new"%>
-<script type="text/javascript" charset="utf-8">
-$(document).ready(function () {
-	$('.alumni').click(function(){
-		$('.password').hide('slow');
-	});
-	
-	$('.teacher').click(function(){
-		$('.password').show('slow');
-	});
-});
+<div class="users margin-top-36">
+	<p class="header"><%= params[:action] == "edit" ? 'Editar' : 'Nuevo'%> usuario</p>
+</div>
 
-</script>
-<%end%>
-<%end%>
-<%=form_for @new_user,:url => (params[:action] == "new" ? new_user_url : edit_user_url(@new_user)), :html =>{:class => "margin-bottom-45"} do |f|%>
+<%=form_for @new_user,:url => (params[:action] == "new" ? new_user_url : edit_user_url(@new_user)), :html =>{:class => "user"} do |f|%>
 
-	<div class="margin-bottom-30">
-		<h3>Nombre</h3>
-		<%= f.text_field :name, :class => "text m"%>
+
+	<div class="input_holder_short">
+		<p class="label">Nombre</p>
+		<%= f.text_field :name, :placeholder => 'Nombre', :class => 'header_edit'%>
 	</div>
 	
-	<div class="margin-bottom-30">
-		<h3>Apellido</h3>
-		<%= f.text_field :last_name, :class => "text m"%><br />
+	<div class="input_holder_short">
+		<p class="label">Apellido</p>
+		<%= f.text_field :last_name, :placeholder => 'Apellido', :class => 'header_edit'%>
 	</div>
+	<div class="clear"></div>
 	
-	<div class="margin-bottom-30">
-		<h3>Email</h3>
-		<%= f.text_field :email, :class => "text m"%><br />
-		<%= f.text_field :email_confirmation, :class => "text m"%>
-		<label>repetir</label><br />
+	<div class="input_holder_short">
+		<p class="label">Email</p>
+		<%= f.text_field :email, :placeholder => 'Email', :class => 'header_edit'%>
 	</div>
-	<%if session[:professor_id]%>
-	<div class="margin-bottom-30">
-		<h3>Tipo</h3>
-		<%= f.radio_button :status, "professor", :class => 'teacher'%>
-		<label>Profesor</label>
-		<%= f.radio_button :status, "alumne", :class => 'alumni'%>
-		<label>Alumno</label><br />
+
+	<div class="input_holder_short">
+		<p class="label">Confirma email</p>
+		<%= f.text_field :email_confirmation, :placeholder => 'Confirma email', :class => 'header_edit'%>
 	</div>
-	<%end%>
+	<div class="clear"></div>
+
+<%if session[:professor_id]%>
+	<div class='radio'>
+	<p class="label">Tipo</p>
+	<%= f.radio_button :status, "professor", :class => 'teacher'%>
+	<label>Profesor</label>
+	<%= f.radio_button :status, "alumne", :class => 'alumni'%>
+	<label>Alumno</label>
+	</div>
+<%end%>
+	<div class="clear"></div>
+		<div class="password">
+		<div class="input_holder_short">
+			<p>Contraseña: </p>
+			<%= f.password_field :proxy_password, :class => "header_edit", :placeholder=> "Contraseña"%>
+		</div>
+		<div class="input_holder_short">
+			<p class="label">Confirma contraseña</p>
+			<%= f.password_field :proxy_password_confirmation, :class => "header_edit", :placeholder=> "Confirma contraseña"%>
+		</div>
+		<div class="clear"></div>
+		<p class="text">mínimo 8 caracteres, una mayúscula, una minúscula y un número</p>
+	</div>	
+	<%= f.submit "Guardar", :class => "submit_button"%>
+	<%= link_to "cancelar", (session[:professor_id] ? users_url : edit_user_url(@new_user)),:class => "red hovering"%>
 	
-	<div class="margin-bottom-30 password">
-		<h3>Contraseña</h3>
-		<%= f.password_field :proxy_password, :class => "text m"%>
-		<label>mínimo 8 caracteres, una mayúscula, una minúscula y un número</label><br />
-		
-		<%= f.password_field :proxy_password_confirmation, :class => "text m"%>
-		<label>repetir</label><br />
-	</div>
-	
-	<%= f.submit "Guardar usuario", :class => "margin-right-15"%><%= link_to "cancelar", (session[:professor_id] ? users_url : edit_user_url(@new_user)),:class => "red hovering"%>
 <%end%>

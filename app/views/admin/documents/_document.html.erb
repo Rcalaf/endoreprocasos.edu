@@ -1,7 +1,7 @@
-<tr>
-	<td><%= link_to document.titol, document.document.url%></td>
-	<td><%= document.descripcio%></th>
+<li>
+	<p class="name"><%=document.titol%></p>
+	<%=link_to(excerpt(document.document_file_name, '.', :radius => 15),document.document.url,:class => 'file')%>
 	<%if session[:professor_id]%>
-		<td><%=link_to '',delete_document_url(@cas,document),:class => 'delete', :confirm => "Desea eliminar este material?"%>
+	<%=link_to '',delete_document_url(@cas,document),:class => 'remove', :confirm => "Desea eliminar este material?"%>
 	<%end%>
-</tr>
+</li>
