@@ -14,7 +14,7 @@ class Admin::CasosController < Admin::AdminController
     @owner = Cas.new
     if request.post? 
       @owner = Cas.create(params[:cas])
-      if @cas.valid? 
+      if @owner.valid? 
         redirect_to edit_cas_url(@owner)
       end
     end
@@ -40,7 +40,7 @@ class Admin::CasosController < Admin::AdminController
     @documents = @cas.documents
     @preguntes = @cas.preguntes
     @contents = @cas.contents
-    @pregunta = Pregunta.new
+    @pregunta = Pregunta.new(:cas_id => @cas,:user_id => session[:alumne_id] | session[:professor_id])
     @resposta = Resposta.new
   end
   

@@ -19,7 +19,7 @@ body {
 	font-weight: 400;
 	letter-spacing: 0.1em;
 	font-size: 12px;
-	background-color: #E6F2F2;
+	background-color: #FFF;
 	line-height: 22px;
 	}
 
@@ -418,10 +418,12 @@ div.content_main{
 	
 }
 
-div.content_main p.text {
+div.content_main div.content-text {
 	float: left;
 	width: 577px;
 	margin-left: 46px;
+	margin-bottom: 30px;
+	padding-top: 30px;
 	color: #333;
 	text-align: justify;
 	font-size: 12px;	
@@ -432,6 +434,7 @@ div.content_main img {
 	float: left;
 	width: 577px;
 	margin-left: 46px;
+	margin-bottom: 30px;
 	padding: 46px 0;
 }
 
@@ -754,10 +757,13 @@ div.input_holder_newfile {
 	border-top: 1px solid #f1f1f1;
 	}	
 
-div.input_holder_newimage {
-	width: 206px;
-	padding: 10px 0;
-	height: 60px;
+input.input_holder_newimage {
+	max-width: 561px;
+	padding: 0px 8px;
+	margin: 46px 0 46px 46px;
+	background-color: rgba(255, 255, 255, 0);
+
+	border: none;
 	float: left;
 	border-top: 1px solid #f1f1f1;
 	}	
@@ -787,9 +793,11 @@ input.header_edit {
 	color: #333;	
 	padding: 2px 4px;
 	}
+	
+
 
 input.file_attach {		
-	padding: 24px;
+	padding: 0px;
 	width: 100%;
 	float: left;
 	background-color: rgba(255, 255, 255, 0);
@@ -803,7 +811,7 @@ input.file_attach:hover {
 
 
 input:hover	{	
-	background-color: rgba(255, 255, 255, 1);
+	/*background-color: rgba(255, 255, 255, 1);*/
 	}	
 
 input:focus	{	

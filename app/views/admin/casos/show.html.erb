@@ -4,21 +4,25 @@
 		<%=link_to '',edit_cas_url(@cas),:class => 'edit'%>
 	<%end%>
 </div>
-<div class="content_main">
+<div class="content_main case">
 	<%= render :partial => "shared/content", :collection => @contents%>
 </div>
+<%unless @documents.empty?%>
 <div class="content_secondary">
 	<ul class="attachments">
 	<%= render :partial => "admin/documents/document", :collection => @documents%>
 	</ul>
 	<a name="preguntas"></a>
 </div>
+<%end%>
 
 <div class="content_comments">
 	<ul class="main_questions">
 		<div class="textarea_holder">
-			<textarea>Enter your question here...</textarea>
+			<%= form_for @pregunta, :url => new_pregunta_url(@cas) do |f|%>
+			<textarea placeholder="Enter your question here..." name="pregunta[text]"><%= @pregunta.text%></textarea>
 			<input type="submit" class="submit_button f_right" value="ask"/>
+			<%end%>
 		</div>
 	</ul>
 </div>

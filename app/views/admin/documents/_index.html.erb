@@ -2,6 +2,9 @@
 	<%= render :partial => 'admin/documents/document', :collection => @documents%>
 	<div class="input_holder_newfile">
 	<%= form_for @document, :url => new_document_url, :html => {:multipart => true}  do |f|%>
+		<div class="input_holder_short">
+			<%= f.text_field :titol, :placeholder => 'Título', :class => 'header_edit'%>
+		</div>
 		<%=f.file_field :document, :class => "file_attach"%>
 		<input type="submit" class="submit_button n_content" value="material"/>
 	<%end%>

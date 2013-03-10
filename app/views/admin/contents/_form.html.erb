@@ -9,17 +9,17 @@
 	</ul>
 	<span class="clear"></span>
 	<div class="text">
-		<%=f.text_area :text, :class => "edit_main"%>
+		<%=f.text_area :text, :class => "edit_main", :rows => 8%>
 	</div>		
 	<span class="clear"></span>				
 	<div class="image" style="display: none;">
-		<div class="input_holder_newimage">
-			<%=f.file_field :image, :class => "file_attach" %>
-		</div>
+		
+			<%=f.file_field :image ,:class => "input_holder_newimage"%>
+	
 	</div>		
 	<span class="clear"></span>				
 	<div class="embed" style="display: none;">
-		<%=f.text_area :embed_code, :class => "edit_main"%>
+		<%=f.text_area :embed_code, :class => "edit_main", :rows => 8%>
 	</div>	
 	<%= f.hidden_field :content_type,:value => 'text'%>
 	<%= f.hidden_field :page_id%>
