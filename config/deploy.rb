@@ -48,7 +48,7 @@ set :deploy_via, :copy
 #
 
 set :db_passwd, "wL8XSPha"
-set :db_name, "endoreprocasos.edu_production"
+set :db_name, "endoreprocasos2.edu_production"
 
 role :app, server_ip
 role :web, server_ip
