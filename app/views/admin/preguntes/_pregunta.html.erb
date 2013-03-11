@@ -1,5 +1,7 @@
-<li>
+<li id="<%=pregunta.id%>" class="pregunta">
 	<p class="name"><%=pregunta.user.name%> <%=pregunta.user.last_name%></p>
 	<p class="question"><%= pregunta.text%></p>
 </li>
-	<%= render :partial => 'admin/respostes/index', :object => pregunta%>
+	<ul class="sub_questions"  id="resposta_<%=pregunta.id%>">
+		<%= render :partial => 'admin/respostes/index', :object => pregunta%>
+	</ul>
