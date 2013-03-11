@@ -15,13 +15,13 @@ EndoreprocasosEdu::Application.routes.draw do
 
       #---------------------------------USERS--------------------------------------
 
-   match "users" => "admin/users#index", :as => "users"
+   match "/admin/users" => "admin/users#index", :as => "users"
 
-   match "user/new" => "admin/users#new", :as => "new_user"
+   match "/admin/user/new" => "admin/users#new", :as => "new_user"
 
-   match "user/:user_id" => "admin/users#edit", :as => "edit_user"
+   match "/admin/user/:user_id" => "admin/users#edit", :as => "edit_user"
 
-   match "user/:user_id/delete" => "admin/users#delete", :as => "delete_user"
+   match "/admin/user/:user_id/delete" => "admin/users#delete", :as => "delete_user"
    
    
       #---------------------------------PAGES--------------------------------------
@@ -30,18 +30,19 @@ EndoreprocasosEdu::Application.routes.draw do
 
    match "page/new" => "admin/pages#new", :as => "new_page"
    
+   match '/admin/pages/sort' => 'admin/pages#sort', :as => 'sort_pages'
+   
    match "page/:page_id" => "admin/pages#show", :as => "show_page"
 
-   match "page/:page_id/editar" => "admin/pages#edit", :as => "edit_page"
+   match "/admin/page/:page_id/editar" => "admin/pages#edit", :as => "edit_page"
 
-   match "page/:page_id/delete" => "admin/pages#delete", :as => "delete_page"
+   match "/admin/page/:page_id/delete" => "admin/pages#delete", :as => "delete_page"
    
    
    #-----------------------CONTENTS--------------------------------
+     match '/admin/contents/sort/' => 'admin/contents#sort', :as => 'sort_contents'
 
      match '/admin/:owner_type/:owner_id/content/new' => 'admin/contents#new', :as => 'new_content'
-     
-     match '/admin/:owner_type/:owner_id/contents/sort/' => 'admin/contents#sort', :as => 'sort_contents'
      
      match '/admin/:owner_type/:owner_id/content/:content_id' => 'admin/contents#edit', :as => 'edit_content'
      
@@ -54,15 +55,15 @@ EndoreprocasosEdu::Application.routes.draw do
    
    match 'cas/:cas_id' => 'admin/casos#show', :as => 'show_cas'
    
-   match 'cas/:cas_id/editar' => 'admin/casos#edit', :as => "edit_cas"
+   match '/admin/cas/:cas_id/editar' => 'admin/casos#edit', :as => "edit_cas"
    
-   match 'cas/:cas_id/delete' => 'admin/casos#delete', :as => "delete_cas"
+   match '/admin/cas/:cas_id/delete' => 'admin/casos#delete', :as => "delete_cas"
    
       #---------------------------------DOCUMENTS--------------------------------------
       
-   match 'cas/:cas_id/document/nou' => 'admin/documents#new', :as => 'new_document'
+   match '/admin/cas/:cas_id/document/nou' => 'admin/documents#new', :as => 'new_document'
    
-   match 'cas/:cas_id/document/:document_id' => 'admin/documents#delete', :as => 'delete_document'
+   match '/admin/cas/:cas_id/document/:document_id' => 'admin/documents#delete', :as => 'delete_document'
    
       #---------------------------------PREGUNTES--------------------------------------
     

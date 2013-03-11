@@ -11,14 +11,14 @@ jQuery(function() {
 	$('#sort-pages').sortable({
 		 update : function () {		
 			var order = $("#sort-pages").sortable('serialize');
-			$("input#sort_data").val(order);
+			$.post('/admin/pages/sort', {'sort_data':order});
 		  }
 	});
 	
 	$('#sort-contents').sortable({
 		 update : function () {		
 			var order = $("#sort-contents").sortable('serialize');
-			$("input#sort_data").val(order);
+			$.post('/admin/contents/sort', {'sort_data':order});
 		  }
 	});
 	

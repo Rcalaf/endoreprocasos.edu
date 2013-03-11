@@ -6,6 +6,8 @@ class Page < ActiveRecord::Base
   before_validation :set_slug
   after_save :update_home_status
   
+  acts_as_list 
+  
   private
   
   def update_home_status

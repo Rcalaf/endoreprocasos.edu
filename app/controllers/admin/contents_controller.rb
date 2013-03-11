@@ -33,7 +33,6 @@ class Admin::ContentsController < ApplicationController
 
 
   def sort
-   ApplicationSweeper.sweep
    sort_array = params[:sort_data].split("&")
    sort_array.each_with_index do |content_id,position|
      content_id = content_id.split("=")[1].to_i 
@@ -41,7 +40,10 @@ class Admin::ContentsController < ApplicationController
        flash[:content] = "El orden se ha actualizado"
      end 
    end
-   redirect_to edit_page_url(params[:page_id],:anchor => "contents")
+   respond_to do |format|
+      format.js { render :layout=>false }
+      #format.html 
+   end
   end
 
   def destroy

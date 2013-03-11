@@ -6,8 +6,8 @@ class Content < ActiveRecord::Base
   
   #before_validation :set_type
   
-  #acts_as_list :scope => :page
- # acts_as_list :scope => :cas
+  acts_as_list :scope => :page
+  acts_as_list :scope => :cas
 
   has_attached_file :image, :styles => { :small => "305x", :big => "640x" }, :convert_options => {:all => ["-strip", "-colorspace RGB"]}
   

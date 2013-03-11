@@ -1,4 +1,4 @@
-<div class="edit_main_zone">
+<div class="edit_main_zone" id="id_<%=toolbox.id%>">
 <%=link_to '',delete_content_url(@owner.class.to_s,@owner.id,toolbox.id),:class => 'remove button',:confirm => "Desea eliminar este contenido?"%>
 <%= render :partial => "shared/content", :object => toolbox%>
 </div>
