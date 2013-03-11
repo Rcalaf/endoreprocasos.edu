@@ -16,15 +16,6 @@
 </div>
 <%end%>
 
-<div class="content_comments">
-	<ul class="main_questions">
-		<div class="textarea_holder">
-			<%= form_for @pregunta, :url => new_pregunta_url(@cas) do |f|%>
-			<textarea placeholder="Enter your question here..." name="pregunta[text]"><%= @pregunta.text%></textarea>
-			<input type="submit" class="submit_button f_right" value="ask"/>
-			<%end%>
-		</div>
-	</ul>
-</div>
+<%= render :partial => 'admin/preguntes/index'%>
 
 

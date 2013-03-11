@@ -5,7 +5,7 @@ class Admin::RespostesController < Admin::AdminController
       unless @resposta.valid? 
         flash[:resposta_errors] = @resposta.errors
       end  
-      redirect_to edit_cas_url(params[:cas_id],:anchor => 'respuestas')
+      redirect_to show_cas_url(params[:cas_id],:anchor => 'respuestas')
     end
   end
   
@@ -13,7 +13,7 @@ class Admin::RespostesController < Admin::AdminController
     @resposta = Resposta.find(params[:resposta_id])
     if request.put?
       if @resposta.update_attributes(params[:resposta])
-         redirect_to edit_cas_url(params[:cas_id])
+         redirect_to show_cas_url(params[:cas_id])
       end
     end
   end
@@ -22,7 +22,7 @@ class Admin::RespostesController < Admin::AdminController
     resposta = Resposta.find(params[:resposta_id])
     cas = resposta.pregunta.cas
     if resposta.destroy
-      redirect_to edit_cas_url(cas)
+      redirect_to show_cas_url(cas)
     end
   end
 end

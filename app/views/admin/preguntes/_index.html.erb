@@ -1,26 +1,13 @@
-<a name="preguntas">
-<h2 class="float-left">Preguntas</h2>
-<a href="javascript:void(0);" id="new-question" class="float-right">Nueva una pregunta</a>
-<div class="clear"></div>
-<div class="question-form" style="display:<%=flash[:errors] ? '' : 'none'%>">
-	<%= render :partial => 'admin/shared/form_errors_notification', :object => flash[:errors]%>
-	<%= form_for @pregunta, :url => new_pregunta_url , :html =>{:class => "margin-bottom-30"} do |f|%>
-	<%= f.hidden_field :user_id, :value => session[:alumne_id] || session[:professor_id]%>
-	<%= f.hidden_field :cas_id, :value => @cas.id%>
-	<div class='margin-bottom-5'>
-	<%= f.text_area :text, :rows => 8,:cols=> 80,:class => 'margin-right-5'%>
-	</div>
-	
-	<%= f.submit 'Crea pregunta'%>
-	<%end%>
+<div class="content_comments">
+	<ul class="main_questions">
+		<%= render :partial => 'admin/preguntes/pregunta', :collection => @preguntes%>
+		<div class="textarea_holder">
+			<%= form_for @pregunta, :url => new_pregunta_url(@cas) do |f|%>
+			<%= f.text_area :text, :placeholder => "Escribe tu pregunta....", :rows => 8%>
+			<%= f.hidden_field :user_id%>
+			<%= f.hidden_field :cas_id%>
+			<input type="submit" class="submit_button f_right" value="Pregunta"/>
+		</div>
+		<%end%>
+	</ul>
 </div>
-
-<%if @preguntes.empty?%>
-<div class='margin-bottom-60'> 
-<p class='red'> - No hay preguntas para este caso.</p>
-</div>
-<%else%>
-<div>
-	<%= render :partial => "admin/preguntes/pregunta", :collection => @preguntes%>
-</div>
-<%end%>

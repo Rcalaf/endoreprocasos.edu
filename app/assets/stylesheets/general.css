@@ -224,10 +224,6 @@ ul.users-list li {
 	float: left;
 }
 
-ul.users-list li:last-child {
-	margin-bottom: 20px;
-}
-
 ul.users-list li:hover {
 	background-color: #f4f4f4;
 	/*cursor: pointer;*/
@@ -255,6 +251,7 @@ div.users {
 	width: 888px;
 	background-color: #F2F2F2;
 }
+
 
 
 div.users p.header {
@@ -552,8 +549,8 @@ div.content_comments{
 }
 
 
-div.content_comments a.name{
-	float: left;
+div.content_comments p.name{
+	/*float: left;*/
 	color: #003A54;
 	font-weight: 700;
 	font-size: 12px;
@@ -563,7 +560,7 @@ div.content_comments a.name{
 }
 
 div.content_comments p.question{
-	float: left;
+/*	float: left;*/
 	padding: 20px;
 	padding-top: 10px;
 	height: auto;

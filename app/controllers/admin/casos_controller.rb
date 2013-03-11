@@ -40,7 +40,7 @@ class Admin::CasosController < Admin::AdminController
     @documents = @cas.documents
     @preguntes = @cas.preguntes
     @contents = @cas.contents
-    @pregunta = Pregunta.new(:cas_id => @cas,:user_id => session[:alumne_id] | session[:professor_id])
+    @pregunta = Pregunta.new(:cas_id => @cas.id,:user_id => session[:alumne_id] | session[:professor_id])
     @resposta = Resposta.new
   end
   

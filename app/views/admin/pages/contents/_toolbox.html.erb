@@ -1,9 +1,0 @@
-<div class="content-box" id="id_<%= toolbox.id%>">
-	<div class="tools">
-		<%= link_to '',edit_content_url(@page,toolbox),:class => "edit"%><%= link_to '',delete_content_url(@page,toolbox),:confirm => "El contenido se eliminará",:class => "delete"%>
-	</div>
-	
-	<div class="content">
-	<%= render :partial => "shared/content", :object => toolbox%>
-	</div>
-</div>
