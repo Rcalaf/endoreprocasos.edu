@@ -1,7 +1,7 @@
-<li>
-	<p class="name"><%=document.titol%></p>
-	<%=link_to(excerpt(document.document_file_name, '.', :radius => 15),document.document.url,:class => 'file')%>
+<li class="edit">
 	<%if session[:professor_id]%>
-	<%=link_to '',delete_document_url(@cas,document),:class => 'remove', :confirm => "Desea eliminar este material?"%>
+	<%=link_to '',delete_document_url(@owner,document.id),:class => 'button remove', :confirm => "Desea eliminar este material?"%>
 	<%end%>
+	<p class="name"><%=document.titol%></p>
+	<%=link_to(excerpt(document.document_file_name, '.', :radius => 23),document.document.url,:class => 'file')%>
 </li>

@@ -1,15 +1,16 @@
 <ul class="attachments">
 	<%= render :partial => 'admin/documents/document', :collection => @documents%>
-	<div class="input_holder_newfile">
-	<%= form_for @document, :url => new_document_url, :html => {:multipart => true}  do |f|%>
-		<div class="input_holder_short">
-			<%= f.text_field :titol, :placeholder => 'Título', :class => 'header_edit'%>
-		</div>
-		<%=f.file_field :document, :class => "file_attach"%>
-		<input type="submit" class="submit_button n_content" value="material"/>
-	<%end%>
-	</div>
 </ul>
+<%= form_for @document, :url => new_document_url, :html => {:multipart => true,:class=>"new_file_form"}  do |f|%>
+<div class="input_holder_rightside">
+	<%= f.text_field :titol, :placeholder => 'Título', :class => 'header_edit'%>
+</div>
+<div class="input_holder_newfile">
+	<%=f.file_field :document, :class => "file_attach"%>
+</div>
+	
+	<input type="submit" class="submit_button n_file" value="material"/>
+<%end%>
 
 
 

@@ -48,7 +48,8 @@ class Admin::ContentsController < ApplicationController
 
   def destroy
     content = Content.find(params[:content_id])
+    url = self.send("edit_#{content.owner_class.to_s.downcase}_url",content.owner.id,:anchor => "contents")
     flash[:content] = "El contenido se ha borrado" if content.destroy
-    redirect_to edit_page_url(params[:page_id],:anchor => "contents")
+    redirect_to url
   end
 end

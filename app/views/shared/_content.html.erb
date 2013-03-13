@@ -4,7 +4,7 @@
 	</div>
 <%elsif content.content_type == "embed"%>
 	<p class="text"><%= raw RDiscount.new(content.embed_code).to_html%></p>
-<%elsif content.content_type == "big-image"%>
+<%elsif content.content_type == "image"%>
 	<%= image_tag content.image.url(:big)%>
 <%end%>
 
