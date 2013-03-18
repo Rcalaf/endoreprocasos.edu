@@ -78,7 +78,33 @@ div.top_head div.header a.submit_button {
 	padding: 0 10px 0 10px;
 	float: right;
 
-}	
+}
+
+div.title-holder {
+	float: left;
+	height: 92px;
+	margin-top: 46px;
+	margin-bottom: 20px;
+	width: 888px;
+}
+
+
+
+div.title-holder p.header {
+	float: left;
+	margin-left: 6px;
+	margin-top: 34px;
+	margin-bottom: 10px;
+	color: #333;
+	font-size: 22px;	
+}
+
+div.title-holder p.subtitle{
+	clear: both;
+	margin-left: 6px;
+	color: #333;
+}
+	
 	
 	
 /**********************************
@@ -389,7 +415,7 @@ ul.pages-list li:last-child {
 	margin-bottom: 60px;
 }
 
-
+/*
 div.pages {
 	float: left;
 	height: 40px;
@@ -405,6 +431,7 @@ div.pages p.header {
 	line-height: 40px;	
 }
 
+*/
 
 ul.pages a.remove {
 	background-image: url(/assets/admin/remove.png);
@@ -435,8 +462,7 @@ div.content_main{
 	height: auto;
 	width: 669px;
 	border-right: 1px solid #F2F2F2;	
-	padding: 46px 0;
-	
+	padding: 46px 0;	
 }
 
 div.content_main div.content-text {
@@ -463,8 +489,7 @@ div.content_secondary{
 	float: left;
 	height: auto;
 	width: 218px;
-	padding: 46px 0;
-	
+	padding: 46px 0;	
 }
 
 div.edit_mode{
@@ -627,11 +652,30 @@ ul.sub_questions li{
 }
 
 /**********************************
+ * Notifications
+ **********************************/
+
+.notification {
+	border: 2px solid;
+	margin-bottom:5px;
+	height: 80px;
+}
+
+.error{
+	background-color: rgba(255, 0, 0, 0.3);
+	border-color: rgba(255, 0, 0, 1);
+}
+
+.success{
+	background-color: rgba(9, 181, 0, 0.3);
+	border-color: rgba(9, 181, 0, 1);
+}
+/**********************************
  * Cases
  **********************************/
 ul.cases {
 	width: 888px;
-	margin: 46px 0;
+	margin-bottom: 46px;
 	height: auto;
 	float: left;
 }

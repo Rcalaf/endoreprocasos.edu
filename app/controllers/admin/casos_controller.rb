@@ -35,12 +35,12 @@ class Admin::CasosController < Admin::AdminController
   end
   
   def show
-    @cas = Cas.find(params[:cas_id])
-    @title = "Endoreprocasos | #{@cas.titol}"
-    @documents = @cas.documents
-    @preguntes = @cas.preguntes
-    @contents = @cas.contents
-    @pregunta = Pregunta.new(:cas_id => @cas.id,:user_id => session[:alumne_id] | session[:professor_id])
+    @owner = Cas.find(params[:cas_id])
+    @title = "Endoreprocasos | #{@owner.titol}"
+    @documents = @owner.documents
+    @preguntes = @owner.preguntes
+    @contents = @owner.contents
+    @pregunta = Pregunta.new(:cas_id => @owner.id,:user_id => session[:alumne_id] | session[:professor_id])
     @resposta = Resposta.new
   end
   

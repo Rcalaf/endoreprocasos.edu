@@ -1,5 +1,5 @@
 <%= render :partial => 'admin/respostes/resposta',:collection => index.respostes%>
-<%= form_for index.respostes.build, :url => new_resposta_url(@cas.id,index) do |f|%>
+<%= form_for index.respostes.build, :url => new_resposta_url(@owner.id,index) do |f|%>
 <div class="textarea_holder_mini">
 	<%= f.text_area :text,:placeholder => "Escribe tu respuesta..." ,:rows => 3,:class => "mini"%>
 	<%= f.hidden_field :user_id, :value => session[:alumne_id] | session[:professor_id]%>

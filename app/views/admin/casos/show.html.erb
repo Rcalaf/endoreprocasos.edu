@@ -1,7 +1,7 @@
 <div class="content_top">
-	<p class="header"><%= @cas.titol%></p>
+	<p class="header"><%= @owner.titol%></p>
 	<%if session[:professor_id]%>
-		<%=link_to '',edit_cas_url(@cas),:class => 'edit'%>
+		<%=link_to '',edit_cas_url(@owner),:class => 'edit'%>
 	<%end%>
 </div>
 <div class="content_main case">

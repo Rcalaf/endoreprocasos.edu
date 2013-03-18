@@ -2,7 +2,7 @@
 	<ul class="main_questions">
 		<%= render :partial => 'admin/preguntes/pregunta', :collection => @preguntes%>
 		<div class="textarea_holder">
-			<%= form_for @pregunta, :url => new_pregunta_url(@cas) do |f|%>
+			<%= form_for @pregunta, :url => new_pregunta_url(@owner) do |f|%>
 			<%= f.text_area :text, :placeholder => "Escribe tu pregunta....", :rows => 8%>
 			<%= f.hidden_field :user_id%>
 			<%= f.hidden_field :cas_id%>

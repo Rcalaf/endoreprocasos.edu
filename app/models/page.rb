@@ -1,7 +1,7 @@
 class Page < ActiveRecord::Base
   attr_accessible :menu_title, :title, :home, :slug
   
-  has_many :contents, :dependent => :destroy
+  has_many :contents, :dependent => :destroy, :order => 'position asc'
   
   before_validation :set_slug
   after_save :update_home_status
