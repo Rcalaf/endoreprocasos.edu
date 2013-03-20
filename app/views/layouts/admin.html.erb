@@ -39,10 +39,11 @@
 						<li><%=link_to "Casos",casos_url,:class => params[:controller] == 'admin/casos' ? "active" : nil%></li>
 						<%if session[:professor_id]%>
 						<li><%=link_to "Usuarios", users_url,:class => params[:controller] == 'admin/users' ? "active" : nil%></li>
-						<li><%=link_to "Páginas", pages_url, :class => params[:controller] == 'admin/pages' ? "active" : nil%>
+						<li><%=link_to "Páginas", pages_url, :class => (params[:controller] == 'admin/pages' && @page.nil?) ? "active" : nil%>
 						<%elsif session[:alumne_id]%>
 						<li><%=link_to "Perfil", edit_user_url(@user),:class => params[:controller] == 'admin/users' ? "active" : nil%></li>
 						<%end%>
+						<%= render :partial => "admin/shared/menu_page", :collection => @admin_pages%>
 					</ul>
 				</div>
 			</div>

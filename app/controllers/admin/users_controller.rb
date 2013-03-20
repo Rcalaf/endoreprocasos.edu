@@ -20,25 +20,24 @@ class Admin::UsersController < Admin::AdminController
       @new_user = User.create(params[:user])
       if @new_user.valid? 
         Mailer.new_user_mail(@new_user).deliver if @new_user.status == "alumne"
+         flash[:user] = "El usuario se ha creado correctamente"
         redirect_to users_url
-      else
-        flash[:errors] = @new_user.errors
       end
     end
   end
 
   def edit
-    
     @new_user = User.find(params[:user_id])
     @title = "Endoreprocasos | Editar usuario #{@new_user.name} #{@new_user.last_name}"
     if request.put?
-      @new_user.update_attributes(params[:user])
+      (flash[:user] = "Los cambios se han guardado") if @new_user.update_attributes(params[:user])
     end
   end
 
   def delete
     user = User.find(params[:user_id])
     if user.destroy
+       flash[:user] = "El usuario se ha eliminado correctamente"
       redirect_to users_url
     end
   end

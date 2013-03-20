@@ -29,7 +29,7 @@ class Admin::CasosController < Admin::AdminController
     @contents = @owner.contents
     @content = Content.new(:cas_id => @owner.id)
     if request.put? 
-      @owner.update_attributes(params[:cas])
+      flash[:caso] = "Los cambios se han guardado" if @owner.update_attributes(params[:cas])
     end
    
   end

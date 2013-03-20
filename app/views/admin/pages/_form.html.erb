@@ -1,6 +1,5 @@
-
-<div class="content_top">
-<%=form_for @owner,:url => (params[:action] == "new" ? new_page_url : edit_page_url(@owner)) do |f|%>
+<div class="content_top page">
+	<%=form_for @owner,:url => (params[:action] == "new" ? new_page_url : edit_page_url(@owner)) do |f|%>
 	<div class="input_holder_medium">
 		<%= f.text_field :title, :placeholder => "Título", :class => "header_edit"%>
 	</div>
@@ -8,5 +7,13 @@
 		<%= f.text_field :menu_title, :placeholder => "Título menú", :class => "header_edit"%>
 	</div>
 	<%= f.submit "Guardar", :class => "submit_button general_save"%>
+	
+	<div class="clear"></div>
+	
+	<div class="checkboxs_holder">
+		<%=f.label :public%><%= f.check_box :public%>
+		<%=f.label :home%><%= f.check_box :home%>
+	</div>
+	
 <%end%>
 </div>	

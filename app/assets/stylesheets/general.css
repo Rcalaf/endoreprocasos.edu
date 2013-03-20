@@ -1,7 +1,8 @@
 /*
 *= require reset
 *= require_self
-*/
+*/ 
+
 /******************************************
  * General Styling
  * Version: 0.1 
@@ -21,6 +22,7 @@ body {
 	font-size: 12px;
 	background-color: #FFF;
 	line-height: 22px;
+	padding-top:46px; /*may bother in front*/
 	}
 
 .clear {
@@ -83,7 +85,7 @@ div.top_head div.header a.submit_button {
 div.title-holder {
 	float: left;
 	height: 92px;
-	margin-top: 46px;
+	/*margin-top: 46px;*/	
 	margin-bottom: 20px;
 	width: 888px;
 }
@@ -168,6 +170,20 @@ div.login_zone{
 	padding: 90px 0 0 0;
 	background-color: #009EBC;
 	
+}
+
+div.login_zone a{
+	float: left;
+	font-size: 9px;
+	margin-left: 30px;
+}
+
+div.login_zone p{
+	font-size: 9px;
+	margin-left: 30px;
+	margin-bottom: 10px;
+	padding-right:30px;
+	line-height: 12px;
 }
 
 div.logout_zone{
@@ -360,14 +376,22 @@ input[type=radio] {
 /**********************************
  * Pages Content
  **********************************/
+div.content_top.page{
+	height: auto;
+}
+/*
+.standard{
+	height: 92px;
+}*/
 
 div.content_top{
 	float: left;
+/*	margin-top: 46px;*/
 	height: 92px;
-	margin-top: 46px;
 	width: 888px;
 	background-color: #F2F2F2;	
 }
+
 
 div.content_top p.header {
 	float: left;
@@ -491,6 +515,7 @@ div.content_secondary{
 	width: 218px;
 	padding: 46px 0;	
 }
+
 
 div.edit_mode{
 	padding: 4px 0;		
@@ -657,19 +682,36 @@ ul.sub_questions li{
 
 .notification {
 	border: 2px solid;
-	margin-bottom:5px;
-	height: 80px;
+	margin:0 4px 4px 4px;
+	height: auto;
 }
 
 .error{
 	background-color: rgba(255, 0, 0, 0.3);
 	border-color: rgba(255, 0, 0, 1);
+	color: #FF0000;
 }
 
 .success{
 	background-color: rgba(9, 181, 0, 0.3);
 	border-color: rgba(9, 181, 0, 1);
+	color: #09B500;
 }
+
+.notification .margins{
+	margin-left: 46px;
+	margin-bottom: 30px;
+	padding-top: 30px;
+	text-align: justify;
+	font-size: 12px;
+}
+
+
+.notification ul li{
+	margin-left: 15px;
+}
+
+
 /**********************************
  * Cases
  **********************************/
@@ -785,6 +827,23 @@ div.footer {
 
 /* Inputs*/	
 
+div.checkboxs_holder {
+	float:left;
+	margin: 10px 0 28px 46px;
+	}
+
+div.checkboxs_holder label{
+	float: left;
+	padding-bottom: 2px;
+	}
+
+div.checkboxs_holder input{
+	float: left;
+	width: auto;
+	height: auto;
+	margin-right: 10px;
+	}
+
 div.input_holder {
 	margin: 0 0 12px 28px;
 	width: 140px;
@@ -871,8 +930,6 @@ input.header_edit {
 	padding: 2px 4px;
 	}
 	
-
-
 input.file_attach {		
 	margin-left: 24px;
 	margin-bottom: 24px;
@@ -1072,52 +1129,52 @@ span.submit:hover {
 	cursor: pointer;
 	}									
 
-	/**********************************
-	 * Anchors Buttons
-	 **********************************/
+/**********************************
+ * Anchors Buttons
+ **********************************/
 
-	a:link, a:visited, a:active {
-		text-decoration:none;
-		color: #333;
-	 }
+a:link, a:visited, a:active {
+	text-decoration:none;
+	color: #333;
+ }
 
-	a.submit_button {	
-		width: 152px;
-		height: 26px;	
-		border: 1px solid rgba(255, 255, 255, 0.4);
-		background-color: rgba(0, 58, 84, 0.9);
-		border-radius: 1px;	
-		outline: none;
-		font-family: lucida grande;
-		text-transform: uppercase;
-		line-height: 26px;
-		font-size: 12px;
-		color: #fff;	
-		float: left;
-		text-align:center;
-		margin-left: 27px;
-	}
+a.submit_button {	
+	width: 152px;
+	height: 26px;	
+	border: 1px solid rgba(255, 255, 255, 0.4);
+	background-color: rgba(0, 58, 84, 0.9);
+	border-radius: 1px;	
+	outline: none;
+	font-family: lucida grande;
+	text-transform: uppercase;
+	line-height: 26px;
+	font-size: 12px;
+	color: #fff;	
+	float: left;
+	text-align:center;
+	margin-left: 27px;
+}
 
 
-	a.submit_button:hover {		
-		border: 1px solid rgba(255, 255, 255, 0.5);
-		background-color: rgba(0, 58, 84, 1);
-	/*	cursor: pointer;*/
-	}
+a.submit_button:hover {		
+	border: 1px solid rgba(255, 255, 255, 0.5);
+	background-color: rgba(0, 58, 84, 1);
+/*	cursor: pointer;*/
+}
 
-	a.n_case {
-		float: left;
-		margin-top: -12px;
-		margin-left: 0;
-		background-image: url(/assets/admin/add.png);
-		background-repeat: no-repeat;
-		background-position: 4px 1px;
-	}
-	
-	span.moveleft {
-		margin-left: -27px;
-		float: left;
-	}								
+a.n_case {
+	float: left;
+	margin-top: -12px;
+	margin-left: 0;
+	background-image: url(/assets/admin/add.png);
+	background-repeat: no-repeat;
+	background-position: 4px 1px;
+}
+
+span.moveleft {
+	margin-left: -27px;
+	float: left;
+}								
 
 
 	

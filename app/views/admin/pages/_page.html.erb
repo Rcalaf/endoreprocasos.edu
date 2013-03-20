@@ -1,5 +1,5 @@
 <li id="id_<%=page.id%>">
-	<p class="title"><%= link_to page.menu_title + (page.home ? " (Home)" : ""),show_page_url(page)%></p>
+	<p class="title"><%= link_to page.menu_title + (page.home ? " (Home)" : ""),show_admin_page_url(page.slug)%></p>
 	<%= link_to '',edit_page_url(page),:class => "edit button"%>
 	<%=link_to("",delete_page_url(page.id), :class=>"remove button", :confirm => 'La página será eliminada.') unless page.home %>
 </li>

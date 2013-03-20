@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class Admin::RespostesController < Admin::AdminController
   def new
     if request.post?

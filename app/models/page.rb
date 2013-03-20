@@ -1,5 +1,5 @@
 class Page < ActiveRecord::Base
-  attr_accessible :menu_title, :title, :home, :slug
+  attr_accessible :menu_title, :title, :home, :slug, :public
   
   has_many :contents, :dependent => :destroy, :order => 'position asc'
   
@@ -7,6 +7,8 @@ class Page < ActiveRecord::Base
   after_save :update_home_status
   
   acts_as_list 
+  
+  scope :admin, where(:public => false)
   
   private
   

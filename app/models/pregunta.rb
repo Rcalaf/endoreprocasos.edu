@@ -7,4 +7,8 @@ class Pregunta < ActiveRecord::Base
   belongs_to :user
   
   validates :text, :presence => {:presence => true,:message => "Escribe un texto para la pregunta."}
+  
+  def is_owner(id)
+    self.user_id == id
+  end
 end

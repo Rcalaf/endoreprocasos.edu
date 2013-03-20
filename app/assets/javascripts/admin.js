@@ -4,8 +4,12 @@
 
 jQuery(function() {
 	
-	$(document).ready(function () { $(".validation-errors").slideDown(1000); });
-	$(document).ready(function () { $(".confirmation").slideDown(1000); });
+	$(document).ready(function () { $(".notification").slideDown(1000); });
+	$(document).ready(function () {
+		if ($('.notification')){
+			setTimeout(function(){$('.notification').slideUp(1000,function(){$(".notification").remove(); })},5000);
+		}
+	});
 	
 
 	$('#sort-pages').sortable({

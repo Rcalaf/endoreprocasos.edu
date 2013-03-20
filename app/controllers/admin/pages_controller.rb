@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class Admin::PagesController < Admin::AdminController
   layout 'admin'
   
@@ -6,14 +7,14 @@ class Admin::PagesController < Admin::AdminController
   end
   
   def new
-    
     if request.post?
       @owner = Page.create(params[:page])
       if @owner.valid? 
+        flash[:page] = "La página se ha creado"
         redirect_to edit_page_url(@owner)
       end
     end
-    @page = Page.new
+    @owner = Page.new
   end
   
   def edit
@@ -21,7 +22,7 @@ class Admin::PagesController < Admin::AdminController
     @contents = @owner.contents
     @content = Content.new(:page_id => @owner.id)
     if request.put?
-      @owner.update_attributes(params[:page])
+      flash[:page] = "Los cambios se han guardado" if @owner.update_attributes(params[:page])
     end
   end
   
@@ -30,7 +31,7 @@ class Admin::PagesController < Admin::AdminController
    sort_array.each_with_index do |content_id,position|
      content_id = content_id.split("=")[1].to_i 
      if Page.update_all(['position=?',position + 1],['id=?',content_id])
-       flash[:content] = "El orden se ha actualizado"
+       flash[:page] = "El orden se ha actualizado"
      end 
    end
    respond_to do |format|
@@ -39,9 +40,15 @@ class Admin::PagesController < Admin::AdminController
    end
   end
   
+  def show
+    @page = Page.find_by_slug(params[:slug])
+  end
+  
   def delete
     page = Page.find(params[:page_id])
-    page.destroy unless page.home
+    unless page.home
+    flash[:page] = "La página se ha eliminado" if page.destroy
+    end
     redirect_to pages_url
   end
   

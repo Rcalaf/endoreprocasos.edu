@@ -1,6 +1,10 @@
+
 <div class="users margin-top-36">
 	<p class="header"><%= params[:action] == "edit" ? 'Editar' : 'Nuevo'%> usuario</p>
 </div>
+<div class="clear"></div>
+<%= render(:partial => "admin/shared/success_notification", :object => flash[:user]) unless flash[:user].nil?%>
+<%= render(:partial => "admin/shared/error_notification", :object => @new_user) unless @new_user.errors.empty?%>
 
 <%=form_for @new_user,:url => (params[:action] == "new" ? new_user_url : edit_user_url(@new_user)), :html =>{:class => "user"} do |f|%>
 
@@ -40,7 +44,7 @@
 		<div class="password">
 		<div class="input_holder_short">
 			<p>Contraseña: </p>
-			<%= f.password_field :proxy_password, :class => "header_edit", :placeholder=> "Contraseña"%>
+			<%= f.password_field :proxy_password, :class => "header_edit", :placeholder=> "Contraseña", :value => ''%>
 		</div>
 		<div class="input_holder_short">
 			<p class="label">Confirma contraseña</p>

@@ -1,7 +1,9 @@
-<div class="title-holder margin-top-36">
+<div class="title-holder">
 	<p class="header">Páginas</p>
 	<p class="subtitle">Arrastrar para ordenar (los cambios se guardan automáticamente)</p>
 </div>
+<div class="clear"></div>
+<%= render(:partial => "admin/shared/success_notification", :object => flash[:page]) unless flash[:page].nil?%>
 <ul class="pages-list" id="sort-pages">
 	<%=render :partial => '/admin/pages/page', :collection => @pages%>
 </ul>

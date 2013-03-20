@@ -1,0 +1,11 @@
+<%if flash[:page].nil?%>
+$(".clear").after("<%= escape_javascript(render(:partial => 'admin/shared/error_notification',:object => flash[:page])) %>");
+$('.notification').slideDown(1000);
+window.scrollTo(0,0);
+setTimeout(function(){$('.notification').slideUp(1000,function(){$(".notification").remove(); })},5000);
+<%else%>
+$(".clear").after("<%= escape_javascript(render(:partial => 'admin/shared/success_notification', :object => flash[:page])) %>");
+$('.notification').slideDown(1000);
+window.scrollTo(0,0);
+setTimeout(function(){$('.notification').slideUp(1000,function(){$(".notification").remove(); })},5000);
+<%end%>
