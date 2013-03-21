@@ -912,16 +912,14 @@ a.remove:hover {
 /**********************************
  * Footer
  **********************************/
-
 div.footer {
 	float: left;
 	background-color: rgba(200, 200, 200, 0.1);
 	width: 888px;
 	height: auto;
 	padding: 30px 46px;
-	/*margin-left: 46px;*/
+	margin-top: 46px;
 	margin-bottom: 100px;
-
 	}	
 
 div.footer ul {

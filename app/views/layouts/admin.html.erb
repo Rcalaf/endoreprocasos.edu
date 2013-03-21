@@ -51,7 +51,7 @@
 	   		<div class="site_content">
 			<%= yield%>
 	   		</div>
-	   		<div class="footer"></div>
-        </div>
+	   		<div class="footer"><%= raw RDiscount.new(@settings.footer).to_html%></div>
+	        </div>
 	</body>
 </html>
