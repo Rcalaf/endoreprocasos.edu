@@ -1,5 +1,6 @@
 # encoding: UTF-8
 class Admin::RespostesController < Admin::AdminController
+  layout 'admin'
   def new
     if request.post?
       @resposta = Resposta.create(params[:resposta])

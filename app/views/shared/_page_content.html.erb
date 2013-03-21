@@ -1,4 +1,9 @@
 <div class="content_box">
-	<%= render :partial => "shared/content", :object => page_content%>
+<%if page_content.content_type == "text"%>
+	<%= raw RDiscount.new(page_content.text).to_html%>
+<%elsif page_content.content_type == "embed"%>
+	<p class="embed"><%=raw RDiscount.new( page_content.embed_code).to_html%></p>
+<%elsif page_content.content_type == "image"%>
+	<%= image_tag page_content.image.url(:big)%>
+<%end%>
 </div>
-

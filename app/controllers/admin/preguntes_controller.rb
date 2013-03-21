@@ -1,6 +1,6 @@
 # encoding: UTF-8
 class Admin::PreguntesController < Admin::AdminController
-  layout 'application'
+  layout 'admin'
   
   def index
     @preguntes = Pregunta.all

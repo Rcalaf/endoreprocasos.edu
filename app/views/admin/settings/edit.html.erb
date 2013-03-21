@@ -1,0 +1,36 @@
+<div class="users margin-top-36">
+	<p class="header">Configuración</p>
+</div>
+<div class="clear"></div>
+<%= render(:partial => "admin/shared/success_notification", :object => flash[:settings]) unless flash[:settings].nil?%>
+<%= render(:partial => "admin/shared/error_notification", :object => @settings) unless @settings.errors.empty?%>
+
+<%=form_for @settings,:url => edit_settings_url, :html =>{:class => "user"} do |f|%>
+
+
+	<div class="settings_input_holder_header">
+		<p class="label">Título principal</p>
+		<%= f.text_field :main_title, :placeholder => 'Título principal', :class => 'header_edit'%>
+	</div>
+	
+	<div class="settings_input_holder_medium">
+		<p class="label">Subtítulo (fechas)</p>
+		<%= f.text_field :subtitle, :placeholder => 'Subtítulo', :class => 'header_edit'%>
+	</div>
+
+	<div class="logos_placehoder"></div>
+	<%=f.file_field :logo ,:class => "input_holder_logos"%>
+	
+	<div class="settings_input_holder_textarea">
+		<p class="label">Footer</p>
+		<%=f.text_area :footer, :class => "settings", :rows => 8%>
+	</div>
+	
+	<div class="logos_placehoder"></div>
+	<%=f.file_field :footer_logo ,:class => "input_holder_logos"%>
+	
+
+	<%= f.submit "Guardar", :class => "submit_button"%>
+	<%= link_to "cancelar", edit_settings_url(@settings),:class => "red hovering"%>
+	
+<%end%>

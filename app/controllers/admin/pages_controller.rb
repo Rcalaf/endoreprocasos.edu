@@ -42,6 +42,7 @@ class Admin::PagesController < Admin::AdminController
   
   def show
     @page = Page.find_by_slug(params[:slug])
+    @contents = @page.contents
   end
   
   def delete

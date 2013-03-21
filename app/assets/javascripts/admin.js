@@ -49,7 +49,7 @@ jQuery(function() {
 
 	$(document).ready(function () {
 		
-		$('.add_content_menu li').click(function(){
+		$('.add_content_menu li a').click(function(){
 			$('#text').removeClass("active");
 			$('#image').removeClass("active");
 			$('#embed').removeClass("active");
@@ -57,7 +57,7 @@ jQuery(function() {
 				case 'image':
 				  $(this).addClass("active");
 			  	  $('.text').hide();
-				  $('.embed').hide();
+				  $('.content-embed').hide();
 				  $('.image').show('slow');
 				  $('#content_content_type').attr('value','image');
 				  break;
@@ -65,13 +65,13 @@ jQuery(function() {
 				  $(this).addClass("active");
 			  	  $('.text').hide();
 				  $('.image').hide();
-				  $('.embed').show('slow');
+				  $('.content-embed').show('slow');
 				  $('#content_content_type').attr('value','embed');
 				  break;
-				default:
+				case 'text':
 				  $(this).addClass("active");
 				  $('.image').hide();
-				  $('.embed').hide();
+				  $('.content-embed').hide();
 				  $('.text').show('slow');
 				  $('#content_content_type').attr('value','text');
 			}

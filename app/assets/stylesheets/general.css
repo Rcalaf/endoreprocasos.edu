@@ -168,6 +168,7 @@ div.login_zone{
 	height: 230px;
 	width: 210px;
 	padding: 90px 0 0 0;
+	margin-top: -46px;
 	background-color: #009EBC;
 	
 }
@@ -204,6 +205,7 @@ div.logout_zone p.username{
 }
 
 div.intro_zone{
+	margin-top: -46px;
 	float: left;
 	height: 320px;
 	width: 678px;
@@ -229,7 +231,7 @@ p.org_when{
 	color: #fff;
 	font-size: 14px;	
 }
-
+/*
 div.content_box{
 	float: left;
 	height: auto;
@@ -237,28 +239,51 @@ div.content_box{
 	padding: 46px 0;
 	
 }
+*/
+div.content_box {
+	width: 888px;
+	height: auto;
+	min-height:40px;
+	float: left;
+	padding: 46px 0;
+}
 
 div.content_box p.header {
-	float: left;
 	margin-left: 46px;
 	color: #333;
 	font-size: 22px;	
 }
 
-div.content_box p.text {
-	float: left;
-	width: 344px;
+div.content_box h1 {
 	margin-left: 46px;
-	margin-top: 30px;
 	color: #333;
-	font-size: 12px;	
+	font-size: 22px;
+}
+
+div.content_box ul {
+	margin: 30px 0 30px 75px;
+	color: #333;
+	font-size: 12px;
+	list-style-type: disc;
+}
+
+
+div.content_box p {
+	text-align: justify;
+    margin-top: 30px;
+	padding: 0 45px 0 45px;
+	color: #333;
+	font-size: 12px;
+}
+
+div.content_box .embed {
+	margin: 30px 124px 0 124px;	
 }
 
 div.content_box img {
-	float: left;
-	width: 344px;
 	height: auto;
-	margin-left: 46px;	
+	margin: 0 124px;
+
 }
 
 /**********************************
@@ -308,6 +333,10 @@ div.users {
 	width: 888px;
 }
 
+div.users label {
+	width: auto;
+}
+
 
 
 div.users p.header {
@@ -336,6 +365,43 @@ a.n_user {
 	background-image: url(/assets/admin/add.png);
 	background-repeat: no-repeat;
 	background-position: 4px 0;
+}
+
+/**********************************
+ * Settings Form
+ **********************************/
+
+div.settings_input_holder_header {
+	margin: 28px 0 60px 46px;
+	width: 569px;
+	height: 26px;
+	}
+
+div.settings_input_holder_textarea{
+	margin: 0 0 -15px 46px;
+	width: 569px;
+	height: auto;
+}
+
+div.settings_input_holder_medium {
+	margin: 0 0 60px 46px;
+	width: 350px;
+	height: 26px;
+	}
+	
+input.input_holder_logos {
+
+	margin: 15px 0 46px 46px;
+	background-color: rgba(255, 255, 255, 0);
+	border: none;
+	}
+
+div.logos_placehoder {
+	margin-left: 46px;
+	height:70px;
+	width: 120px;
+	background-color: rgba(200, 200, 200, 0.4);
+	border: 1px solid rgba(200, 200, 200, 0.6);
 }
 
 /**********************************
@@ -370,6 +436,14 @@ form.user .submit_button{
 input[type=radio] {
 	width:auto;
 }
+
+textarea.settings {
+	max-width: 561px;
+	border: 2px solid rgba(200, 200, 200, 0.6);
+	border-radius: 1px;
+	padding: 8px 8px;
+	margin: 0 30px 46px 0;
+	}
 
 
 		
@@ -489,6 +563,35 @@ div.content_main{
 	padding: 46px 0;	
 }
 
+div.content_main .text h1 {
+	margin: 0 0 30px 46px;
+	color: #333;
+	font-size: 22px;
+}
+
+div.content_main .text ul {
+	margin: 0 0 30px 75px;
+	color: #333;
+	font-size: 12px;
+	list-style-type: disc;
+}
+
+
+div.content_main .embed {
+	margin: 30px 124px 0 124px;	
+}
+
+
+div.content_main .text p{
+	width: 577px;
+	margin-left: 46px;
+	margin-bottom: 30px;
+	color: #333;
+	text-align: justify;
+	font-size: 12px;
+}
+
+
 div.content_main div.content-text {
 	float: left;
 	width: 577px;
@@ -498,7 +601,6 @@ div.content_main div.content-text {
 	color: #333;
 	text-align: justify;
 	font-size: 12px;	
-	
 }
 
 div.content_main img {
@@ -815,12 +917,30 @@ div.footer {
 	float: left;
 	background-color: rgba(200, 200, 200, 0.1);
 	width: 888px;
-	height: 86px;
-	margin-left: 46px;
+	height: auto;
+	padding: 30px 46px;
+	/*margin-left: 46px;*/
 	margin-bottom: 100px;
-	margin-top: 100px;
+
 	}	
 
+div.footer ul {
+	min-height: 100px;
+	color: #333;
+	text-align: justify;
+	font-size: 12px;
+
+}
+
+div.footer ul li{
+	width: 421px;
+ 	float:left;
+}
+
+div.footer ul li ul li{
+	list-style-type: disc;
+	list-style-position: inside;
+}
 /**********************************
  * Inputs
  **********************************/	
@@ -857,6 +977,13 @@ div.input_holder_header {
 	height: 26px;
 	float: left;
 	}
+
+div.input_holder_textarea{
+	margin: 28px 0 12px 46px;
+	width: 569px;
+	height: auto;
+	float: left;
+}
 
 div.input_holder_medium {
 	margin: 28px 0 12px 46px;

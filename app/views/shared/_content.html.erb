@@ -1,9 +1,9 @@
 <%if content.content_type == "text"%>
-	<div class='content-text'>
-	<%= raw RDiscount.new(content.text).to_html%>
+	<div class="text">
+		<%= raw RDiscount.new(content.text).to_html%>
 	</div>
 <%elsif content.content_type == "embed"%>
-	<p class="text"><%= raw RDiscount.new(content.embed_code).to_html%></p>
+	<div class="embed"><%= raw RDiscount.new(content.embed_code).to_html%></p>
 <%elsif content.content_type == "image"%>
 	<%= image_tag content.image.url(:big)%>
 <%end%>

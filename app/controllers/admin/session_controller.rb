@@ -1,6 +1,6 @@
 # encoding: UTF-8
 class Admin::SessionController < Admin::AdminController
-  layout 'application'
+  layout 'admin'
   def login
      if user = User.find_by_id(session[:admin_id])
        redirect_to pages_path

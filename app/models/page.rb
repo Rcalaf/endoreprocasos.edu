@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class Page < ActiveRecord::Base
   attr_accessible :menu_title, :title, :home, :slug, :public
   
@@ -9,6 +10,7 @@ class Page < ActiveRecord::Base
   acts_as_list 
   
   scope :admin, where(:public => false)
+  scope :front, where(:public => true)
   
   private
   

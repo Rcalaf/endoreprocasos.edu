@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130308212707) do
+ActiveRecord::Schema.define(:version => 20130321101854) do
 
   create_table "cas", :force => true do |t|
     t.string   "titol"
@@ -74,6 +74,22 @@ ActiveRecord::Schema.define(:version => 20130308212707) do
     t.integer  "pregunta_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "settings", :force => true do |t|
+    t.text     "footer"
+    t.string   "main_title"
+    t.string   "subtitle"
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
+    t.string   "footer_logo_file_name"
+    t.string   "footer_logo_content_type"
+    t.integer  "footer_logo_file_size"
+    t.datetime "footer_logo_updated_at"
+    t.string   "logo_file_name"
+    t.string   "logo_content_type"
+    t.integer  "logo_file_size"
+    t.datetime "logo_updated_at"
   end
 
   create_table "users", :force => true do |t|

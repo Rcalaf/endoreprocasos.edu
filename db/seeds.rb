@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
@@ -13,4 +14,8 @@ end
 
 if Page.all.empty?
 Page.create(:title => "root",:menu_title => "root", :home => true)
+end
+
+if Setting.all.empty?
+  Setting.create(:main_title => 'CURSO PRÁCTICO DE ENDOCRINOLOGÍA GINECOLÓGICA Y REPRODUCCIÓN HUMANA BASADO EN EL CASO', :subtitle => 'Barcelona, December 12, 13, 14', :footer => 'Footer')
 end

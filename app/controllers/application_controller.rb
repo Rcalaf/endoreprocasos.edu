@@ -1,14 +1,15 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :authenticate
-  before_filter :get_user
+  before_filter :load_main_data
   
-  def get_user
+  def load_main_data
     if session[:alumne_id]
       @user = User.find(session[:alumne_id])
     elsif session[:professor_id]
       @user = User.find(session[:professor_id])
     end
+    @settings = Setting.first
   end
   
   

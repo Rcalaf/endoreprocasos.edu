@@ -23,12 +23,11 @@ EndoreprocasosEdu::Application.routes.draw do
 
    match "/admin/user/:user_id/delete" => "admin/users#delete", :as => "delete_user"
    
-   
       #---------------------------------PAGES--------------------------------------
 
    match "pages" => "admin/pages#index", :as => "pages"
 
-   match "page/new" => "admin/pages#new", :as => "new_page"
+   match "admin/ page/new" => "admin/pages#new", :as => "new_page"
    
    match '/admin/pages/sort' => 'admin/pages#sort', :as => 'sort_pages'
    
@@ -38,8 +37,14 @@ EndoreprocasosEdu::Application.routes.draw do
 
    match "/admin/page/:page_id/delete" => "admin/pages#delete", :as => "delete_page"
    
+   match "page/:slug" => "front/pages#show", :as => "show_page"
+  
+      #---------------------------------SETTINGS-----------------------------------
+    
+   match '/admin/configuracion' => 'admin/settings#edit', :as => 'edit_settings'  
+      
+      #---------------------------------CONTENTS-----------------------------------
    
-   #-----------------------CONTENTS--------------------------------
      match '/admin/contents/sort/' => 'admin/contents#sort', :as => 'sort_contents'
 
      match '/admin/:owner_type/:owner_id/content/new' => 'admin/contents#new', :as => 'new_content'
@@ -51,7 +56,7 @@ EndoreprocasosEdu::Application.routes.draw do
   
    match 'casos' => 'admin/casos#index', :as => 'casos'
   
-   match "cas/nou" => "admin/casos#new", :as => "new_cas"
+   match "/admin/cas/nou" => "admin/casos#new", :as => "new_cas"
    
    match 'cas/:cas_id' => 'admin/casos#show', :as => 'show_cas'
    
@@ -67,7 +72,7 @@ EndoreprocasosEdu::Application.routes.draw do
    
       #---------------------------------PREGUNTES--------------------------------------
     
-   match 'preguntes' => 'admin/preguntes#index', :as => 'preguntes'
+   #match 'preguntes' => 'admin/preguntes#index', :as => 'preguntes'
    
    match 'cas/:cas_id/pregunta/nova' => 'admin/preguntes#new', :as => 'new_pregunta'
    
