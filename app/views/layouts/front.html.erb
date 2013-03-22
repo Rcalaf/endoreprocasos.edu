@@ -43,6 +43,9 @@
 		   			<p class="org_when"><%=@settings.subtitle%></p>
 	   			</div>
 	   			<div class="login_zone">
+					<%if flash[:login]%>
+						<%= flash[:login]%>
+					<%end%>
 					<%= form_tag login_url do %>
 					<div class="input_holder">
 						<input type="text" name='email' placeholder="e-mail"/>
@@ -58,7 +61,7 @@
 				</div>
 				<%= yield%>
 	   		</div>
-	   		<div class="footer"><%= raw RDiscount.new(@settings.footer).to_html%></div>
+	   		<div class="footer"><%= raw RDiscount.new(@settings.front_footer).to_html%></div>
         </div>
 	</body>
 </html>

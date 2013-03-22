@@ -1,6 +1,6 @@
 # encoding: UTF-8
 class Admin::DocumentsController < Admin::AdminController
-  layout 'application'
+
   def new
     cas = Cas.find(params[:cas_id])
     if request.post?

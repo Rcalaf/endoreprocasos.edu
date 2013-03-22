@@ -1,6 +1,6 @@
 # encoding: UTF-8
 class Admin::UsersController < Admin::AdminController
-  layout 'admin'
+
  
   def index
     @title = "Endoreprocasos | Usuarios"

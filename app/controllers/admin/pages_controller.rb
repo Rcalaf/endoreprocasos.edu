@@ -1,6 +1,6 @@
 # encoding: UTF-8
 class Admin::PagesController < Admin::AdminController
-  layout 'admin'
+
   
   def index
     @pages = Page.all :order => "position asc"

@@ -18,12 +18,17 @@
 		<%= f.text_field :subtitle, :placeholder => 'Subtítulo', :class => 'header_edit'%>
 	</div>
 
+	<div class="settings_input_holder_textarea">
+		<p class="label">Pie de página para alumnos</p>
+		<%=f.text_area :footer, :class => "settings", :rows => 8%>
+	</div>
+	
 	<div class="logos_placehoder"></div>
 	<%=f.file_field :logo ,:class => "input_holder_logos"%>
 	
 	<div class="settings_input_holder_textarea">
-		<p class="label">Footer</p>
-		<%=f.text_area :footer, :class => "settings", :rows => 8%>
+		<p class="label">Pie de página pública</p>
+		<%=f.text_area :front_footer, :class => "settings", :rows => 8%>
 	</div>
 	
 	<div class="logos_placehoder"></div>

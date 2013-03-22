@@ -1,6 +1,6 @@
 # encoding: UTF-8
 class Admin::SessionController < Admin::AdminController
-  layout 'admin'
+
   def login
      if user = User.find_by_id(session[:admin_id])
        redirect_to pages_path
@@ -17,9 +17,10 @@ class Admin::SessionController < Admin::AdminController
               session[:professor_id] = nil
               session[:alumne_id] = user.id
             end
-              redirect_to params[:url].nil? || params[:url] == "" ? casos_url : params[:url]
+            redirect_to params[:url].nil? || params[:url] == "" ? casos_url : params[:url] 
          else
-           flash.now[:notice] = data[:flash]
+             flash[:login] = data[:flash]
+             redirect_to root_url
          end
        end
      end

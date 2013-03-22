@@ -12,6 +12,7 @@ class ApplicationController < ActionController::Base
     @settings = Setting.first
   end
   
+
   
   protected
   

@@ -1,6 +1,6 @@
 # encoding: UTF-8
-class Admin::SettingsController < ApplicationController
-  layout 'admin'
+class Admin::SettingsController < Admin::AdminController
+
   def edit
     @settings = Setting.first
     if request.put?

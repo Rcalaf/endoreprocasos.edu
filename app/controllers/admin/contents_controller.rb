@@ -1,6 +1,6 @@
 # encoding: UTF-8
 class Admin::ContentsController < ApplicationController
-  layout 'application'
+
 
   def new
     @owner = params[:owner_type] == "Page" ? Page.find(params[:owner_id]) : Cas.find(params[:owner_id])
