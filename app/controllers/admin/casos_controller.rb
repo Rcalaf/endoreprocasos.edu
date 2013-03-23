@@ -4,7 +4,6 @@ class Admin::CasosController < Admin::AdminController
   
   def index
     @title = "Endoreprocasos | Casos"
-   # @casos = session[:professor_id] ? Cas.all : Cas.this_year
     @casos = Cas.all
     @cas = @casos.first
   end
@@ -40,7 +39,7 @@ class Admin::CasosController < Admin::AdminController
     @documents = @owner.documents
     @preguntes = @owner.preguntes
     @contents = @owner.contents
-    @pregunta = Pregunta.new(:cas_id => @owner.id,:user_id => session[:alumne_id] | session[:professor_id])
+    @pregunta = Pregunta.new(:cas_id => @owner.id,:user_id => session[:user_id])
     @resposta = Resposta.new
   end
   

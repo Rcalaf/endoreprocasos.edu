@@ -1,7 +1,7 @@
 
 <div class="add_content">
 <%= form_for @content, :url => new_content_url(@owner.class.to_s,@owner.id), :html => {:multipart => true} do |f|%>
-	<p>New Content</p>
+	<p>Nuevo contenido</p>
 	<ul class="top_nav add_content_menu">
 		<li><a id="text" class="active">text</a></li>
 		<li><a id="image">image</a></li>
@@ -13,9 +13,7 @@
 	</div>		
 	<span class="clear"></span>				
 	<div class="image" style="display: none;">
-		
-			<%=f.file_field :image ,:class => "input_holder_newimage"%>
-	
+		<%=f.file_field :image ,:class => "input_holder_newimage"%>
 	</div>		
 	<span class="clear"></span>				
 	<div class="content-embed" style="display: none;">

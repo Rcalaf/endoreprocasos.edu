@@ -4,11 +4,7 @@ class ApplicationController < ActionController::Base
   before_filter :load_main_data
   
   def load_main_data
-    if session[:alumne_id]
-      @user = User.find(session[:alumne_id])
-    elsif session[:professor_id]
-      @user = User.find(session[:professor_id])
-    end
+    @user = User.find_by_id(session[:user_id])
     @settings = Setting.first
   end
   
@@ -23,11 +19,9 @@ class ApplicationController < ActionController::Base
   end
 	
 	def authorize
-	  user_id = session[:professor_id] || session[:alumne_id]
-	  user = User.find_by_id(user_id)
+	  user = User.find_by_id(session[:user_id])
 	  unless user
-	    session[:professor_id] = nil
-	    session[:alumne_id] = nil
+	    session[:user_id] = nil
       @url_filtered = url_for(params) 
       redirect_to login_url(:url => @url_filtered)
     end

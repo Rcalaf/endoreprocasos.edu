@@ -1,5 +1,5 @@
 <li class="edit">
-	<%if session[:professor_id] && params[:action] == 'edit'%>
+	<%if @user.status == 'professor' && params[:action] == 'edit'%>
 	<%=link_to '',delete_document_url(@owner.id,document.id),:class => 'button remove', :confirm => "Desea eliminar este material?"%>
 	<%end%>
 	<p class="name"><%=document.titol%></p>

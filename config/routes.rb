@@ -27,7 +27,7 @@ EndoreprocasosEdu::Application.routes.draw do
 
    match "pages" => "admin/pages#index", :as => "pages"
 
-   match "admin/ page/new" => "admin/pages#new", :as => "new_page"
+   match "admin/page/new" => "admin/pages#new", :as => "new_page"
    
    match '/admin/pages/sort' => 'admin/pages#sort', :as => 'sort_pages'
    

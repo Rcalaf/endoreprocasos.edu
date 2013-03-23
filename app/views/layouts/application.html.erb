@@ -54,18 +54,18 @@
 			</div>
 			<div id="menu">
 				<ul class="inline float-left">
-				<%if session[:professor_id] || session[:alumne_id]%>
+				<%if session[:user_id]%>
 					<li><%=link_to "Casos",casos_url,:class => params[:controller] == 'admin/casos' ? "active" : nil%></li>
-					<%if session[:professor_id]%>
+					<%if @user.status == 'professor'%>
 					<li><%=link_to "Usuarios", users_url,:class => params[:controller] == 'admin/users' ? "active" : nil%></li>
 					<li><%=link_to "Páginas", pages_url, :class => params[:controller] == 'admin/pages' ? "active" : nil%>
-					<%elsif session[:alumne_id]%>
+					<%else%>
 					<li><%=link_to "Perfil", edit_user_url(@user),:class => params[:controller] == 'admin/users' ? "active" : nil%></li>
 					<%end%>
 				<%end%>
 				</ul>
 				<ul class="inline float-right">
-					<%unless session[:professor_id] || session[:alumne_id]%>
+					<%unless session[:user_id]%>
 					<li><%=link_to "Login",login_url,:class => params[:controller] == 'admin/session' ? "active" : nil%></li>
 					<%else%>
 					<li>Hola <%=@user.name%>, <%= link_to "logout",logout_url%></li>

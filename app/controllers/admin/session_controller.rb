@@ -10,13 +10,7 @@ class Admin::SessionController < Admin::AdminController
          data = User.authenticate(params[:email],params[:proxy_password])
          user = data[:user]
          if user
-            if user.status == "professor" 
-              session[:alumne_id] = nil
-              session[:professor_id] = user.id
-            else user.status == "alumne" 
-              session[:professor_id] = nil
-              session[:alumne_id] = user.id
-            end
+            session[:user_id] = user.id
             redirect_to params[:url].nil? || params[:url] == "" ? casos_url : params[:url] 
          else
              flash[:login] = data[:flash]
@@ -62,8 +56,7 @@ class Admin::SessionController < Admin::AdminController
    end
   
   def logout 
-    session[:professor_id] = nil
-    session[:alumne_id] = nil
+    session[:user_id] = nil
     redirect_to root_url
   end
 end

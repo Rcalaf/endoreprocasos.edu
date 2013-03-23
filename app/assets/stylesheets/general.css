@@ -639,7 +639,7 @@ div.add_content div{
 	margin: 1px 0;
 }
 
-div.add_content p{
+div.add_content .title{
 	float: left;
 	width: 500px;
 	margin-left: 46px;
@@ -647,6 +647,13 @@ div.add_content p{
 	color: #333;
 	font-size: 22px;
 
+}
+
+div.add_content .subtitle{
+	float:left;
+	margin-left: 46px;
+	margin-top: 30px;
+	color: #333;
 }
 
 ul.add_content_menu{

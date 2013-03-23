@@ -2,7 +2,7 @@
 <%= form_for index.respostes.build, :url => new_resposta_url(@owner.id,index) do |f|%>
 <div class="textarea_holder_mini">
 	<%= f.text_area :text,:placeholder => "Escribe tu respuesta..." ,:rows => 3,:class => "mini"%>
-	<%= f.hidden_field :user_id, :value => session[:alumne_id] | session[:professor_id]%>
+	<%= f.hidden_field :user_id, :value => session[:user_id]%>
 	<%= f.hidden_field :pregunta_id, :value => index.id%>
 	<input type="submit" class="submit_button f_mini" value="reply"/>
 </div>

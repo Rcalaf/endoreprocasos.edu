@@ -33,15 +33,15 @@
 				<div class="header">
 					<div class="logout_zone">
 						<%= link_to 'Salir', logout_url, :class => 'submit_button'%>
-						<p class="username"><%= @user.name.capitalize%> <%= @user.last_name.capitalize%></p>
+						<p class="username"><%="Dr. " if @user.status == 'professor'%><%= @user.name.capitalize%> <%= @user.last_name.capitalize%></p>
 					</div>
 					<ul class="top_nav">
 						<li><%=link_to "Casos",casos_url,:class => params[:controller] == 'admin/casos' ? "active" : nil%></li>
-						<%if session[:professor_id]%>
+						<%if @user.status == 'professor'%>
 						<li><%=link_to "Usuarios", users_url,:class => params[:controller] == 'admin/users' ? "active" : nil%></li>
 						<li><%=link_to "Páginas", pages_url, :class => (params[:controller] == 'admin/pages' && @page.nil?) ? "active" : nil%></li>
 						<li><%=link_to "Configuración", edit_settings_url, :class => (params[:controller] == 'admin/settings') ? "active" : nil%></li>	
-						<%elsif session[:alumne_id]%>
+						<%else%>
 						<li><%=link_to "Perfil", edit_user_url(@user),:class => params[:controller] == 'admin/users' ? "active" : nil%></li>
 						<%end%>
 						<%= render :partial => "admin/shared/menu_page", :collection => @admin_pages%>

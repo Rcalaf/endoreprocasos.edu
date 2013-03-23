@@ -39,12 +39,12 @@ jQuery(function() {
 
 	$(document).ready(function () {
 		$('.sub_questions').hide();
-		$('.sub_questions:last').show();	
+		$('.sub_questions:last').slideDown();	
 	});
 	
 	$('.pregunta').click(function (){
 		$('.sub_questions').hide();	
-		$('#resposta_'+$(this).attr('id')).show('slow');
+		$('#resposta_'+$(this).attr('id')).slideDown('slow');
 	})
 
 	$(document).ready(function () {
