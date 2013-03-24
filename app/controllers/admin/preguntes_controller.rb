@@ -6,7 +6,6 @@ class Admin::PreguntesController < Admin::AdminController
   end
   
   def new
-    #jquey
     @pregunta = Pregunta.new
     if request.post?
       @pregunta = Pregunta.create(params[:pregunta])

@@ -56,23 +56,23 @@ jQuery(function() {
 			switch($(this).attr('id')){
 				case 'image':
 				  $(this).addClass("active");
-			  	  $('.text').hide();
-				  $('.content-embed').hide();
-				  $('.image').show('slow');
+			  	  $('.new-text').hide();
+				  $('.new-embed').hide();
+				  $('.new-image').show('slow');
 				  $('#content_content_type').attr('value','image');
 				  break;
 				case 'embed':
 				  $(this).addClass("active");
-			  	  $('.text').hide();
-				  $('.image').hide();
-				  $('.content-embed').show('slow');
+			  	  $('.new-text').hide();
+				  $('.new-image').hide();
+				  $('.new-embed').show('slow');
 				  $('#content_content_type').attr('value','embed');
 				  break;
 				case 'text':
 				  $(this).addClass("active");
-				  $('.image').hide();
-				  $('.content-embed').hide();
-				  $('.text').show('slow');
+				  $('.new-image').hide();
+				  $('.new-embed').hide();
+				  $('.new-text').show('slow');
 				  $('#content_content_type').attr('value','text');
 			}
 		});

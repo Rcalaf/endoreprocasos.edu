@@ -1,22 +1,22 @@
 
 <div class="add_content">
 <%= form_for @content, :url => new_content_url(@owner.class.to_s,@owner.id), :html => {:multipart => true} do |f|%>
-	<p>Nuevo contenido</p>
+	<p class="title">Nuevo contenido</p>
 	<ul class="top_nav add_content_menu">
 		<li><a id="text" class="active">text</a></li>
 		<li><a id="image">image</a></li>
 		<li><a id="embed">embed code</a></li>
 	</ul>
 	<span class="clear"></span>
-	<div class="text">
+	<div class="new-text">
 		<%=f.text_area :text, :class => "edit_main", :rows => 8%>
 	</div>		
 	<span class="clear"></span>				
-	<div class="image" style="display: none;">
+	<div class="new-image" style="display: none;">
 		<%=f.file_field :image ,:class => "input_holder_newimage"%>
 	</div>		
 	<span class="clear"></span>				
-	<div class="content-embed" style="display: none;">
+	<div class="new-embed" style="display: none;">
 		<%=f.text_area :embed_code, :class => "edit_main", :rows => 8%>
 	</div>	
 	<%= f.hidden_field :content_type,:value => 'text'%>

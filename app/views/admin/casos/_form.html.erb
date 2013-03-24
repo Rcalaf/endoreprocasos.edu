@@ -1,8 +1,10 @@
-<%# render :partial => 'admin/shared/form_errors_notification', :object => @cas%>
 
 <%=form_for @owner,:url => (params[:action] == "new" ? new_cas_url : edit_cas_url(@owner)) do |f|%>
-	<div class="input_holder_header">
+	<div class="input_holder_medium">
 		<%=f.text_field :titol, :class => "header_edit",:placeholder => 'Título' %>
+	</div>
+	<div class="input_holder_short">
+		<%= f.select :year,options_for_select([['2013', '2013'], ['2012', "2012"]], @owner.year),:html=>{:class => "header_edit"}%>
 	</div>
 	<%= f.submit "Guardar caso", :class => "submit_button general_save"%>
 <%end%>

@@ -1200,7 +1200,21 @@ div.edit_main_zone:hover {
 	background-color: rgba(200, 200, 200, 0.15);
 }
 
-
+select {
+	background: url(admin/arrow-select.png) no-repeat 165px;
+	-webkit-appearance: none;
+	height: 36px;
+	border: 2px solid rgba(200, 200, 200, 0.4);
+	background-color: rgba(253, 253, 253, 1);
+	border-radius: 1px;
+	outline: none;
+	font-family: lucida grande;
+	line-height: 16px;
+	font-size: 16px;
+	color: #333;
+	padding: 2px 4px;
+	width:100%;
+}
 
 textarea {
 	outline: none;

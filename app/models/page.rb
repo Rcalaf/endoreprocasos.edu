@@ -16,8 +16,10 @@ class Page < ActiveRecord::Base
   
   def update_home_status
     if self.home
-      page = Page.find_by_home(true)
-      page.update_attribute(:home,false) if page != self
+      pages = Page.find_all_by_home(true)
+      pages.each do |page|
+        page.update_attribute(:home,false) if page != self
+      end
     end
   end
   
