@@ -9,7 +9,10 @@ class Page < ActiveRecord::Base
   
   acts_as_list 
   
-  scope :admin, where(:public => false)
+  validates :title, :presence => {:presence => true,:message => "Escribe un título"}
+  validates :menu_title, :presence => {:presence => true,:message => "Escribe un título para el menú"}
+  
+  scope :admin, where(:public => false, :home => false)
   scope :front, where(:public => true)
   
   private

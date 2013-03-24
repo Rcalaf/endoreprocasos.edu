@@ -1,6 +1,6 @@
 
 <%= render(:partial => "admin/shared/success_notification", :object => flash[:document]) unless flash[:document].nil?%>
-<%= render(:partial => "admin/shared/error_notification", :object => @document) unless @document.errors.empty?%>
+<%= render(:partial => "admin/shared/error_notification", :object => flash[:error]) unless flash[:error].nil?%>
 
 <ul class="attachments">
 	<%= render :partial => 'admin/documents/document', :collection => @documents%>

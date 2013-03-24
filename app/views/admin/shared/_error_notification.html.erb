@@ -1,0 +1,12 @@
+<div class="notification error" style="display: none;">
+	<%if error_notification.class == String%>
+		<p class="margins"><%= error_notification.html_safe%></p>
+	<%else%>
+		<ul class="margins">
+		<p>Porfavor, comprueba los siguientes errores:</p>	
+		<%error_notification.errors.each do |key,value|%>
+			<li><%= value%></li>
+		<%end%>
+		</ul>
+	<%end%>
+</div>

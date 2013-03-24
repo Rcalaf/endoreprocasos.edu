@@ -8,7 +8,8 @@ class Cas < ActiveRecord::Base
   
   scope :this_year, where("created_at > ?", "#{Time.now.year}-1-1") 
   
- # validates :ti, :presence => {:presence => true,:message => "Escribe un email", :if => :enable_email_validations}
- # validates :email, :uniqueness => {:uniqueness => true,:message => "Ya existe un usuario con este email",:if => :enable_email_validations}
+  validates :titol, :presence => {:presence => true,:message => "Escribe un título"}
+  validates :titol, :uniqueness => {:uniqueness => true,:message => "Éste título ya existe"}
+  validates :year, :presence => {:presence => true,:message => "Escoge un año"}  
   
 end

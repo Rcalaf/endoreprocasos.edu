@@ -44,7 +44,7 @@
 						<%else%>
 						<li><%=link_to "Perfil", edit_user_url(@user),:class => params[:controller] == 'admin/users' ? "active" : nil%></li>
 						<%end%>
-						<%= render :partial => "admin/shared/menu_page", :collection => @admin_pages%>
+						<%= render(:partial => "admin/shared/menu_page", :collection => @admin_pages) if @user.status == 'alumne'%>
 					</ul>
 				</div>
 			</div>

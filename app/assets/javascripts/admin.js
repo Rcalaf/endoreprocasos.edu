@@ -36,6 +36,23 @@ jQuery(function() {
 			$('.password').show('slow');
 		});
 	});
+	
+	$(document).ready(function(){
+		if($('#page_home').prop('checked')){
+			$('#page_public').prop('checked',false);
+			$('#page_public').prop('disabled',true);
+		}
+	});
+	
+	$('#page_home').click(function(){
+		if($('#page_home').prop('checked')){
+			$('#page_public').prop('checked',false);
+			$('#page_public').prop('disabled',true);
+		}else{
+			$('#page_public').prop('disabled',false);	
+		}
+	});
+	
 
 	$(document).ready(function () {
 		$('.sub_questions').hide();

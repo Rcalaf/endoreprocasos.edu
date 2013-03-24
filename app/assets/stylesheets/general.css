@@ -118,6 +118,7 @@ ul.top_nav {
 	height: 34px;
 	width: auto;
 	margin-top: 52px;
+	
 } 
 
 ul.top_nav li {
@@ -1202,7 +1203,9 @@ div.edit_main_zone:hover {
 
 select {
 	background: url(admin/arrow-select.png) no-repeat 165px;
+	appearance: none;
 	-webkit-appearance: none;
+	-moz-appearance:none; 
 	height: 36px;
 	border: 2px solid rgba(200, 200, 200, 0.4);
 	background-color: rgba(253, 253, 253, 1);
@@ -1214,6 +1217,10 @@ select {
 	color: #333;
 	padding: 2px 4px;
 	width:100%;
+}
+
+select:hover{
+	cursor: pointer;
 }
 
 textarea {

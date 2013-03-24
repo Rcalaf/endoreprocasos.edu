@@ -1,4 +1,7 @@
+<%= render(:partial => "admin/shared/success_notification", :object => flash[:caso]) unless flash[:caso].nil?%>
+<%= render(:partial => "admin/shared/error_notification", :object => @owner) unless @owner.errors.empty?%>
+
 <div class="content_top">
 	<%= render :partial => "form"%>
 </div>
-<%= render :partial => 'admin/contents/no_contents', :object => "caso"%>
+<%= render :partial => 'admin/contents/no_contents', :object => "el caso"%>

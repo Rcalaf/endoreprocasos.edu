@@ -7,6 +7,10 @@ class Admin::DocumentsController < Admin::AdminController
       @document = cas.documents.create(params[:document])
       if @document.valid?
         flash[:document] = "Material añadido"
+      else
+        message = ""
+        @document.errors.each {|key,error| message += "#{error}<br />"}
+        flash[:error] = message
       end
     end
     redirect_to edit_cas_url(cas,:anchor => 'material')
