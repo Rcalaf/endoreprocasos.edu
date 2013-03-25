@@ -232,15 +232,9 @@ p.org_when{
 	color: #fff;
 	font-size: 14px;	
 }
-/*
-div.content_box{
-	float: left;
-	height: auto;
-	width: 444px;
-	padding: 46px 0;
-	
-}
-*/
+
+
+
 div.content_box {
 	width: 888px;
 	height: auto;
@@ -800,6 +794,11 @@ ul.sub_questions li{
 	background-color: rgba(255, 0, 0, 0.3);
 	border-color: rgba(255, 0, 0, 1);
 	color: #FF0000;
+}
+
+div.login_zone p.red {
+	font-size: 11px;
+ 	color: #FF0000;
 }
 
 .success{

@@ -44,7 +44,7 @@
 	   			</div>
 	   			<div class="login_zone">
 					<%if flash[:login]%>
-						<%= flash[:login]%>
+						<p class="red"><%= flash[:login]%></p>
 					<%end%>
 					<%= form_tag login_url do %>
 					<div class="input_holder">
