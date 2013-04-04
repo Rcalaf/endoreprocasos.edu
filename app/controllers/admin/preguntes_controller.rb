@@ -8,6 +8,7 @@ class Admin::PreguntesController < Admin::AdminController
   def new
     @pregunta = Pregunta.new
     if request.post?
+      params[:pregunta][:owner_name] = "#{@user.name} #{@user.last_name}"
       @pregunta = Pregunta.create(params[:pregunta])
       unless @pregunta.valid? 
         flash[:errors] = @pregunta.errors

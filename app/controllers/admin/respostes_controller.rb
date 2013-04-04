@@ -2,6 +2,7 @@
 class Admin::RespostesController < Admin::AdminController
   def new
     if request.post?
+      params[:pregunta][:owner_name] = "#{@user.name} #{@user.last_name}"
       @resposta = Resposta.create(params[:resposta])
       unless @resposta.valid? 
         flash[:resposta_errors] = @resposta.errors

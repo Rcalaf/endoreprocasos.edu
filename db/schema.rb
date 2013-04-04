@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130323144045) do
+ActiveRecord::Schema.define(:version => 20130404122035) do
 
   create_table "cas", :force => true do |t|
     t.string   "titol"
@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(:version => 20130323144045) do
     t.integer  "cas_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "owner_name"
   end
 
   create_table "resposta", :force => true do |t|
@@ -75,6 +76,7 @@ ActiveRecord::Schema.define(:version => 20130323144045) do
     t.integer  "pregunta_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.string   "owner_name"
   end
 
   create_table "settings", :force => true do |t|

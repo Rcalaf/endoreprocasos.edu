@@ -13,7 +13,7 @@ class Front::PagesController < Front::FrontController
   
   def root
     @page = Page.find_by_home(true)
-    @title = @page.title
+    @title = @settings.main_title
     @contents = @page.contents
     render :show
   end

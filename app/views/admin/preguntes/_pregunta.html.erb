@@ -1,6 +1,6 @@
 <li id="<%=pregunta.id%>" class="pregunta">
 	<%=link_to('',delete_pregunta_url(@owner.id,pregunta.id),:class => 'remove button', :confirm => "Desea eliminar tu pregunta?") if pregunta.user_id == session[:user_id]%>
-	<p class="name"><%=pregunta.user.name%> <%=pregunta.user.last_name%></p>
+	<p class="name"><%=pregunta.owner_name%></p>
 	<p class="question"><%= pregunta.text%></p>
 </li>
 	<ul class="sub_questions"  id="resposta_<%=pregunta.id%>">

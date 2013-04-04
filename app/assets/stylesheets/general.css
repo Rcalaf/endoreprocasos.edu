@@ -1201,7 +1201,7 @@ div.edit_main_zone:hover {
 }
 
 select {
-	background: url(admin/arrow-select.png) no-repeat 165px;
+	background: url(/assets/admin/arrow-select.png) no-repeat 165px;
 	appearance: none;
 	-webkit-appearance: none;
 	-moz-appearance:none; 
