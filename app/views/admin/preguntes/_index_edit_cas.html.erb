@@ -1,8 +1,0 @@
-<h2>Preguntas</h2>
-<%if @preguntes.empty?%>
-<p class='red'> - No hay preguntas para este caso.</p>
-<%else%>
-<div>
-	<%= render :partial => "admin/preguntes/pregunta", :collection => @preguntes%>
-</div>
-<%end%>

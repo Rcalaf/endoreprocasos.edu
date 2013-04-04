@@ -1,6 +1,6 @@
 # encoding: UTF-8
 class Resposta < ActiveRecord::Base
-  attr_accessible :pregunta_id, :text, :user_id
+  attr_accessible :pregunta_id, :text, :user_id, :owner_name
   
   belongs_to :pregunta
   belongs_to :user
