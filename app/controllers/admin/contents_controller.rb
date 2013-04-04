@@ -6,8 +6,6 @@ class Admin::ContentsController < ApplicationController
     @owner = params[:owner_type] == "Page" ? Page.find(params[:owner_id]) : Cas.find(params[:owner_id])
     @title = "Nuevo contenido"
     if request.post?
-   
-   
      @content = Content.new(params[:content])
        if @content.save
           flash[:content] = "El contenido se ha creado"
