@@ -106,7 +106,8 @@ div.title-holder p.subtitle{
 	margin-left: 6px;
 	color: #333;
 }
-	
+
+
 	
 	
 /**********************************
@@ -232,6 +233,14 @@ p.org_when{
 	color: #fff;
 	font-size: 14px;	
 }
+
+p.ie-alert{
+	width: auto;
+	margin: 10px 46px 0;
+	text-align: center;
+	color: red;
+}
+
 
 
 
