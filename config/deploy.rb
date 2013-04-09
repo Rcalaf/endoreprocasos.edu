@@ -27,19 +27,19 @@ set :deploy_to, "/home/#{user}/#{application}"
 ### 
 # Git settings
 #
-#set :scm, :git
-#set :repository, "git@github.com:Rcalaf/endoreprocasos.edu.git"  #point to github CLONE URL.
-#set :branch, "master"
-#set :deploy_via, :remote_cache
+set :scm, :git
+set :repository, "git@github.com:Rcalaf/endoreprocasos.edu.git"  #point to github CLONE URL.
+set :branch, "master"
+set :deploy_via, :remote_cache
 
 ### 
 # Git settings
 #
-set :scm, :git
-set :repository,  "."  #point to github CLONE URL.
-set :copy_strategy, :export
-set :copy_compression, :gzip
-set :deploy_via, :copy
+#set :scm, :git
+#set :repository,  "."  #point to github CLONE URL.
+#set :copy_strategy, :export
+#set :copy_compression, :gzip
+#set :deploy_via, :copy
 
 
 
