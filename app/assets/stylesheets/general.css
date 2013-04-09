@@ -235,10 +235,13 @@ p.org_when{
 }
 
 p.ie-alert{
-	width: auto;
-	margin: 10px 46px 0;
+	width: 888px;
+	margin: 10px 0;
 	text-align: center;
 	color: red;
+	position: fixed;
+	top: 0;
+	z-index: 40000;
 }
 
 
