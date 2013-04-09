@@ -240,7 +240,8 @@ p.ie-alert{
 	text-align: center;
 	color: red;
 	position: fixed;
-	top: 0;
+	top: 0px;
+	left: 0px;
 	z-index: 40000;
 }
 
