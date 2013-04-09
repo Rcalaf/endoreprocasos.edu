@@ -240,7 +240,7 @@ div.content_box {
 	height: auto;
 	min-height:40px;
 	float: left;
-	padding: 46px 0;
+	padding-top: 46px
 }
 
 div.content_box p.header {
@@ -251,8 +251,16 @@ div.content_box p.header {
 
 div.content_box h1 {
 	margin-left: 46px;
+	margin-bottom: 15px;
 	color: #333;
 	font-size: 22px;
+}
+
+div.content_box h2 {
+	margin-left: 46px;
+	margin-bottom: 15px;
+	color: #333;
+	font-size: 16px;
 }
 
 div.content_box ul {
@@ -265,14 +273,15 @@ div.content_box ul {
 
 div.content_box p {
 	text-align: justify;
-    margin-top: 30px;
+    margin-bottom: 15px;
 	padding: 0 45px 0 45px;
 	color: #333;
 	font-size: 12px;
 }
 
 div.content_box .embed {
-	margin: 30px 124px 0 124px;	
+	margin: 0px 124px 30px 124px;	
+	padding: 0;
 }
 
 div.content_box img {
