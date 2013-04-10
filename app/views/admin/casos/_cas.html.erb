@@ -1,6 +1,5 @@
 <li>
 	<p class="title"><%= link_to cas.titol,show_cas_url(cas)%></p>
-	<p class="description"><%= truncate(cas.descripcio,:length => 70)%></p>
 	<%= link_to cas.preguntes.size,show_cas_url(cas, :anchor => 'preguntas'),:class => 'comments'%>
 	<%if @user.status == 'professor'%>
 	<%=link_to '',delete_cas_url(cas),:class => 'remove button',:confirm => "Desea eliminar el caso?"%>

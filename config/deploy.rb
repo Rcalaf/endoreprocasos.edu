@@ -20,7 +20,7 @@ set :user, "deploy"
 # Deploy settings
 #
 
-set :application, "endoreprocasos2.es"
+set :application, "endoreprocasos.es"
 set :local_app, "endoreprocasos.edu"
 set :deploy_to, "/home/#{user}/#{application}"
 
@@ -48,7 +48,7 @@ set :deploy_via, :remote_cache
 #
 
 set :db_passwd, "wL8XSPha"
-set :db_name, "endoreprocasos2.edu_production"
+set :db_name, "endoreprocasos.edu_production"
 
 role :app, server_ip
 role :web, server_ip
