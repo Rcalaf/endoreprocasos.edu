@@ -586,6 +586,11 @@ div.content_main .text h1 {
 	font-size: 22px;
 }
 
+div.content_main .text h2 {
+	margin: 0 0 30px 46px;
+	color: #333;
+}
+
 div.content_main .text ul {
 	margin: 0 0 30px 75px;
 	color: #333;
