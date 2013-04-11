@@ -2,6 +2,7 @@
 	<%if @user.status == 'professor' && params[:action] == 'edit'%>
 	<%=link_to '',delete_document_url(@owner.id,document.id),:class => 'button remove', :confirm => "Desea eliminar este material?"%>
 	<%end%>
-	<p class="name"><%=document.titol%></p>
-	<%=link_to(excerpt(document.document_file_name, '.', :radius => 23),document.document.url,:class => 'file')%>
+	<p class="name"><%=document.titol.truncate(25)%></p>
+	<%=link_to(excerpt(document.document_file_name, '.', :radius => 15),document.document.url,:class => 'file')%>
+	<%#link_to(document.document_file_name.shrink(20),document.document.url,:class => 'file')%>
 </li>

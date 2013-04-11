@@ -10,5 +10,7 @@ class Document < ActiveRecord::Base
   validates_attachment_size :document, :less_than => 5120000, :message => "Pesado demasiado (5 Mb máximo)"
   validates_attachment_presence :document, :message => "Selecciona archivo"
   validates :titol, :presence => {:presence => true,:message => "Escribe un título"}
+ # validates :titol, :length => {:maximum => 25,:message => "Titulo: maximo 25ch."}
+  
   
 end

@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
 	  unless user
 	    session[:user_id] = nil
       @url_filtered = url_for(params) 
-      redirect_to login_url(:url => @url_filtered)
+      redirect_to root_url(:url => @url_filtered)
     end
   end
   

@@ -709,6 +709,7 @@ ul.attachments li p.name{
 	line-height: 20px;
 	color: #333;
 	width: 152px;
+	font-size: 10px;
 }
 
 ul.attachments li a.file{
@@ -720,6 +721,7 @@ ul.attachments li a.file{
 	line-height: 20px;
 	color: #003A54;
 	width: 188px;
+	font-size: 10px;
 	background-image: url(/assets/admin/doc_icon.png);
 	background-repeat: no-repeat;
 	background-position: right center;
