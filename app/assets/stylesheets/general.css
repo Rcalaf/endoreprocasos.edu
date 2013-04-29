@@ -167,13 +167,20 @@ ul.top_nav a.active {
  **********************************/
 div.login_zone{
 	float: right;
-	height: 230px;
+	height: 320px;
 	width: 210px;
-	padding: 90px 0 0 0;
+	padding: 0px 0 0 0;
 	margin-top: -46px;
 	background-color: #009EBC;
 	
 }
+
+div.login_zone img{
+	float:left;
+	margin: 30px 30px;
+	
+}
+
 
 div.login_zone a{
 	float: left;
@@ -413,7 +420,7 @@ input.input_holder_logos {
 	border: none;
 	}
 
-div.logos_placehoder {
+div.logos_placeholder {
 	margin-left: 46px;
 	height:70px;
 	width: 120px;
@@ -421,6 +428,10 @@ div.logos_placehoder {
 	border: 1px solid rgba(200, 200, 200, 0.6);
 }
 
+img.logos {
+	margin-left: 46px;
+	border: 1px solid rgba(200, 200, 200, 0.6);
+}
 /**********************************
  * Users Form
  **********************************/
@@ -978,6 +989,10 @@ div.footer ul li{
 div.footer ul li ul li{
 	list-style-type: disc;
 	list-style-position: inside;
+}
+
+div.footer img{
+	margin:0px auto;
 }
 /**********************************
  * Inputs

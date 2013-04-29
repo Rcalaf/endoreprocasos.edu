@@ -24,7 +24,11 @@
 		<%=f.text_area :footer, :class => "settings", :rows => 8%>
 	</div>
 	
-	<div class="logos_placehoder"></div>
+	<%if @settings.logo.nil?%>
+	<div class="logos_placeholder"></div>
+	<%else%>
+	<%=image_tag @settings.logo.url(:small), :class => "logos"%>
+	<%end%>
 	<%=f.file_field :logo ,:class => "input_holder_logos"%>
 	
 	<div class="settings_input_holder_textarea">
@@ -32,7 +36,12 @@
 		<%=f.text_area :front_footer, :class => "settings", :rows => 8%>
 	</div>
 	
-	<div class="logos_placehoder"></div>
+
+	<%if @settings.logo.nil?%>
+	<div class="logos_placeholder"></div>
+	<%else%>
+	<%=image_tag @settings.footer_logo.url(:small), :class => "logos"%>
+	<%end%>
 	<%=f.file_field :footer_logo ,:class => "input_holder_logos"%>
 	
 
