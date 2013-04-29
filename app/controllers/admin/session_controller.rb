@@ -33,7 +33,7 @@ class Admin::SessionController < Admin::AdminController
       @title = "Comprueba tu correo"
       user = User.find_by_email(params[:email])
       if user 
-        if user.update_attribute("token",params[:token])
+        if user.update_attribute(:token,params[:token])
           Mailer.new_password_mail(user).deliver
         end
       end

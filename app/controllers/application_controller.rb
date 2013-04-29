@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   before_filter :load_main_data
   
   def load_main_data
-    @user = User.find_by_id(session[:user_id])
+    @user = User.find_by_id(session[:user_id]) || User.find_by_token(params[:token])  
     @settings = Setting.first
   end
   
@@ -28,8 +28,7 @@ class ApplicationController < ActionController::Base
   end
   
   def authorize_profile
-    user = User.find_by_id(session[:user_id])
-    user = User.find_by_token(params[:token]) if user.nil?
+    user = User.find_by_id(session[:user_id]) || User.find_by_token(params[:token])  
 	  unless user
 	    session[:user_id] = nil
       @url_filtered = url_for(params) 
