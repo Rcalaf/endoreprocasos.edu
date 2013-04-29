@@ -37,7 +37,7 @@
 	</div>
 	
 
-	<%if @settings.logo.url == "/footer_logos/original/missing.png"%>
+	<%if @settings.footer_logo.url == "/footer_logos/original/missing.png"%>
 	<div class="logos_placeholder"></div>
 	<%else%>
 	<%=image_tag @settings.footer_logo.url(:small), :class => "logos"%>
