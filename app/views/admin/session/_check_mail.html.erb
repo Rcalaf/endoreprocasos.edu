@@ -1,2 +1,7 @@
+<%if @settings.logo.url == "/logos/original/missing.png" %>
+<div class="logo-empty"></div>
+<%else%>
+<%= image_tag(@settings.logo.url(:small)) %>
+<%end%>
 <p>Comprueba tu email. Sigue los pasos para restablecer tu contraseña.</p>
 <%= link_to raw('&larr; atrás'),root_url%>
