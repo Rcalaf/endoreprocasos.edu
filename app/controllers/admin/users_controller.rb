@@ -1,6 +1,6 @@
 # encoding: UTF-8
 class Admin::UsersController < Admin::AdminController
-
+  before_filter :authorize_profile,:only =>[:edit]
  
   def index
     @title = "Endoreprocasos | Usuarios"

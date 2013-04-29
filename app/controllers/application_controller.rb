@@ -27,6 +27,16 @@ class ApplicationController < ActionController::Base
     end
   end
   
+  def authorize_profile
+    user = User.find_by_id(session[:user_id])
+    user = User.find_by_token(params[:token]) if user.nil?
+	  unless user
+	    session[:user_id] = nil
+      @url_filtered = url_for(params) 
+      redirect_to root_url(:url => @url_filtered)
+    end
+  end
+  
   def set_token(length)
 	   chars = ('a'..'z').to_a + ('A'..'Z').to_a + ('0'..'9').to_a
 	   token = []
