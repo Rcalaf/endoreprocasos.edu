@@ -19,7 +19,7 @@ EndoreprocasosEdu::Application.routes.draw do
 
    match "/admin/user/new" => "admin/users#new", :as => "new_user"
 
-   match "/admin/user/:user_id" => "admin/users#edit", :as => "edit_user"
+   match "/admin/user/:user_id" => "admin/users#edit_user", :as => "edit_user"
 
    match "/admin/user/:user_id/delete" => "admin/users#delete", :as => "delete_user"
    

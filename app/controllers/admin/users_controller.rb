@@ -26,7 +26,7 @@ class Admin::UsersController < Admin::AdminController
     end
   end
 
-  def edit
+  def edit_user
     @new_user = User.find(params[:user_id])
     @title = "Endoreprocasos | Editar usuario #{@new_user.name} #{@new_user.last_name}"
     if request.put?
