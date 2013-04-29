@@ -24,7 +24,7 @@
 		<%=f.text_area :footer, :class => "settings", :rows => 8%>
 	</div>
 	
-	<%if @settings.logo.nil?%>
+	<%if @settings.logo.url == "/logos/original/missing.png"%>
 	<div class="logos_placeholder"></div>
 	<%else%>
 	<%=image_tag @settings.logo.url(:small), :class => "logos"%>
@@ -37,7 +37,7 @@
 	</div>
 	
 
-	<%if @settings.logo.nil?%>
+	<%if @settings.logo.url == "/footer_logos/original/missing.png"%>
 	<div class="logos_placeholder"></div>
 	<%else%>
 	<%=image_tag @settings.footer_logo.url(:small), :class => "logos"%>

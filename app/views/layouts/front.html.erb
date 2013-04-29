@@ -50,7 +50,11 @@
 		   			<p class="org_when"><%=@settings.subtitle%></p>
 	   			</div>
 	   			<div class="login_zone">
-					<%= image_tag(@settings.logo.url(:small)) unless @settings.logo.nil?%>
+					<%if @settings.logo.url == "/logos/original/missing.png" %>
+					<div class="logo-empty"></div>
+					<%else%>
+					<%= image_tag(@settings.logo.url(:small)) %>
+					<%end%>
 					<p> Zona alumnos:</p>
 					<%if flash[:login]%>
 						<p class="red"><%= flash[:login]%></p>
@@ -72,7 +76,7 @@
 	   		</div>
 	   		<div class="footer">
 				<%= raw RDiscount.new(@settings.front_footer).to_html%>
-				<%= image_tag(@settings.footer_logo.url(:big)) unless @settings.footer_logo.nil?%>
+				<%= image_tag(@settings.footer_logo.url(:big)) unless @settings.footer_logo.url == "/footer_logos/original/missing.png"%>
 			</div>
         </div>
 	</body>
