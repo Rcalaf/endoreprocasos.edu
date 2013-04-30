@@ -22,7 +22,7 @@ class Admin::SessionController < Admin::AdminController
   
    def reset_password
      @title = "Restablecer contraseña"
-     @token = set_token(71) 
+     @token = SecureRandom.hex(35)
      respond_to do |format|
        format.js { render :layout=>false }
        #format.html 

@@ -33,6 +33,8 @@ class ApplicationController < ActionController::Base
 	    session[:user_id] = nil
       @url_filtered = url_for(params) 
       redirect_to root_url(:url => @url_filtered)
+    else
+      session[:user_id] = user.id
     end
   end
   
