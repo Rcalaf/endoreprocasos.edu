@@ -5,7 +5,7 @@ class Admin::SessionController < Admin::AdminController
      if user = User.find_by_id(session[:admin_id])
        redirect_to pages_path
      else
-       @title = "Hola, identifícate por favor"
+      # @title = "Hola, identifícate por favor"
       if request.post?
          data = User.authenticate(params[:email],params[:proxy_password])
          user = data[:user]
@@ -21,7 +21,7 @@ class Admin::SessionController < Admin::AdminController
    end 
   
    def reset_password
-     @title = "Restablecer contraseña"
+     #@title = "Restablecer contraseña"
      @token = SecureRandom.hex(35)
      respond_to do |format|
        format.js { render :layout=>false }
@@ -30,7 +30,7 @@ class Admin::SessionController < Admin::AdminController
    end
 
    def check_mail
-      @title = "Comprueba tu correo"
+      #@title = "Comprueba tu correo"
       user = User.find_by_email(params[:email])
       if user 
         if user.update_attribute(:token,params[:token])
@@ -44,7 +44,7 @@ class Admin::SessionController < Admin::AdminController
    end
 
    def enter_new_password
-     @title = "Entra tu nueva contraseña"
+     #@title = "Entra tu nueva contraseña"
      @user = User.find_by_token(params[:token])
       raise ActiveRecord::RecordNotFound if !params[:token] || params[:token] == "" || @user.nil?
       if request.put? 
