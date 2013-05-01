@@ -205,7 +205,7 @@ div.logout_zone{
 	float: right;
 	height: 28px;
 	width: 300px;
-	margin-top: 54px;
+	margin-top: 52px;
 	
 }
 
@@ -216,6 +216,36 @@ div.logout_zone p.username{
 	line-height: 28px;
 	font-weight: 700;
 	cursor: default;
+}
+
+div.logout_zone a.username {
+	float: right;
+	color: #fff; 
+	display: block;
+	line-height: 34px;
+	height: 34px;
+	min-width: 60px;
+	width: auto;
+	padding: 0 14px;
+	background-color: rgba(255, 255, 255, 0.1);
+}
+
+div.logout_zone a.active {
+	background-color: rgba(255, 255, 255, 1);
+	cursor: pointer;
+	display: block;
+	color: #009EBC;
+	border-bottom: 0px solid #fff;
+	line-height: 34px;
+	height: 34px;
+	min-width: 60px;
+	width: auto;
+	padding: 0 14px;
+}
+
+div.logout_zone .submit_button{
+	margin-left: 1px;
+	margin-top: 3px;
 }
 
 div.intro_zone{

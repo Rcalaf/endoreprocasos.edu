@@ -1,6 +1,10 @@
 <div class="title-holder">
 	<%if @user.status == "professor"%>
-	<p class="header"><%= params[:action] == "edit" ? 'Editar' : 'Nuevo'%> usuario</p>
+		<%if @user == @new_user%>
+		<p class="header">Editar perfil</p>
+		<%else%>
+		<p class="header"><%= params[:action] == "edit" ? 'Editar' : 'Nuevo'%> usuario</p>
+		<%end%>
 	<%else%>
 	<p class="header">Editar perfil</p>
 	<%end%>
@@ -55,7 +59,7 @@
 			<%= f.password_field :proxy_password_confirmation, :class => "header_edit", :placeholder=> "Confirma contraseña"%>
 		</div>
 		<div class="clear"></div>
-		<!--p class="text">mínimo 8 caracteres, una mayúscula, una minúscula y un número</p-->
+		<p class="text"></p>
 	</div>	
 	<%= f.submit "Guardar", :class => "submit_button"%>
 	<%= link_to "cancelar", (@user.status == 'professor' ? users_url : edit_user_url(@new_user)),:class => "red hovering"%>
