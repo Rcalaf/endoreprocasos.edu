@@ -3,10 +3,12 @@ class Admin::PagesController < Admin::AdminController
 
   
   def index
+    @title = "Endoreprocasos | Páginas"
     @pages = Page.all :order => "position asc"
   end
   
   def new
+    @title = "Endoreprocasos | Nueva página"
     if request.post?
       @owner = Page.create(params[:page])
       if @owner.valid? 
@@ -19,6 +21,7 @@ class Admin::PagesController < Admin::AdminController
   
   def edit
     @owner = Page.find(params[:page_id])
+    @title = "Endoreprocasos | Editar página #{@owner.titol}"
     @contents = @owner.contents
     @content = Content.new(:page_id => @owner.id)
     if request.put?
@@ -42,6 +45,7 @@ class Admin::PagesController < Admin::AdminController
   
   def show
     @page = Page.find_by_slug(params[:slug])
+    @title = "Endoreprocasos | #{@page.titol}"
     @contents = @page.contents
   end
   
