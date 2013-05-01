@@ -1,5 +1,6 @@
 /*
 *= require reset
+*= require jquery.fancybox
 *= require_self
 */ 
 
@@ -311,7 +312,6 @@ div.content_box .embed {
 div.content_box img {
 	height: auto;
 	margin: 0 124px;
-
 }
 
 /**********************************
@@ -646,11 +646,13 @@ div.content_main div.content-text {
 
 div.content_main img {
 	float: left;
-	width: 577px;
-	margin-left: 46px;
+	/*width: 265px;*/
+	margin-left: 47px;
 	margin-bottom: 30px;
-	padding: 46px 0;
+	/*padding: 46px 0;*/
 }
+
+
 
 div.content_secondary{
 	float: left;

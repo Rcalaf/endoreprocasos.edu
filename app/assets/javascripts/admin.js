@@ -1,5 +1,6 @@
 //= require jquery-1.7.1.min
 //= require jquery-ui-1.8.16.custom.min
+//= require jquery.fancybox.pack
 //= require jquery_ujs
 
 jQuery(function() {
@@ -11,6 +12,16 @@ jQuery(function() {
 		}
 	});
 	
+	$(document).ready(function() {
+	    $(".box").fancybox({
+	          helpers: {
+	              title : {
+	                  type : 'float'
+	              }
+	          }
+	      });
+	});
+	
 
 	$('#sort-pages').sortable({
 		 update : function () {		
@@ -18,6 +29,7 @@ jQuery(function() {
 			$.post('/admin/pages/sort', {'sort_data':order});
 		  }
 	});
+	
 	
 	$('#sort-contents').sortable({
 		 update : function () {		

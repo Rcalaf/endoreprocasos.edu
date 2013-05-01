@@ -4,7 +4,13 @@
 	</div>
 <%elsif content.content_type == "embed"%>
 	<div class="embed"><%= raw RDiscount.new(content.embed_code).to_html%></div>
-<%elsif content.content_type == "image"%>
-	<%= image_tag content.image.url(:big)%>
+<%elsif content.content_type == "image"%>	
+	<%unless params[:action] == 'edit'%>
+	    <%= link_to(image_tag(content.image.url(:small)),content.image.url(:big), :class => 'box')%>
+		<% unless (!@contents[content_counter+1].nil? && @contents[content_counter+1].content_type == 'image')%>
+		<div class="clear"></div>
+		<%end%>
+	<%else%>
+		<%=image_tag(content.image.url(:big))%>
+	<%end%>
 <%end%>
-

@@ -8,7 +8,7 @@ class Content < ActiveRecord::Base
   acts_as_list :scope => :page
   acts_as_list :scope => :cas
 
-  has_attached_file :image, :styles => { :small => "305x", :big => "578x" }, :convert_options => {:all => ["-strip", "-colorspace RGB"]}
+  has_attached_file :image, :styles => { :small => "265x", :big => "577x", :page => "640x" }, :convert_options => {:all => ["-strip", "-colorspace RGB"]}
   validates_attachment_size :image, :less_than => 5120000, :message => "Pesado demasiado (5 Mb máximo)", :if => :enable_image_validation
   validates_attachment_presence :image, :message => "Selecciona un archivo.", :if => :enable_image_validation
   validates :text, :presence => {:presence => true,:message => "Escribe un texto"},:if => :enable_text_validation
