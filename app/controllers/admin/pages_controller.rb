@@ -21,7 +21,7 @@ class Admin::PagesController < Admin::AdminController
   
   def edit
     @owner = Page.find(params[:page_id])
-    @title = "Endoreprocasos | Editar página #{@owner.titol}"
+    @title = "Endoreprocasos | Editar página #{@owner.title}"
     @contents = @owner.contents
     @content = Content.new(:page_id => @owner.id)
     if request.put?
@@ -45,7 +45,7 @@ class Admin::PagesController < Admin::AdminController
   
   def show
     @page = Page.find_by_slug(params[:slug])
-    @title = "Endoreprocasos | #{@page.titol}"
+    @title = "Endoreprocasos | #{@page.title}"
     @contents = @page.contents
   end
   
