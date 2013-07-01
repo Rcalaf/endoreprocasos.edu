@@ -9,4 +9,11 @@ class Admin::SettingsController < Admin::AdminController
     end
   end
   
+  def delete_footer_logo
+    @settings = Setting.first
+    @settings.footer_logo = nil
+    @settings.save
+    redirect_to edit_settings_url
+  end
+  
 end

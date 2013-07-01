@@ -41,7 +41,9 @@ EndoreprocasosEdu::Application.routes.draw do
   
       #---------------------------------SETTINGS-----------------------------------
     
-   match '/admin/configuracion' => 'admin/settings#edit', :as => 'edit_settings'  
+   match '/admin/configuracion' => 'admin/settings#edit', :as => 'edit_settings' 
+   
+   match '/admin/configuration/delete-footer-logo' => 'admin/settings#delete_footer_logo', :as => 'delete_footer_logo' 
       
       #---------------------------------CONTENTS-----------------------------------
    

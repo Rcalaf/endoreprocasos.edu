@@ -41,6 +41,8 @@
 	<div class="logos_placeholder"></div>
 	<%else%>
 	<%=image_tag @settings.footer_logo.url(:small), :class => "logos"%>
+	<%=link_to "", delete_footer_logo_url,:class => 'remove button'%>
+	<div class="clear"></div>
 	<%end%>
 	<%=f.file_field :footer_logo ,:class => "input_holder_logos"%>
 	
