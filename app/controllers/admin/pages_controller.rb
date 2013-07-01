@@ -25,7 +25,7 @@ class Admin::PagesController < Admin::AdminController
     @contents = @owner.contents
     @content = Content.new(:page_id => @owner.id)
     if request.put?
-      flash[:page] = "Los cambios se han guardado" if @owner.update_attributes(params[:page])
+      flash.now[:page] = "Los cambios se han guardado" if @owner.update_attributes(params[:page])
     end
   end
   

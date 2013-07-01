@@ -14,6 +14,10 @@ class Page < ActiveRecord::Base
   
   scope :admin, where(:public => false, :home => false)
   scope :front, where(:public => true)
+
+  def self.root
+    Page.where(home: true).first
+  end
   
   private
   

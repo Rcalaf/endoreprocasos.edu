@@ -10,7 +10,9 @@ ENV['RAILS_ENV'] ||= 'production'
 # SSH settings
 
 ## New server
-set :server_ip, "5.39.92.72"
+#set :server_ip, "5.39.92.72"
+set :server_ip, "91.121.65.49"
+
 
 default_run_options[:pty] = true
 set :ssh_options, {:forward_agent => true}
@@ -146,7 +148,7 @@ namespace :backup do
   
   #desc "Makes a DB dump."
   task :db_dump, :roles => :db do 
-    run "mysqldump -u root -p#{db_passwd} #{db_name} > ~/#{db_name}_dump.sql"
+    run "mysqldump -u root -p #{db_passwd} #{db_name} > ~/#{db_name}_dump.sql"
   end
   
   desc "Download the latest DB dump."

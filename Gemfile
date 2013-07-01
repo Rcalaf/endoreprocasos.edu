@@ -6,7 +6,7 @@ gem 'rails', '3.2.8'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'mysql2'
-gem 'paperclip'
+
 gem 'rdiscount'
 gem 'paperclip'
 gem "acts-as-list", :require => 'acts_as_list'
