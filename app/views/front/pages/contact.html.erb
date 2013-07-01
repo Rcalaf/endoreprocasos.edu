@@ -1,0 +1,54 @@
+	<div class="content_box">
+		<%= form_tag show_contact_url do %>
+			<h2>Contacta con nosotros</h2>
+			<%if flash[:notice]%>
+				<p class='green'><%= flash[:notice]%></p>
+			<%elsif flash[:error]%>
+				<p class='red'><%= flash[:error]%></p>
+			<%else%>
+			<p>Consulta lo que necessites a través del forulario, enviando un email o llamando al número facilitado de secretaría.</p>
+			<%end%>
+			<div class="input_holder_short">
+				<%=text_field_tag 'user[nom]', nil, :class => "header_edit",:placeholder => "Nombre"%>
+			</div>
+			<div class="clear"></div>
+			<div class="input_holder_short">
+				<%=email_field_tag 'user[email]', nil, :class => "header_edit",:placeholder => "Email"%>
+			</div>
+			<div class="clear"></div>
+			<div class="input_holder_medium">
+				<%=text_area_tag 'user[mensaje]', nil, :class => "header_edit",:placeholder => 'Escribe tu consulta' %>
+			</div>
+			<div class="clear"></div>
+			
+			<%= submit_tag "Enviar", :class => "submit_button general_save"%>
+			<div class="clear"></div>
+		<%end%>
+	</div>
+	
+	<div class="content_box">
+		<p><b>SECRETARIA TORRES PARDO </b><br/><br/>
+	Nàpols, 187 - 2n,  08013, Barcelona <br/>
+	Tel. 93 246 35 66<br/>
+	Fax 93 231 79 88<br/><br/>
+	<a href="mailto:p.lacruz@torrespardo.com">p.lacruz@torrespardo.com</a><br/>
+	<a href="http://www.torrespardo.com">www.torrespardo.com </a></p>
+
+	</div>
+	<div class="content_box">
+		<p class="embed"><iframe width="500" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.es/maps?f=q&amp;source=s_q&amp;hl=es&amp;geocode=&amp;q=Carrer+de+N%C3%A0pols,+187,+Barcelona&amp;aq=0&amp;oq=N%C3%A0pols,+187&amp;sll=41.619549,1.746826&amp;sspn=2.233924,4.938354&amp;ie=UTF8&amp;hq=&amp;hnear=Carrer+de+N%C3%A0pols,+187,+08013+Barcelona&amp;t=m&amp;ll=41.405527,2.175207&amp;spn=0.022532,0.042915&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe>
+
+	</p>
+	</div>
+	<div class="content_box">
+		<p>
+			<b>SEDE</b><br/><br/>
+	Unidad Docente de l’Universitat Autònoma de Barcelona en l’Hospital de la Santa Creu i Sant Pau<br/><br/>
+	C/ Sant Antoni M. Claret, 167, 08041 Barcelona</p>
+
+	</div>
+	<div class="content_box">
+		<p class="embed">
+			<iframe width="500" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=es&amp;geocode=&amp;q=Sant+Antoni+M.+Claret,+167&amp;aq=&amp;sll=41.414684,2.176151&amp;sspn=0.008239,0.01929&amp;ie=UTF8&amp;hq=&amp;hnear=Calle+de+Sant+Antoni+Maria+Claret,+167,+08025+Barcelona,+Espa%C3%B1a&amp;t=m&amp;ll=41.415054,2.175765&amp;spn=0.011264,0.021458&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
+		</p>
+	</div>

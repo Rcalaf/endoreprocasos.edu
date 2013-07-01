@@ -426,6 +426,36 @@ a.n_user {
 }
 
 /**********************************
+ * Contact Form
+ **********************************/
+
+div.content_box form{
+	padding-top: 20px;
+	margin-left: 45px;
+	width:635px;
+	background-color: #F2F2F2;
+}
+
+div.content_box form p.green{
+	color: #09B500;
+}
+
+div.content_box form p.red{
+	color: #FF0000;
+}
+
+div.content_box form textarea{
+	border: 2px solid rgba(200, 200, 200, 0.4);	
+}
+
+div.content_box form .general_save{
+	float:left;
+	margin-top:90px;
+	margin-left: 46px;
+	margin-bottom: 30px;
+}
+
+/**********************************
  * Settings Form
  **********************************/
 

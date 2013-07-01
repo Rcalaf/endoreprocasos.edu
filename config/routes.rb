@@ -36,8 +36,6 @@ EndoreprocasosEdu::Application.routes.draw do
    match "/admin/page/:page_id/editar" => "admin/pages#edit", :as => "edit_page"
 
    match "/admin/page/:page_id/delete" => "admin/pages#delete", :as => "delete_page"
-   
-   match "page/:slug" => "front/pages#show", :as => "show_page"
   
       #---------------------------------SETTINGS-----------------------------------
     
@@ -91,6 +89,16 @@ EndoreprocasosEdu::Application.routes.draw do
    match 'cas/:cas_id/pregunta/:pregunta_id/resposta/:resposta_id' => 'admin/respostes#edit', :as => 'edit_resposta'
    
    match 'cas/:cas_id/pregunta/:pregunta_id/resposta/:resposta_id/eliminar' => 'admin/respostes#delete', :as => 'delete_resposta'
+
+   #------------------------------------FRONT--------------------------------------
+
+       #---------------------------------PAGES------------------------------------
+       
+   match "page/contact" => "front/pages#contact", :as => "show_contact"
+  
+   match "page/:slug" => "front/pages#show", :as => "show_page"
+
+   
    
   # The priority is based upon order of creation:
   # first created -> highest priority.

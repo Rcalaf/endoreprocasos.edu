@@ -11,5 +11,10 @@ class Mailer < ActionMailer::Base
     @user = user
     mail(:to => user.email, :subject => "Bienvenido a Endoreprocasos.es")
   end
+  
+  def contact(user)
+    @user = user
+    mail(:from => user[:email], :to =>'p.lacruz@torrespardo.com', :subject => "Consulta de Endoreprocasos.es")
+  end
  
 end

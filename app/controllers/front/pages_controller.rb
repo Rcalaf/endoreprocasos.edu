@@ -17,4 +17,16 @@ class Front::PagesController < Front::FrontController
     @contents = @page.contents
     render :show
   end
+  
+  def contact
+    @title = "Contacto"
+    if request.post?
+      unless params[:user][:email].empty? || params[:user][:mensaje].empty?
+        Mailer.contact(params[:user]).deliver
+        flash.now[:notice] = "Grácias por contactar con nosotros!"
+      else
+        flash.now[:error] = "Pon un mensaje y un email para enviar el formulario"
+      end
+    end
+  end
 end

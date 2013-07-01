@@ -48,7 +48,7 @@
 						<li><%=link_to "Páginas", pages_url, :class => (params[:controller] == 'admin/pages' && @page.nil?) ? "active" : nil%></li>
 						<li><%=link_to "Configuración", edit_settings_url, :class => (params[:controller] == 'admin/settings') ? "active" : nil%></li>	
 						<%end%>
-						<%= render(:partial => "admin/shared/menu_page", :collection => @admin_pages) if @user.status == 'alumne'%>
+						<%# render(:partial => "admin/shared/menu_page", :collection => @admin_pages) if @user.status == 'alumne'%>
 					</ul>
 				</div>
 			</div>

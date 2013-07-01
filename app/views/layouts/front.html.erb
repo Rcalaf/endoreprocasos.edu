@@ -38,6 +38,7 @@
 					<ul class="top_nav">
 						<li><%= link_to "#{@root_page.menu_title}", root_url,:class => params[:action] =='root' ? "active" : nil%></li>
 						<%= render :partial => 'shared/menu_tab', :collection => @public_pages%>
+						<li><%= link_to "Contacto", show_contact_url,:class => params[:action] =='contact' ? "active" : nil%>
 					</ul>
 				</div>
 			</div>
