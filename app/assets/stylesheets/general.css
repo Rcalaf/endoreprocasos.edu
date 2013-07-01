@@ -520,6 +520,22 @@ div.content_top.page{
 	height: 92px;
 }*/
 
+div.small-text p{
+	float: left;
+	width: 490px;
+	padding-left: 20px;
+	color: #333;
+	text-align: justify;
+}
+
+div.small-text img{
+	float: left;
+	margin-left: 45px;
+	margin-right: 20px;
+}
+
+
+
 div.content_top{
 	float: left;
 /*	margin-top: 46px;*/
@@ -1278,6 +1294,10 @@ div.edit_main_zone{
 	margin-left: 0px;
 	margin-bottom: 4px;
 	background-color: rgba(200, 200, 200, 0.1);
+}
+
+div.edit_main_zone div.small-text p{
+	width: 250px;
 }
 
 div.edit_main_zone:hover {

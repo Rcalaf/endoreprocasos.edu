@@ -1,6 +1,6 @@
 # encoding: UTF-8
 class Content < ActiveRecord::Base
-  attr_accessible :content_type, :embed_code, :image , :page_id, :text, :cas_id
+  attr_accessible :content_type, :embed_code, :image , :page_id, :text, :cas_id, :image_text
   
   belongs_to :page
   belongs_to :cas

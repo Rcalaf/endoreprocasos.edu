@@ -81,19 +81,30 @@ jQuery(function() {
 		$('.add_content_menu li a').click(function(){
 			$('#text').removeClass("active");
 			$('#image').removeClass("active");
+			$('#image-text').removeClass("active");
 			$('#embed').removeClass("active");
 			switch($(this).attr('id')){
 				case 'image':
 				  $(this).addClass("active");
 			  	  $('.new-text').hide();
 				  $('.new-embed').hide();
+				  $('.new-image-text').hide();
 				  $('.new-image').show('slow');
 				  $('#content_content_type').attr('value','image');
+				  break;
+				case 'image-text':
+				  $(this).addClass("active");
+			  	  $('.new-text').hide();
+				  $('.new-embed').hide();
+				  $('.new-image').hide();
+				  $('.new-image-text').show('slow');
+				  $('#content_content_type').attr('value','image-text');
 				  break;
 				case 'embed':
 				  $(this).addClass("active");
 			  	  $('.new-text').hide();
 				  $('.new-image').hide();
+				  $('.new-image-text').hide();
 				  $('.new-embed').show('slow');
 				  $('#content_content_type').attr('value','embed');
 				  break;
@@ -101,6 +112,7 @@ jQuery(function() {
 				  $(this).addClass("active");
 				  $('.new-image').hide();
 				  $('.new-embed').hide();
+				  $('.new-image-text').hide();
 				  $('.new-text').show('slow');
 				  $('#content_content_type').attr('value','text');
 			}

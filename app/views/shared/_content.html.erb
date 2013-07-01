@@ -13,4 +13,15 @@
 	<%else%>
 		<%=image_tag(content.image.url(:big))%>
 	<%end%>
+<%elsif content.content_type == "image-text"%>
+	<%#unless params[:action] == 'edit'%>
+		<div class="small-text">
+		<%=image_tag(content.image.url(:small))%>
+		<%= raw RDiscount.new(content.image_text).to_html%>
+		</div>
+		<div class="clear"></div>
+	<%#else%>
+		<%#image_tag(content.image.url(:small))%>
+		<%# raw RDiscount.new(content.image_text).to_html%>
+	<%#end%>
 <%end%>
