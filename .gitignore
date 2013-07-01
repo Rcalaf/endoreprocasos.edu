@@ -15,5 +15,7 @@
 /tmp
 .DS_Store
 public/system/*
+public/system
+backups/
 tmp/
 .sass-cache/
