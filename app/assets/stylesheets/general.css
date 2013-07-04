@@ -71,7 +71,7 @@ div.top_head {
 	}
 	
 div.top_head div.header {
-	width: 900px;
+	width: 888px;
 	height: 86px;
 	margin: 0 auto;
 	}
@@ -121,6 +121,7 @@ ul.top_nav {
 	width: auto;
 	margin-top: 52px;
 	
+	
 } 
 
 ul.top_nav li {
@@ -132,6 +133,7 @@ ul.top_nav li {
 	text-align: center;
 	line-height: 34px;
 	text-transform: uppercase;
+	
 } 
 
 ul.top_nav li a {
@@ -143,6 +145,7 @@ ul.top_nav li a {
 	width: auto;
 	padding: 0 14px;
 	background-color: rgba(255, 255, 255, 0.1);
+	font-size: 11px;
 }
 
 ul.top_nav li:hover {
