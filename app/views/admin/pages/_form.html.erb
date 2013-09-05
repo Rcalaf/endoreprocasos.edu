@@ -10,6 +10,12 @@
 	
 	<div class="clear"></div>
 	
+	<div class="input_holder_long">
+		<%= f.text_field :description, :placeholder => "Descripción para Google (SEO)", :class => "header_edit"%>
+	</div>
+	
+		<div class="clear"></div>
+	
 	<div class="checkboxs_holder">
 		<%=f.label :public%><%= f.check_box :public%>
 		<%=f.label :home%><%= f.check_box :home%>

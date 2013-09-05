@@ -1,6 +1,6 @@
 # encoding: UTF-8
 class Page < ActiveRecord::Base
-  attr_accessible :menu_title, :title, :home, :slug, :public
+  attr_accessible :menu_title, :title, :home, :slug, :public, :description
   
   has_many :contents, :dependent => :destroy, :order => 'position asc'
   

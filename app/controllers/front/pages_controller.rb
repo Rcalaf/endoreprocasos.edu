@@ -2,24 +2,28 @@
 class Front::PagesController < Front::FrontController
   
   def index
-     @title = "CURSO PRÁCTICO DE ENDOCRINOLOGÍA GINECOLÓGICA Y REPRODUCCIÓN HUMANA BASADO EN EL CASO"
+     @title = @settings.main_title
+     @description = ""
   end
   
   def show
     @page = Page.find_by_slug(params[:slug])
     @title = @page.title
+    @description = @page.description
     @contents = @page.contents
   end
   
   def root
     @page = Page.find_by_home(true)
     @title = @settings.main_title
+    @description = @settings.main_description
     @contents = @page.contents
     render :show
   end
   
   def contact
     @title = "Contacto"
+    @description = "En esta página podreis encontrar toda la información necesaria para contactar con nosotros así como un formulario de consulta."
     if request.post?
       unless params[:user][:email].empty? || params[:user][:mensaje].empty?
         Mailer.contact(params[:user]).deliver

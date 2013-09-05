@@ -1130,6 +1130,13 @@ div.input_holder_medium {
 	height: 26px;
 	float: left;
 	}
+	
+div.input_holder_long {
+	margin: 28px 0 12px 46px;
+	width: 596px;
+	height: 26px;
+	float: left;
+	}
 		
 div.input_holder_short {
 	margin: 28px 0 12px 46px;
