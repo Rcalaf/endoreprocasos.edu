@@ -1,6 +1,6 @@
 <li>
 	<p class="title"><%= link_to cas.titol,show_cas_url(cas)%><%if cas.hidden%>
-		<span class="visible">(no visible)</span>
+		<span class="visible">(NO VISIBLE)</span>
 	<%end%></p>
 	
 	<%= link_to cas.preguntes.size,show_cas_url(cas, :anchor => 'preguntas'),:class => 'comments'%>
