@@ -578,6 +578,13 @@ div.content_top{
 	background-color: #F2F2F2;	
 }
 
+div.content_top.edit_from{
+	float: left;
+/*	margin-top: 46px;*/
+	height: 120px;
+	width: 888px;
+	background-color: #F2F2F2;	
+}
 
 div.content_top p.header {
 	float: left;
@@ -982,6 +989,14 @@ ul.cases p {
 	line-height: 40px;
 }
 
+ul.cases .visible {
+	float: right;
+	height: 40px;
+	border-left: 1px solid #f9f9f9;
+	padding: 0 8px;
+	line-height: 40px;
+}
+
 ul.cases p.title {
 	width: 580px;
 	font-weight: 700;
@@ -1090,6 +1105,7 @@ div.checkboxs_holder {
 	float:left;
 	margin: 10px 0 28px 46px;
 	}
+
 
 div.checkboxs_holder label{
 	float: left;

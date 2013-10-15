@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130905182033) do
+ActiveRecord::Schema.define(:version => 20131015135022) do
 
   create_table "cas", :force => true do |t|
     t.string   "titol"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20130905182033) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "year"
+    t.boolean  "hidden"
   end
 
   create_table "contents", :force => true do |t|

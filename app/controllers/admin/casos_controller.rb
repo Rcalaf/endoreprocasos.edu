@@ -4,7 +4,7 @@ class Admin::CasosController < Admin::AdminController
   
   def index
     @title = "Endoreprocasos | Casos"
-    @casos = Cas.all
+    @casos =  (@user.status == 'professor' ? Cas.all : Cas.active)
     @cas = @casos.first
   end
 
