@@ -1,5 +1,5 @@
 	<div class="content_box">
-		<%= form_tag show_contact_url do %>
+		<%= form_for @consulta,  :url => show_contact_url do |f|%>
 			<h2>Contacta con nosotros</h2>
 			<%if flash[:notice]%>
 				<p class='green'><%= flash[:notice]%></p>
@@ -9,19 +9,19 @@
 			<p>Consulta lo que necesites a través del formulario, enviando un email o llamando al número facilitado de secretaría.</p>
 			<%end%>
 			<div class="input_holder_short">
-				<%=text_field_tag 'user[nom]', nil, :class => "header_edit",:placeholder => "Nombre"%>
+				<%=f.text_field :name,:class => "header_edit",:placeholder => "Nombre"%>
 			</div>
 			<div class="clear"></div>
 			<div class="input_holder_short">
-				<%=email_field_tag 'user[email]', nil, :class => "header_edit",:placeholder => "Email"%>
+				<%=f.email_field :email, :class => "header_edit",:placeholder => "Email"%>
 			</div>
 			<div class="clear"></div>
 			<div class="input_holder_medium">
-				<%=text_area_tag 'user[mensaje]', nil, :class => "header_edit",:placeholder => 'Escribe tu consulta' %>
+				<%=f.text_area :mensaje,:rows => 6	 ,:class => "header_edit",:placeholder => 'Escribe tu consulta' %>
 			</div>
 			<div class="clear"></div>
 			
-			<%= submit_tag "Enviar", :class => "submit_button general_save"%>
+			<%= f.submit "Enviar", :class => "submit_button general_save"%>
 			<div class="clear"></div>
 		<%end%>
 	</div>

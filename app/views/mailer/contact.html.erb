@@ -8,14 +8,14 @@
 
 <body style="font-family: Helvetica, Arial, Geneva, sans-serif; font-size: 12px; line-height: 17px;">
 	
-	<p>Mensaje de <%= @user[:nom]%></p>
+	<p>Mensaje de <%= @consulta.name%></p>
 	
-	<p><%=@user[:mensaje]%></p>
+	<p><%=@consulta.mensaje%></p>
 	
 	
 
 	<p>Para contestar<br />
-	<a href="mailto:<%=@user[:email]%>"><%=@user[:email]%></a></p>
+	<a href="mailto:<%=@consulta.email%>"><%=@consulta.email%></a></p>
 
 </body>
 </html>

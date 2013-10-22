@@ -25,12 +25,15 @@ class Front::PagesController < Front::FrontController
     @title = "Contacto"
     @description = "En esta página podreis encontrar toda la información necesaria para contactar con nosotros así como un formulario de consulta."
     if request.post?
-      unless params[:user][:email].empty? || params[:user][:mensaje].empty?
-        Mailer.contact(params[:user]).deliver
+      @consulta = Consulta.create(params[:consulta])
+      if @consulta.valid?
+        Mailer.contact(@consulta).deliver
         flash.now[:notice] = "Grácias por contactar con nosotros!"
       else
         flash.now[:error] = "Pon un mensaje y un email para enviar el formulario"
       end
+    else
+      @consulta = Consulta.new
     end
   end
 end
