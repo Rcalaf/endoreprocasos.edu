@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   before_validation :downcase_email
   
   has_attached_file :thumb, :styles => { :thumb => "100x100#" }, 
-                            :convert_options => {:all => ["-strip", "-colorspace RGB"]}
+                            :convert_options => {:all => ["-strip"]}
    
 
   validates :email, :presence => {:presence => true,:message => "Escribe un email", :if => :enable_email_validations}
