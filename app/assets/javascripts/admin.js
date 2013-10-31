@@ -40,6 +40,10 @@ jQuery(function() {
 	
 
 	$(document).ready(function () {
+		if ($('.alumni').attr('checked') == 'checked') {
+			$('.password').hide('slow');
+		}
+		
 		$('.alumni').click(function(){
 			$('.password').hide('slow');
 		});

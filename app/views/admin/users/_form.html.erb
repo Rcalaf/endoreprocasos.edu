@@ -15,19 +15,30 @@
 <%= render(:partial => "admin/shared/error_notification", :object => @new_user) unless @new_user.errors.empty?%>
 
 <%=form_for @new_user,:url => (params[:action] == "new" ? new_user_url : edit_user_url(@new_user)), :html =>{:class => "user"} do |f|%>
+	<div class="float-left">
+		<div class="thumbnail">
+			<%= image_tag @new_user.thumb.url(:thumb) if @new_user.thumb.file?%>
+		</div>
+
+		<%= f.file_field :thumb, :class => "thumb_attach"%>
+
+	</div>
+
+	<div class="clear"></div>
+
 
 
 	<div class="input_holder_short">
 		<p class="label">Nombre</p>
 		<%= f.text_field :name, :placeholder => 'Nombre', :class => 'header_edit'%>
 	</div>
-	
+
 	<div class="input_holder_short">
 		<p class="label">Apellido</p>
 		<%= f.text_field :last_name, :placeholder => 'Apellido', :class => 'header_edit'%>
 	</div>
 	<div class="clear"></div>
-	
+
 	<div class="input_holder_short">
 		<p class="label">Email</p>
 		<%= f.text_field :email, :placeholder => 'Email', :class => 'header_edit'%>
@@ -37,7 +48,10 @@
 		<p class="label">Confirma email</p>
 		<%= f.text_field :email_confirmation, :placeholder => 'Confirma email', :class => 'header_edit'%>
 	</div>
+
 	<div class="clear"></div>
+
+
 
 <%if @user.status == 'professor'%>
 	<div class='radio'>

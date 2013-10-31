@@ -1230,6 +1230,19 @@ input.file_attach {
 	border: none;
 	}
 	
+
+input.thumb_attach {		
+	margin-left: 24px;
+	margin-top: 130px;
+	width: 270px;
+	height: 20px;
+	padding: 0;
+	float: left;
+	color: black;
+	background-color: #F2F2F2;
+	border: none;
+	}
+		
 input.file_attach:hover {		
 	background-color: rgba(255, 255, 255, 0);
 	border: none;
@@ -1489,5 +1502,31 @@ span.moveleft {
 	float: left;
 }								
 
+
+.thumbnail{
+	float:left;
+	margin-top: 45px;
+	margin-left: 45px;
+	height: 100px;
+	width: 100px;	
+	border: 2px solid rgba(200, 200, 200, 0.4);
+	background-color: rgba(253, 253, 253, 1);
+	border-radius: 1px;	
+}
+
+.placeholder{
+	float:left;
+	margin-top:44px;
+	margin-left: 45px;
+}
+
+.float-left{
+	float:left;
+	width:auto;
+}
+
+.left{
+	float:left;
+}
 
 	

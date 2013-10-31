@@ -1,10 +1,14 @@
 # encoding: UTF-8
 class User < ActiveRecord::Base
-  attr_accessible :email, :failed_login_attempts, :login_blocked_until, :password, :salt, :token, :token_valid_until, :proxy_password, :proxy_password_confirmation, :email_confirmation, :name, :last_name, :status
+  attr_accessible :email, :failed_login_attempts, :login_blocked_until, :password, :salt, :token, :token_valid_until, :proxy_password, :proxy_password_confirmation, :email_confirmation, :name, :last_name, :status, :thumb
 
   has_many :preguntes, :class_name => "Pregunta", :dependent => :destroy
   
   before_validation :downcase_email
+  
+  has_attached_file :thumb, :styles => { :thumb => "100x100#" }, 
+                            :convert_options => {:all => ["-strip", "-colorspace RGB"]}
+   
 
   validates :email, :presence => {:presence => true,:message => "Escribe un email", :if => :enable_email_validations}
   validates :email, :uniqueness => {:uniqueness => true,:message => "Ya existe un usuario con este email",:if => :enable_email_validations}
