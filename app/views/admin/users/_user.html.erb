@@ -1,5 +1,5 @@
 <li>
-	<p class="title"><%=user.email%></p>
+	<p class="title"><%=user.name%> <%=user.last_name%></p>
 	<%=link_to '',delete_user_url(user),:class => 'remove button',:confirm => "Desea eliminar el caso?"%>
 	<%=link_to '',edit_user_url(user),:class => "edit button"%>
 </li>
