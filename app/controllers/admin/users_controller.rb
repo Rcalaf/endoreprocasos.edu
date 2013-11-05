@@ -4,8 +4,8 @@ class Admin::UsersController < Admin::AdminController
  
   def index
     @title = "Endoreprocasos | Usuarios"
-    @professors = User.professors
-    @alumnes = User.alumnes
+    @professors = User.professors.order('last_name asc')
+    @alumnes = User.alumnes.order('last_name asc')
   end
 
   def new
