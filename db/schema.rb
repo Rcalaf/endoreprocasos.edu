@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131031172058) do
+ActiveRecord::Schema.define(:version => 20131108173334) do
 
   create_table "cas", :force => true do |t|
     t.string   "titol"
@@ -125,6 +125,7 @@ ActiveRecord::Schema.define(:version => 20131031172058) do
     t.string   "thumb_content_type"
     t.integer  "thumb_file_size"
     t.datetime "thumb_updated_at"
+    t.string   "hospital"
   end
 
 end

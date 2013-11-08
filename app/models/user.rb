@@ -1,6 +1,6 @@
 # encoding: UTF-8
 class User < ActiveRecord::Base
-  attr_accessible :email, :failed_login_attempts, :login_blocked_until, :password, :salt, :token, :token_valid_until, :proxy_password, :proxy_password_confirmation, :email_confirmation, :name, :last_name, :status, :thumb
+  attr_accessible :email, :failed_login_attempts, :login_blocked_until, :password, :salt, :token, :token_valid_until, :proxy_password, :proxy_password_confirmation, :email_confirmation, :name, :last_name, :status, :thumb, :hospital
 
   has_many :preguntes, :class_name => "Pregunta", :dependent => :destroy
   
