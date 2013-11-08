@@ -37,13 +37,27 @@
 		<p class="label">Apellido</p>
 		<%= f.text_field :last_name, :placeholder => 'Apellido', :class => 'header_edit'%>
 	</div>
+	<div class="clear"></div>
 	
-	<div class="input_holder_short">
+	<div class="input_holder_medium_user">
 		<p class="label">Hospital</p>
 		<%= f.text_field :hospital, :placeholder => 'Hospital', :class => 'header_edit'%>
 	</div>
+	
 	<div class="clear"></div>
-
+	
+	<div class="input_holder_short">
+		<p class="label">Posición</p>
+		<%= f.text_field :job, :placeholder => 'Posición', :class => 'header_edit'%>
+	</div>
+	
+	<div class="input_holder_short">
+		<p class="label">Fecha de nacimiento</p>
+		<%= f.text_field :birthday, :placeholder => 'YYYY-MM-DD', :class => 'header_edit'%>
+	</div>
+	
+	<div class="clear"></div>
+	
 	<div class="input_holder_short">
 		<p class="label">Email</p>
 		<%= f.text_field :email, :placeholder => 'Email', :class => 'header_edit'%>

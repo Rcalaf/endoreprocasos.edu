@@ -1147,6 +1147,14 @@ div.input_holder_medium {
 	float: left;
 	}
 	
+div.input_holder_medium_user {
+	margin: 28px 0 12px 46px;
+	width: 446px;
+	height: 26px;
+	float: left;
+	}
+	
+
 div.input_holder_long {
 	margin: 28px 0 12px 46px;
 	width: 596px;
