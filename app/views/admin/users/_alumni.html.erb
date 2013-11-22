@@ -1,0 +1,13 @@
+<div class="alumni">
+	<div class="user-pic">
+		<%= image_tag alumni.thumb.url(:thumb) if alumni.thumb.file?%>
+	</div>
+	<div class="name"><%= alumni.name%></div>
+	<div class="name"><%= alumni.last_name%></div>
+	<div class="clear"></div>
+	
+	<div class="text"><%= alumni.hospital%></div>
+	<div class="text"><%= alumni.job%></div>
+	<div class="text"><%= alumni.phone%></div>
+	<div class="text"><%= alumni.email%></div>
+</div>

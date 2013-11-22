@@ -16,6 +16,8 @@ EndoreprocasosEdu::Application.routes.draw do
       #---------------------------------USERS--------------------------------------
 
    match "/admin/users" => "admin/users#index", :as => "users"
+   
+   match "/admin/alumnos" => "admin/users#alumnies", :as => "users"
 
    match "/admin/user/new" => "admin/users#new", :as => "new_user"
 
@@ -52,17 +54,18 @@ EndoreprocasosEdu::Application.routes.draw do
      match '/admin/:owner_type/:owner_id/content/:content_id' => 'admin/contents#edit', :as => 'edit_content'
      
      match '/admin/:owner_type/:owner_id/content/:content_id/delete/' => 'admin/contents#destroy', :as => 'delete_content'
+     
       #---------------------------------CASOS--------------------------------------
   
    match 'casos' => 'admin/casos#index', :as => 'casos'
   
-   match "/admin/cas/nou" => "admin/casos#new", :as => "new_cas"
+   match "/admin/caso/nuevo" => "admin/casos#new", :as => "new_cas"
    
-   match 'cas/:cas_id' => 'admin/casos#show', :as => 'show_cas'
+   match 'caso/:cas_id' => 'admin/casos#show', :as => 'show_cas'
    
-   match '/admin/cas/:cas_id/editar' => 'admin/casos#edit', :as => "edit_cas"
+   match '/admin/caso/:cas_id/editar' => 'admin/casos#edit', :as => "edit_cas"
    
-   match '/admin/cas/:cas_id/delete' => 'admin/casos#delete', :as => "delete_cas"
+   match '/admin/caso/:cas_id/delete' => 'admin/casos#delete', :as => "delete_cas"
    
       #---------------------------------DOCUMENTS--------------------------------------
       

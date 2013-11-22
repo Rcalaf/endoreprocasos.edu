@@ -7,6 +7,11 @@ class Admin::UsersController < Admin::AdminController
     @professors = User.professors.order('last_name asc')
     @alumnes = User.alumnes.order('last_name asc')
   end
+  
+  def alumnies
+    @title = "Endoreprocasos | Alumnos"
+    @alumnes = User.alumnes.order('last_name asc')
+  end
 
   def new
    @title = "Endoreprocasos | Nuevo usuario"
