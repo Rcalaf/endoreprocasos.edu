@@ -30,9 +30,9 @@ EndoreprocasosEdu::Application.routes.draw do
    
       #---------------------------------GROUPS--------------------------------------
 
-   match "/admin/group/new" => "admin/group#new", :as => "new_user"
+  # match "/admin/group/new" => "admin/group#new", :as => "new_user"
 
-   match "/admin/group/:group_id/delete" => "admin/group#delete", :as => "delete_user"
+  # match "/admin/group/:group_id/delete" => "admin/group#delete", :as => "delete_user"
   
    
       #---------------------------------PAGES--------------------------------------
