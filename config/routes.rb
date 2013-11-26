@@ -20,10 +20,20 @@ EndoreprocasosEdu::Application.routes.draw do
    match "/admin/alumnos" => "admin/users#alumnies", :as => "alumnos"
 
    match "/admin/user/new" => "admin/users#new", :as => "new_user"
+   
+   match "/admin/user/:user_id/move/:group_id" => "admin/users#move", :as => "move_user"
 
    match "/admin/user/:user_id" => "admin/users#edit_user", :as => "edit_user"
 
    match "/admin/user/:user_id/delete" => "admin/users#delete", :as => "delete_user"
+   
+   
+      #---------------------------------GROUPS--------------------------------------
+
+   match "/admin/group/new" => "admin/group#new", :as => "new_user"
+
+   match "/admin/group/:group_id/delete" => "admin/group#delete", :as => "delete_user"
+  
    
       #---------------------------------PAGES--------------------------------------
 

@@ -6,7 +6,7 @@
 <ul class="cases">
 	<%= render :partial => 'cas', :collection => @casos%>
 </ul>
-<%if @user.status == 'professor'%>
+<%if @user.status == 'admin'%>
 <%= link_to "Nuevo caso",new_cas_url,:class => "submit_button n_case"%>
 <%end%>
 

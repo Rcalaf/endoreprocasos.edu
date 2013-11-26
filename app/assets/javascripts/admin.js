@@ -38,6 +38,14 @@ jQuery(function() {
 		  }
 	});
 	
+	
+	$('#group').sortable({
+		 update : function () {		
+			var order = $("#group").sortable('serialize');
+			$.post('/admin/contents/sort', {'sort_data':order});
+		  }
+	});
+	
 
 	$(document).ready(function () {
 		if ($('.alumni').attr('checked') == 'checked') {

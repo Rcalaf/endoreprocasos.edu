@@ -44,6 +44,7 @@ class User < ActiveRecord::Base
   end
 
   scope :with_failed_attempts, where("failed_login_attempts > 0")
+  scope :admin, where(:status => 'admin')
   scope :professors, where(:status => 'professor')
   scope :alumnes, where(:status => 'alumne')
 

@@ -56,7 +56,7 @@
 				<ul class="inline float-left">
 				<%if session[:user_id]%>
 					<li><%=link_to "Casos",casos_url,:class => params[:controller] == 'admin/casos' ? "active" : nil%></li>
-					<%if @user.status == 'professor'%>
+					<%if @user.status == 'admin'%>
 					<li><%=link_to "Usuarios", users_url,:class => params[:controller] == 'admin/users' ? "active" : nil%></li>
 					<li><%=link_to "Páginas", pages_url, :class => params[:controller] == 'admin/pages' ? "active" : nil%>
 					<%else%>
