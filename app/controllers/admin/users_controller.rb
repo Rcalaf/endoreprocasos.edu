@@ -13,6 +13,11 @@ class Admin::UsersController < Admin::AdminController
     @title = "Endoreprocasos | Alumnos"
     @alumnes = User.alumnes.order('last_name asc')
   end
+  
+  def profesores
+    @title = "Endoreprocasos | Profesores"
+    @professors = User.professors.order('last_name asc')
+  end
 
   def new
    @title = "Endoreprocasos | Nuevo usuario"

@@ -18,6 +18,8 @@ EndoreprocasosEdu::Application.routes.draw do
    match "/admin/users" => "admin/users#index", :as => "users"
    
    match "/admin/alumnos" => "admin/users#alumnies", :as => "alumnos"
+   
+   match "/admin/profesores" => "admin/users#profesores", :as => "profesores"
 
    match "/admin/user/new" => "admin/users#new", :as => "new_user"
    
