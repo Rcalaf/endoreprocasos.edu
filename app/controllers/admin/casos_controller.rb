@@ -39,7 +39,7 @@ class Admin::CasosController < Admin::AdminController
   
   def show
     @owner = Cas.find(params[:cas_id])
-    if @owner.hidden
+    if @owner.hidden && (@user.status == 'alumne')
       raise ActiveRecord::RecordNotFound
     else
       @title = "Endoreprocasos | #{@owner.titol}"
