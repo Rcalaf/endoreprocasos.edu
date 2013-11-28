@@ -39,12 +39,16 @@ class Admin::CasosController < Admin::AdminController
   
   def show
     @owner = Cas.find(params[:cas_id])
-    @title = "Endoreprocasos | #{@owner.titol}"
-    @documents = @owner.documents
-    @preguntes = @owner.preguntes
-    @contents = @owner.contents
-    @pregunta = Pregunta.new(:cas_id => @owner.id,:user_id => session[:user_id])
-    @resposta = Resposta.new
+    if @owner.hidden
+      raise ActiveRecord::RecordNotFound
+    else
+      @title = "Endoreprocasos | #{@owner.titol}"
+      @documents = @owner.documents
+      @preguntes = @owner.preguntes
+      @contents = @owner.contents
+      @pregunta = Pregunta.new(:cas_id => @owner.id,:user_id => session[:user_id])
+      @resposta = Resposta.new
+    end
   end
   
   def delete
