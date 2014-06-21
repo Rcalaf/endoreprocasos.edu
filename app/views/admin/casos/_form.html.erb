@@ -4,7 +4,7 @@
 		<%=f.text_field :titol, :class => "header_edit",:placeholder => 'Título' %>
 	</div>
 	<div class="input_holder_short">
-		<%= f.select :year,options_for_select([['2013', '2013'], ['2012', "2012"]], @owner.year),:html=>{:class => "header_edit"}%>
+		<%= f.select :year,options_for_select(get_years, @owner.year ? @owner.year : Time.now.year),:html=>{:class => "header_edit"}%>
 	</div>
 	
 	<%= f.submit "Guardar caso", :class => "submit_button general_save"%>

@@ -1,6 +1,18 @@
 <div class="title-holder">
 	<p class="header">Casos</p>
+	<%unless @user.status == 'alumne'%>
+		<%= form_tag casos_url do %>
+		<%# select_tag "filters",options_for_select([["All authors",authors_path],["Highlighted only",highlighted_path],["Authors with no books",no_books_path]],url_for(:controller=> params[:controller],:action => params[:action])),:class => "right-margin",:onChange=>"window.open(this.options[this.selectedIndex].value,'_self')"%>
+		<div class="input_holder_short_right">
+			<%= select_tag 'year',options_for_select(get_years, (params[:year].nil? ? Time.now.year : params[:year])),:html=>{:class => "header_edit"},:onChange=>"this.form.submit()"%>
+		</div>
+		<%end%>
+	<%end%>
 	<p class="subtitle">Puedes ver los casos, hacer preguntas y comentarios</p>
+
+	
+		
+
 </div>
 
 <ul class="cases">

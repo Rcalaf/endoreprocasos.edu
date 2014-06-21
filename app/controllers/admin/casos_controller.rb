@@ -5,9 +5,9 @@ class Admin::CasosController < Admin::AdminController
   def index
     @title = "Endoreprocasos | Casos"
     if @user.status == 'admin' || @user.status == 'professor'
-      @casos = Cas.all
+      @casos = Cas.year_filter(params[:year].nil? ? Time.now.year : params[:year])
     else
-      @casos = Cas.active
+      @casos = Cas.active.year_filter(@user.promocion)
     end
     @cas = @casos.first
   end
@@ -57,4 +57,5 @@ class Admin::CasosController < Admin::AdminController
       redirect_to casos_url
     end
   end
+  
 end

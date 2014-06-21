@@ -1,6 +1,17 @@
 <div class="title-holder">
 	<p class="header">Profesores</p>
-	<p class="subtitle">Curso 2013</p>
+	<%unless @user.status == 'alumne'%>
+		<%= form_tag profesores_url do %>
+		<div class="input_holder_short_right">
+			<%= select_tag 'year',options_for_select(get_years, (params[:year].nil? ? Time.now.year : params[:year])),:html=>{:class => "header_edit"},:onChange=>"this.form.submit()"%>
+		</div>
+		<%end%>
+	<%end%>
+	<%unless @user.status == 'alumne'%>
+	<p class="subtitle">Curso <%="#{params[:year].nil? ? Time.now.year : params[:year]}"%></p>
+	<%else%>
+	<p class="subtitle">Curso <%="#{@user.promocion}"%></p>
+	<%end%>
 </div>
 
 <%= render :partial => 'alumni', :collection => @professors%>

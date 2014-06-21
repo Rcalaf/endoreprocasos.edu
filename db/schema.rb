@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131108175603) do
+ActiveRecord::Schema.define(:version => 20140621052248) do
 
   create_table "cas", :force => true do |t|
     t.string   "titol"
@@ -58,6 +58,13 @@ ActiveRecord::Schema.define(:version => 20131108175603) do
     t.integer  "document_file_size"
     t.datetime "document_updated_at"
     t.string   "descripcio"
+  end
+
+  create_table "groups", :force => true do |t|
+    t.string   "name"
+    t.integer  "number"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "pages", :force => true do |t|
@@ -129,6 +136,8 @@ ActiveRecord::Schema.define(:version => 20131108175603) do
     t.string   "phone"
     t.string   "job"
     t.date     "birthday"
+    t.integer  "group_id"
+    t.string   "promocion"
   end
 
 end

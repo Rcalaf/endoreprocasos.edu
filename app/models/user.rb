@@ -1,6 +1,6 @@
 # encoding: UTF-8
 class User < ActiveRecord::Base
-  attr_accessible :email, :failed_login_attempts, :login_blocked_until, :password, :salt, :token, :token_valid_until, :proxy_password, :proxy_password_confirmation, :email_confirmation, :name, :last_name, :status, :thumb, :hospital,:phone, :job, :birthday
+  attr_accessible :email, :failed_login_attempts, :login_blocked_until, :password, :salt, :token, :token_valid_until, :proxy_password, :proxy_password_confirmation, :email_confirmation, :name, :last_name, :status, :thumb, :hospital,:phone, :job, :birthday, :promocion
 
   has_many :preguntes, :class_name => "Pregunta", :dependent => :destroy
   
@@ -47,6 +47,8 @@ class User < ActiveRecord::Base
   scope :admin, where(:status => 'admin')
   scope :professors, where(:status => 'professor')
   scope :alumnes, where(:status => 'alumne')
+  scope :year_filter, lambda {|year| where("promocion = ?", "#{year}")} 
+  
 
 
   def self.authenticate(email,password)

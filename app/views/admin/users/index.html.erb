@@ -11,7 +11,15 @@
 
 <div class="title-holder">
 	<p class="header">Profesores</p>
-	<p class="subtitle">Pueden ver los casos y alumnos, responder preguntas como comentarios</p>
+	<%= form_tag users_url do %>
+	<%unless params[:alumni_year].nil? %>
+	<%= hidden_field_tag 'alumni_year', params[:alumni_year]%>
+	<%end%>
+	<div class="input_holder_short_right">
+		<%= select_tag 'teacher_year',options_for_select(get_years, (params[:teacher_year].nil? ? Time.now.year : params[:teacher_year])),:html=>{:class => "header_edit"},:onChange=>"this.form.submit()"%>
+	</div>
+	<%end%>
+	<p class="subtitle">Pueden ver los casos, alumnos, responder y hacer preguntas como comentarios</p>
 </div>
 
 <ul class="users-list">
@@ -21,7 +29,15 @@
 
 <div class="title-holder">
 	<p class="header">Alumnos</p>
-	<p class="subtitle">Pueden ver los casosy otros alumnos, hacer preguntas como comentarios</p>
+	<%= form_tag users_url do %>
+	<%unless params[:teacher_year].nil? %>
+	<%= hidden_field_tag 'teacher_year', params[:teacher_year]%>
+	<%end%>
+	<div class="input_holder_short_right">
+		<%= select_tag 'alumni_year',options_for_select(get_years, (params[:alumni_year].nil? ? Time.now.year : params[:alumni_year])),:html=>{:class => "header_edit"},:onChange=>"this.form.submit()"%>
+	</div>
+	<%end%>
+	<p class="subtitle">Pueden ver los casos, alumnos y hacer preguntas como comentarios</p>
 </div>
 
 <ul class="users-list">

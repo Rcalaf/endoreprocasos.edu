@@ -4,19 +4,27 @@ class Admin::UsersController < Admin::AdminController
  
   def index
     @title = "Endoreprocasos | Usuarios"
-    @professors = User.professors.order('last_name asc')
-    @alumnes = User.alumnes.order('last_name asc')
+    @professors = User.professors.year_filter(params[:teacher_year].nil? ? Time.now.year : params[:teacher_year]).order('last_name asc')
+    @alumnes = User.alumnes.year_filter(params[:alumni_year].nil? ? Time.now.year : params[:alumni_year]).order('last_name asc')
     @administradores = User.admin.order('last_name asc')
   end
   
   def alumnies
     @title = "Endoreprocasos | Alumnos"
-    @alumnes = User.alumnes.order('last_name asc')
+    if @user.status == 'admin' || @user.status == 'professor'
+      @alumnes = User.alumnes.year_filter(params[:year].nil? ? Time.now.year : params[:year]).order('last_name asc')
+    else
+      @alumnes = User.alumnes.year_filter(@user.promocion).order('last_name asc')
+    end 
   end
   
   def profesores
     @title = "Endoreprocasos | Profesores"
-    @professors = User.professors.order('last_name asc')
+    if @user.status == 'admin' || @user.status == 'professor'
+      @professors = User.professors.year_filter(params[:year].nil? ? Time.now.year : params[:year]).order('last_name asc')
+    else
+      @professors = User.professors.year_filter(@user.promocion).order('last_name asc')
+    end
   end
 
   def new

@@ -27,6 +27,32 @@
 	<div class="clear"></div>
 
 
+	<%if @user.status == 'admin'%>
+		<div class="input_holder_short status">
+			<p class="label">Tipo</p>
+			<%= f.select :status,options_for_select([["Administrador","admin"],["Profesor","professor"],["Alumno","alumne"]], (@new_user.status.nil? ? 'alumne' : @new_user.status)),:html=>{:class => "header_edit"},:onChange=>"this.form.submit()"%>
+		</div>
+	<!--
+		<div class='radio'>
+		<p class="label">Tipo</p>
+		<%# f.radio_button :status, "admin", :class => 'teacher'%>
+		<label>Administrador</label>
+		<%# f.radio_button :status, "professor", :class => 'alumni'%>
+		<label>Profesor</label>
+		<%# f.radio_button :status, "alumne", :class => 'alumni'%>
+		<label>Alumno</label>
+		</div>
+		-->
+	<%end%>
+	
+	<%unless @new_user.status == 'admin'%>
+	<div class="input_holder_short promocion">
+		<p class="label">Promoción</p>
+		<%= f.select :promocion, options_for_select(get_years, (@new_user.promocion.nil? ? Time.now.year : @new_user.promocion)),:html=>{:class => "header_edit"},:onChange=>"this.form.submit()"%>
+	</div>
+	<%end%>
+
+	<div class="clear"></div>
 
 	<div class="input_holder_short">
 		<p class="label">Nombre</p>
@@ -37,6 +63,8 @@
 		<p class="label">Apellido</p>
 		<%= f.text_field :last_name, :placeholder => 'Apellido', :class => 'header_edit'%>
 	</div>
+	
+
 	<div class="clear"></div>
 	
 	<div class="input_holder_short">
@@ -80,17 +108,7 @@
 
 
 
-<%if @user.status == 'admin'%>
-	<div class='radio'>
-	<p class="label">Tipo</p>
-	<%= f.radio_button :status, "admin", :class => 'teacher'%>
-	<label>Administrador</label>
-	<%= f.radio_button :status, "professor", :class => 'alumni'%>
-	<label>Profesor</label>
-	<%= f.radio_button :status, "alumne", :class => 'alumni'%>
-	<label>Alumno</label>
-	</div>
-<%end%>
+
 	<div class="clear"></div>
 		<div class="password">
 		<div class="input_holder_short">

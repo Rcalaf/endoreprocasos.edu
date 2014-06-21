@@ -15,19 +15,19 @@ EndoreprocasosEdu::Application.routes.draw do
 
       #---------------------------------USERS--------------------------------------
 
-   match "/admin/users" => "admin/users#index", :as => "users"
+   match "/admin/usuarios" => "admin/users#index", :as => "users"
    
    match "/admin/alumnos" => "admin/users#alumnies", :as => "alumnos"
    
    match "/admin/profesores" => "admin/users#profesores", :as => "profesores"
 
-   match "/admin/user/new" => "admin/users#new", :as => "new_user"
+   match "/admin/user/nuevo" => "admin/users#new", :as => "new_user"
    
-   match "/admin/user/:user_id/move/:group_id" => "admin/users#move", :as => "move_user"
+   match "/admin/user/:user_id/mover/:group_id" => "admin/users#move", :as => "move_user"
 
    match "/admin/user/:user_id" => "admin/users#edit_user", :as => "edit_user"
 
-   match "/admin/user/:user_id/delete" => "admin/users#delete", :as => "delete_user"
+   match "/admin/user/:user_id/eliminar" => "admin/users#delete", :as => "delete_user"
    
    
       #---------------------------------GROUPS--------------------------------------
@@ -39,17 +39,17 @@ EndoreprocasosEdu::Application.routes.draw do
    
       #---------------------------------PAGES--------------------------------------
 
-   match "pages" => "admin/pages#index", :as => "pages"
+   match "paginas" => "admin/pages#index", :as => "pages"
 
-   match "admin/page/new" => "admin/pages#new", :as => "new_page"
+   match "admin/pagina/nueva" => "admin/pages#new", :as => "new_page"
    
-   match '/admin/pages/sort' => 'admin/pages#sort', :as => 'sort_pages'
+   match '/admin/paginas/ordenar' => 'admin/pages#sort', :as => 'sort_pages'
    
-   match "/admin/page/:slug" => "admin/pages#show", :as => "show_admin_page"
+   match "/admin/pagina/:slug" => "admin/pages#show", :as => "show_admin_page"
 
-   match "/admin/page/:page_id/editar" => "admin/pages#edit", :as => "edit_page"
+   match "/admin/pagina/:page_id/editar" => "admin/pages#edit", :as => "edit_page"
 
-   match "/admin/page/:page_id/delete" => "admin/pages#delete", :as => "delete_page"
+   match "/admin/pagina/:page_id/delete" => "admin/pages#delete", :as => "delete_page"
   
       #---------------------------------SETTINGS-----------------------------------
     
@@ -81,9 +81,9 @@ EndoreprocasosEdu::Application.routes.draw do
    
       #---------------------------------DOCUMENTS--------------------------------------
       
-   match '/admin/cas/:cas_id/document/nou' => 'admin/documents#new', :as => 'new_document'
+   match '/admin/caso/:cas_id/documento/nou' => 'admin/documents#new', :as => 'new_document'
    
-   match '/admin/cas/:cas_id/document/:document_id' => 'admin/documents#delete', :as => 'delete_document'
+   match '/admin/caso/:cas_id/documento/:document_id' => 'admin/documents#delete', :as => 'delete_document'
    
       #---------------------------------PREGUNTES--------------------------------------
     

@@ -61,6 +61,21 @@ jQuery(function() {
 		});
 	});
 	
+	$(document).ready(function () {
+		if ($('.status > select').attr('value') == 'admin') {
+			$('.promocion').hide('slow');
+		}
+		
+		$('.status > select').change(function(){
+			if ($('.status > select').attr('value') == 'admin') {
+				$('.promocion').hide('slow');
+			}else{
+				$('.promocion').show('slow');
+			}
+		});
+	});
+	
+	
 	$(document).ready(function(){
 		if($('#page_home').prop('checked')){
 			$('#page_public').prop('checked',false);
