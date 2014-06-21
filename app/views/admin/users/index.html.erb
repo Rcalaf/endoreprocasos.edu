@@ -23,6 +23,9 @@
 </div>
 
 <ul class="users-list">
+	<%if @professors.empty?%>
+	<li><p class="title">No hay profesores</p></li>
+	<%end%>
 	<%=render :partial => '/admin/users/user', :collection => @professors%>
 </ul>
 
@@ -41,6 +44,9 @@
 </div>
 
 <ul class="users-list">
+	<%if @alumnes.empty?%>
+	<li><p class="title">No hay alumnos</p></li>
+	<%end%>
 	<%=render :partial => '/admin/users/user', :collection => @alumnes%>
 </ul>
 

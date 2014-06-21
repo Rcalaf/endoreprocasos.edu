@@ -10,14 +10,18 @@
 	<%end%>
 	<p class="subtitle">Puedes ver los casos, hacer preguntas y comentarios</p>
 
-	
-		
-
 </div>
 
+
+
 <ul class="cases">
+	<%if @casos.empty?%>
+	<li><p class="title">Aún no hay casos en los que trabajar</p></li>
+	<%end%>
 	<%= render :partial => 'cas', :collection => @casos%>
 </ul>
+
+
 <%if @user.status == 'admin'%>
 <%= link_to "Nuevo caso",new_cas_url,:class => "submit_button n_case"%>
 <%end%>

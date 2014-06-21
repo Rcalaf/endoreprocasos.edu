@@ -21,13 +21,13 @@ EndoreprocasosEdu::Application.routes.draw do
    
    match "/admin/profesores" => "admin/users#profesores", :as => "profesores"
 
-   match "/admin/user/nuevo" => "admin/users#new", :as => "new_user"
+   match "/admin/usuario/nuevo" => "admin/users#new", :as => "new_user"
    
-   match "/admin/user/:user_id/mover/:group_id" => "admin/users#move", :as => "move_user"
+   match "/admin/usuario/:user_id/mover/:group_id" => "admin/users#move", :as => "move_user"
 
-   match "/admin/user/:user_id" => "admin/users#edit_user", :as => "edit_user"
+   match "/admin/usuario/:user_id" => "admin/users#edit_user", :as => "edit_user"
 
-   match "/admin/user/:user_id/eliminar" => "admin/users#delete", :as => "delete_user"
+   match "/admin/usuario/:user_id/eliminar" => "admin/users#delete", :as => "delete_user"
    
    
       #---------------------------------GROUPS--------------------------------------
