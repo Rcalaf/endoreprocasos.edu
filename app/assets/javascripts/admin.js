@@ -48,16 +48,16 @@ jQuery(function() {
 	
 
 	$(document).ready(function () {
-		if ($('.alumni').attr('checked') == 'checked') {
+		if ($('.status > select').attr('value') != 'admin') {
 			$('.password').hide('slow');
 		}
 		
-		$('.alumni').click(function(){
-			$('.password').hide('slow');
-		});
-
-		$('.teacher').click(function(){
-			$('.password').show('slow');
+		$('.status > select').change(function(){
+			if($(this).attr('value') != 'admin'){ 
+				$('.password').hide('slow');
+			}else{
+				$('.password').show('slow');
+			}
 		});
 	});
 	

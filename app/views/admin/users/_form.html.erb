@@ -105,12 +105,9 @@
 	</div>
 
 	<div class="clear"></div>
+	
 
-
-
-
-	<div class="clear"></div>
-		<div class="password">
+	<div class="password">
 		<div class="input_holder_short">
 			<p>Contraseña: </p>
 			<%= f.password_field :proxy_password, :class => "header_edit", :placeholder=> "Contraseña", :value => ''%>
@@ -120,9 +117,10 @@
 			<%= f.password_field :proxy_password_confirmation, :class => "header_edit", :placeholder=> "Confirma contraseña"%>
 		</div>
 		<div class="clear"></div>
-		<p class="text"></p>
 	</div>	
+	<div class="margin-top-36">
 	<%= f.submit "Guardar", :class => "submit_button"%>
 	<%= link_to "cancelar", (@user.status == 'admin' ? users_url : edit_user_url(@new_user)),:class => "red hovering"%>
+	</div>
 	
 <%end%>
