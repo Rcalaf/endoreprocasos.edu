@@ -1,3 +1,21 @@
+<%content_for :js do%>
+	<%if params[:action] == 'new'%>
+		$(document).ready(function () {
+			if ($('.status > select').attr('value') != 'admin') {
+				$('.password').hide('slow');
+			}
+	
+			$('.status > select').change(function(){
+				if($(this).attr('value') != 'admin'){ 
+					$('.password').hide('slow');
+				}else{
+					$('.password').show('slow');
+				}
+			});
+		});
+	<%end%>
+<%end%>
+
 <div class="title-holder">
 	<%if @user.status == "professor"%>
 		<%if @user == @new_user%>
@@ -10,7 +28,7 @@
 	<%end%>
 </div>
 <div class="clear"></div>
-<div class="clear"></div>
+
 <%= render(:partial => "admin/shared/success_notification", :object => flash[:user]) unless flash[:user].nil?%>
 <%= render(:partial => "admin/shared/error_notification", :object => @new_user) unless @new_user.errors.empty?%>
 
@@ -106,7 +124,7 @@
 
 	<div class="clear"></div>
 	
-
+	
 	<div class="password">
 		<div class="input_holder_short">
 			<p>Contraseña: </p>

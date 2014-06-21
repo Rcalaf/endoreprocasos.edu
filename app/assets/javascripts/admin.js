@@ -47,19 +47,7 @@ jQuery(function() {
 	});
 	
 
-	$(document).ready(function () {
-		if ($('.status > select').attr('value') != 'admin') {
-			$('.password').hide('slow');
-		}
-		
-		$('.status > select').change(function(){
-			if($(this).attr('value') != 'admin'){ 
-				$('.password').hide('slow');
-			}else{
-				$('.password').show('slow');
-			}
-		});
-	});
+
 	
 	$(document).ready(function () {
 		if ($('.status > select').attr('value') == 'admin') {
