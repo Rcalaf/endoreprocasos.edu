@@ -1,14 +1,8 @@
 /*
 *= require reset
 *= require jquery.fancybox
-*= require_self
-*/ 
 
-/******************************************
- * General Styling
- * Version: 0.1 
-   Vitali Poluzhnikov
- ******************************************/
+*/ 
 
 	
 /**********************************
@@ -1130,7 +1124,8 @@ div.footer ul {
 }
 
 div.footer ul li{
-	width: 421px;
+	/*width: 421px;*/
+	width: 295px;
  	float:left;
 }
 
