@@ -1,1 +1,7 @@
 <%= render :partial => 'form'%>
+<%if @new_user.status == "professor"%>
+	<div class="content_main edit_mode" id="sort-contents"> 
+	<%= render :partial => "admin/contents/index"%>
+	<%= render :partial => 'admin/contents/form'%>
+	</div>
+<%end%>

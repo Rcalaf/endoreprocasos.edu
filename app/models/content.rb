@@ -4,6 +4,7 @@ class Content < ActiveRecord::Base
   
   belongs_to :page
   belongs_to :cas
+  belongs_to :user
   
   acts_as_list :scope => :page
   acts_as_list :scope => :cas

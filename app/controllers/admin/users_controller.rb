@@ -51,6 +51,12 @@ class Admin::UsersController < Admin::AdminController
     if request.put?
       (flash[:user] = "Los cambios se han guardado") if @new_user.update_attributes(params[:user])
     end
+    if @new_user.status == 'professor'
+      @owner = @new_user
+      @contents = @owner.contents
+      @content = Content.new(:page_id => @owner.id)
+    end
+
   end
   
   def move

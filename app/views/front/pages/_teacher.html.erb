@@ -1,0 +1,17 @@
+<div class='teacher'>
+	<div class='teacher_header list' id='teacher_<%= teacher_counter%>'>
+		<%= image_tag teacher.thumb.url(:big), :class => 'circular'%>
+		<h2 class='name'><%=teacher.name%> <%=teacher.last_name%></h2>
+		<h2 class='name'><%= teacher.hospital.empty? ? "empty" : teacher.hospital%></h2>
+		<%#link_to 'leer mas', "#inline#{teacher_counter}",:class => 'name'%>
+		<%=link_to 'Leer mas', "#",:class => 'name read'%>
+		<%=link_to 'Volver a la lista', "#",:class => 'name back', :style => 'display:none;'%>
+	
+	</div>
+
+	<div id="inline<%= teacher_counter%>" class="cv" style='display:none;'>
+		<%= render :partial => 'shared/page_content', :collection => teacher.contents%>
+	</div>
+
+</div>
+

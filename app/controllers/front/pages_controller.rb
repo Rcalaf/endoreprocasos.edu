@@ -21,6 +21,12 @@ class Front::PagesController < Front::FrontController
     render :show
   end
   
+  def teachers
+    @title = "Profesores"
+    @description = @settings.main_description
+    @teachers = User.professors.year_filter(Time.new.year)
+  end
+  
   def contact
     @title = "Contacto"
     @description = "En esta página podreis encontrar toda la información necesaria para contactar con nosotros así como un formulario de consulta."

@@ -16,8 +16,9 @@ body {
 	letter-spacing: 0.1em;
 	font-size: 12px;
 	background-color: #FFF;
+	
 	line-height: 22px;
-	padding-top:46px; /*may bother in front*/
+	padding-top:46px; /*may bother in front*/	
 	}
 
 .clear {
@@ -60,8 +61,7 @@ div.top_head {
 	top: 0;
 	left: 0;
 	background-color: #fff;
-	/*background-color: #80cfde;
-	border-bottom: 2px solid rgba(40, 40, 40, 0.2);	*/
+	/*border-bottom: 2px solid rgba(40, 40, 40, 0.2);	*/
 	z-index: 2000;
 	}
 	
@@ -110,8 +110,8 @@ div.title-holder p.subtitle{
  * Top Nav
  **********************************/
  
-ul.top_nav {	
-	font-weight: 800; /*New*/
+ul.top_nav {
+	font-weight: 800;
 	float: left;
 	height: 34px;
 	width: auto;
@@ -134,7 +134,7 @@ ul.top_nav li {
 
 ul.top_nav li a {
 	/*color: #fff; */
-	color:#000; /*NEW*/
+	color:#000;
 	display: block;
 	line-height: 34px;
 	height: 34px;
@@ -147,13 +147,13 @@ ul.top_nav li a {
 
 ul.top_nav li:hover {
 	/*background-color: rgba(255, 255, 255, 0.4);*/
-	border-bottom: 2px solid #009EBC; /*NEW*/
+	border-bottom: 2px solid #009EBC;
 	cursor: pointer;
 }
 
 ul.top_nav a.active {
 	/*background-color: rgba(255, 255, 255, 1);*/
-	border-bottom: 2px solid #009EBC; /*NEW*/
+	border-bottom: 2px solid #009EBC;
 	cursor: pointer;
 	display: block;
 	color: #009EBC;
@@ -265,8 +265,7 @@ div.logout_zone p.username{
 
 div.logout_zone a.username {
 	float: right;
-	font-weight: 800;
-	/*color: #fff; */
+	color: #fff; 
 	display: block;
 	line-height: 34px;
 	height: 34px;
@@ -281,8 +280,7 @@ div.logout_zone a.active {
 	cursor: pointer;
 	display: block;
 	color: #009EBC;
-	border-bottom: 2px solid #009EBC; /*NEW*/
-	/*border-bottom: 0px solid #fff;*/
+	border-bottom: 0px solid #fff;
 	line-height: 34px;
 	height: 34px;
 	min-width: 60px;
@@ -301,7 +299,6 @@ div.intro_zone{
 	height: 320px;
 	width: 678px;
 	background-color: #003A54;
-	
 }
 
 p.org_header{
@@ -310,7 +307,9 @@ p.org_header{
 	margin-top: 46px;
 	width: 400px;
 	color: rgba(255, 255, 255, 0.9);
-	font-family: serif;
+
+	
+		
 	font-size: 28px;
 	line-height: 34px;	
 }
@@ -390,6 +389,45 @@ div.content_box img {
 	height: auto;
 	margin: 0 124px;
 }
+
+/**********************************
+* Teachers
+***********************************/
+.teacher_header{
+
+	width: 250px;
+	height: auto;
+
+}
+
+	.name{
+		width: auto;
+		margin:10px auto;
+		display: table;
+	}
+	
+	.wide{
+		clear: left;
+		margin: 0 auto;
+	}
+	
+
+	
+	.list{
+		float:left;
+		margin-left: 30px;
+		margin-bottom: 60px;
+	}
+	
+.circular {
+	width: 200px;
+	height: 200px;
+	border-radius: 100px;
+	-webkit-border-radius: 100px;
+	-moz-border-radius: 100px;
+	display: table;
+	margin:40px auto;
+	}
 
 /**********************************
  * Users
@@ -1559,6 +1597,10 @@ a.n_case {
 	background-image: url(/assets/admin/add.png);
 	background-repeat: no-repeat;
 	background-position: 4px 1px;
+}
+
+.teacher a{
+	color: #009EBC;
 }
 
 span.moveleft {

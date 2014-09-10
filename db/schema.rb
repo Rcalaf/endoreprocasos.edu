@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140621052248) do
+ActiveRecord::Schema.define(:version => 20140910095557) do
 
   create_table "cas", :force => true do |t|
     t.string   "titol"
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(:version => 20140621052248) do
     t.datetime "image_updated_at"
     t.integer  "cas_id"
     t.text     "image_text"
+    t.integer  "user_id"
   end
 
   create_table "documents", :force => true do |t|

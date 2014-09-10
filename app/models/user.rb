@@ -3,10 +3,11 @@ class User < ActiveRecord::Base
   attr_accessible :email, :failed_login_attempts, :login_blocked_until, :password, :salt, :token, :token_valid_until, :proxy_password, :proxy_password_confirmation, :email_confirmation, :name, :last_name, :status, :thumb, :hospital,:phone, :job, :birthday, :promocion
 
   has_many :preguntes, :class_name => "Pregunta", :dependent => :destroy
+  has_many :contents, :dependent => :destroy, :order => 'position asc'
   
   before_validation :downcase_email
   
-  has_attached_file :thumb, :styles => { :thumb => "100x100#" }, 
+  has_attached_file :thumb, :styles => { :thumb => "100x100#", :big => '200x200#' }, 
                             :convert_options => {:all => ["-strip"]}
    
 
