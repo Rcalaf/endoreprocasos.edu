@@ -31,7 +31,7 @@ set :deploy_to, "/home/#{user}/#{application}"
 #
 set :scm, :git
 set :repository, "git@github.com:Rcalaf/endoreprocasos.edu.git"  #point to github CLONE URL.
-set :branch, "master"
+set :branch, "v2.0"
 set :deploy_via, :remote_cache
 
 ### 
