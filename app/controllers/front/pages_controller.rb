@@ -24,7 +24,7 @@ class Front::PagesController < Front::FrontController
   def teachers
     @title = "Profesores"
     @description = @settings.main_description
-    @teachers = User.professors.year_filter(Time.new.year)
+    @teachers = User.professors.year_filter(Time.new.year).order('last_name asc')
   end
   
   def contact
