@@ -54,7 +54,7 @@ class Admin::UsersController < Admin::AdminController
     if @new_user.status == 'professor'
       @owner = @new_user
       @contents = @owner.contents
-      @content = Content.new(:page_id => @owner.id)
+      @content = Content.new(:user_id => @owner.id)
     end
 
   end

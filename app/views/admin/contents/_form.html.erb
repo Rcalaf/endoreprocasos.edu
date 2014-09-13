@@ -2,7 +2,7 @@
 <div class="add_content">
 <%= form_for @content, :url => new_content_url(@owner.class.to_s,@owner.id), :html => {:multipart => true} do |f|%>
 	<p class="title">Nuevo contenido</p>
-	<ul class="top_nav add_content_menu">
+	<ul class="content_menu add_content_menu">
 		<li><a id="text" class="active">text</a></li>
 		<li><a id="image">image</a></li>
 	    <li><a id="image-text">image with text</a></li>
@@ -28,6 +28,7 @@
 	<%= f.hidden_field :content_type,:value => 'text'%>
 	<%= f.hidden_field :page_id%>
 	<%= f.hidden_field :cas_id%>
+	<%= f.hidden_field :user_id%>
 	<%= f.submit "contenido",:class=>"submit_button n_content"%>
 	<%end%>
 </div>

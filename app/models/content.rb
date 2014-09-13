@@ -1,6 +1,6 @@
 # encoding: UTF-8
 class Content < ActiveRecord::Base
-  attr_accessible :content_type, :embed_code, :image , :page_id, :text, :cas_id, :image_text
+  attr_accessible :content_type, :embed_code, :image , :page_id, :text, :cas_id, :image_text, :user_id
   
   belongs_to :page
   belongs_to :cas
@@ -18,11 +18,25 @@ class Content < ActiveRecord::Base
   
   
   def owner
-    self.cas.nil? ? self.page : self.cas
+    if self.cas.nil? && self.page.nil? 
+      self.user
+    elsif self.cas.nil? && self.user.nil? 
+      self.page
+    else
+      self.cas
+    end
+    #self.cas.nil? ? self.page : self.cas
   end
   
   def owner_class
-    self.cas.nil? ? self.page.class : self.cas.class
+    if self.cas.nil? && self.page.nil? 
+      self.user.class
+    elsif self.cas.nil? && self.user.nil? 
+      self.page.class
+    else
+      self.cas.class
+    end
+    #self.cas.nil? ? self.page.class : self.cas.class
   end
 
   private
