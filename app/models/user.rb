@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   before_validation :downcase_email
   
   has_attached_file :thumb, :styles => { :thumb => "100x100#", :big => '200x200#' }, 
-                            :convert_options => {:all => ["-strip"]},
+                           # :convert_options => {:all => ["-strip"]},
                             :default_url => "/assets/images.jpg"
    
 
