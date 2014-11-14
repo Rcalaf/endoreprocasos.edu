@@ -14,7 +14,9 @@ class Mailer < ActionMailer::Base
   
   def contact(consulta)
     @consulta = consulta
-    mail(:from => consulta.email, :to =>'p.lacruz@torrespardo.com', :subject => "Consulta de Endoreprocasos.es")
+    mail(:from => consulta.email, :to =>'t.avidad@torrespardo.com', :subject => "Consulta de Endoreprocasos.es")
   end
- #p.lacruz@torrespardo.com
+  
+
+
 end
