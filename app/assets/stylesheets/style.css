@@ -620,7 +620,7 @@ a.button:hover {cursor:pointer;text-decoration:none;
   position:absolute;
   bottom:0;
   background-repeat:no-repeat;
-  background-color:#none;
+  background-color:transparent;
   transition: right 0.7s ease-in-out;
   -moz-transition: right 0.7s ease-in-out;
   -webkit-transition: right 0.7s ease-in-out;
