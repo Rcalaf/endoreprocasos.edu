@@ -370,7 +370,7 @@ a.button:hover {cursor:pointer;text-decoration:none;
 .accordion h3 span {
 }
 .accordion h3.active span {
-/background:url(../images/h3_minus.png) no-repeat left top;
+//background:url(../images/h3_minus.png) no-repeat left top;
 }
 
 .accordion .accord_cont {
