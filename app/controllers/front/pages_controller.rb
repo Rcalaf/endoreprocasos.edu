@@ -21,6 +21,10 @@ class Front::PagesController < Front::FrontController
     render :show
   end
   
+  def test
+    
+  end
+  
   def teachers
     @title = "Profesores"
     @description = @settings.main_description

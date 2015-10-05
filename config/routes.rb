@@ -111,6 +111,8 @@ EndoreprocasosEdu::Application.routes.draw do
        
    match "contacto" => "front/pages#contact", :as => "show_contact"
    match "profesores" => "front/pages#teachers", :as => "show_teachers"
+   
+   match "test" => "front/new#test", :as => "show_test"
   
    match ":slug" => "front/pages#show", :as => "show_page"
 
