@@ -561,11 +561,7 @@ a.button:hover {cursor:pointer;text-decoration:none;
 /* ___________________________________ //Programa ___________________________________ */ 
 
 /* ___________________________________ Professors ___________________________________ */ 
-#profesores {
- 	background-color: #ffffff;
-	width:100%;
-	padding:86px 0 69px;
-}
+
 
 
 .tm-slider-container {
