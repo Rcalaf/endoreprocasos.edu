@@ -123,12 +123,12 @@ jQuery(document).ready(function ($) {
 	
 	mymargtop ();
 	
-	$("#slide1, #slide3, #slide5, #slide7").each(function () {
+	/*$("#slide1, #slide3, #slide5, #slide7").each(function () {
         var slide_h = $(this).height();
 		
 		$(this).css('background-size', '100% '+slide_h+'px');
 		
-    });
+    });*/
 	
 });
 
