@@ -123,7 +123,7 @@ h1.undeline {
 .h1_viva {
 	margin:0;
 	padding:0 0 30px 30px;
-	background:url(images/front/h1_viva.png) no-repeat;
+	background:url(/assets/front/h1_viva.png) no-repeat;
 	font-family: 'Raleway', sans-serif;
 	font-style:italic;
 	font-size:18px;
@@ -163,7 +163,7 @@ img.icon_img {
 }
 
 .effect_2 {
-	background:url(images/front/effect_2.png) repeat left top;
+	background:url(/assets/front/effect_2.png) repeat left top;
 	position:relative;
 	top:0;
 	bottom:-57px;
@@ -179,7 +179,7 @@ img.icon_img {
 
 
 #slide1{
-	background-image:url(images/front/casa_conv_blur.jpg);
+	background-image:url(/assets/front/casa_conv_blur.jpg);
 	background-size: cover !important;
 	width:100%;
 	text-align:center;
@@ -217,20 +217,20 @@ img.icon_img {
 .left_bord {
 	display:inline-block;
 	padding-bottom:13px;
-	background:url(images/front/left_bord.png) no-repeat;
+	background:url(/assets/front/left_bord.png) no-repeat;
 	height:2px;
 	width:140px;
 }
 .right_bord {
 	display:inline-block;
 	padding-bottom:13px;
-	background:url(images/front/right_bord.png) no-repeat;
+	background:url(/assets/front/right_bord.png) no-repeat;
 	height:2px;
 	width:140px;
 }
 
 .rigth-arrow{
-  background-image: url(images/front/small-circle-right.png);
+  background-image: url(/assets/front/small-circle-right.png);
   display:block;
   float:right;
   width: 32px;
@@ -238,7 +238,7 @@ img.icon_img {
 }
 
 .left-arrow{
-  background-image: url(images/front/small-circle-left.png);
+  background-image: url(/assets/front/small-circle-left.png);
   display:block;
   float:left;
   width: 32px;
@@ -246,7 +246,7 @@ img.icon_img {
 }
 
 .up-arrow{
-  background-image: url(images/front/small-circle-up.png);
+  background-image: url(/assets/front/small-circle-up.png);
   display:block;
   float:right;
   margin-top: 35px;
@@ -262,7 +262,7 @@ img.icon_img {
 	height:81px;
 	border:none;
 	text-transform:uppercase;
-	background:url(images/front/button_down.png) no-repeat;
+	background:url(/assets/front/button_down.png) no-repeat;
 	transition: all 0.2s ease-in-out;
 	-moz-transition: all 0.2s ease-in-out;
 	-webkit-transition: all 0.2s ease-in-out;
@@ -273,7 +273,7 @@ img.icon_img {
     position:absolute;
     display:inline;
 	  z-index:101;
-	  background-image: url(images/front/arrow_down.png);
+	  background-image: url(/assets/front/arrow_down.png);
     display: block;
     height: 51px;
 	  margin:50px auto 0 auto;
@@ -304,7 +304,7 @@ a.button:hover {cursor:pointer;text-decoration:none;
 
 /* ____________________________________ divider____________________________________ */ 
 .divider{
-	background-image:url(images/front/slide3_bg.jpg);
+	background-image:url(/assets/front/slide3_bg.jpg);
 	background-size: cover !important;
 	width:100%;
 	text-align:center;
@@ -319,7 +319,7 @@ a.button:hover {cursor:pointer;text-decoration:none;
 
 /* ____________________________________ Curso ____________________________________ */ 
 #curso {
-	//background:url(../images/slide_bg.jpg) repeat left top;
+	//background:url(/assets/slide_bg.jpg) repeat left top;
   background-color: #fffbc1;
 	width:100%;
 	padding:86px 0 69px;
@@ -369,7 +369,7 @@ a.button:hover {cursor:pointer;text-decoration:none;
 .accordion h3 span {
 }
 .accordion h3.active span {
-//background:url(images/front/h3_minus.png) no-repeat left top;
+//background:url(/assets/front/h3_minus.png) no-repeat left top;
 }
 
 .accordion .accord_cont {
@@ -395,7 +395,7 @@ a.button:hover {cursor:pointer;text-decoration:none;
 
 /* ____________________________________ Checkmark ____________________________________ */ 
 .checkmark {
-	background:url(images/front/checkmark.png) repeat left top;
+	background:url(/assets/front/checkmark.png) repeat left top;
   margin-right: 15px;
   margin-left: 15px;
   height: 16px;
@@ -426,7 +426,7 @@ a.button:hover {cursor:pointer;text-decoration:none;
 
 
 .button_bg {
-	background:url(images/front/button_bg.png) repeat left top;
+	background:url(/assets/front/button_bg.png) repeat left top;
 	width:100%;
 	height:72px;
 }
@@ -438,10 +438,10 @@ a.button:hover {cursor:pointer;text-decoration:none;
 	height:72px;
 	border:none;
 	text-transform:uppercase;
-	background:url(images/front/button_top1.png) no-repeat;
+	background:url(/assets/front/button_top1.png) no-repeat;
 }
 .button3:hover {
-	background:url(images/front/button_top2.png) no-repeat;
+	background:url(/assets/front/button_top2.png) no-repeat;
 }
 
 /* ___________________________________ //Slide 5 ___________________________________ */ 
@@ -529,28 +529,28 @@ a.button:hover {cursor:pointer;text-decoration:none;
 	top:0;
 	width:95px;
 	text-align:right;
-	background:url(images/front/timeline/exhib_date_top_bg_h.png) no-repeat left center;
+	background:url(/assets/front/timeline/exhib_date_top_bg_h.png) no-repeat left center;
 }
 
 .exhib_date_left {
 	left:-280px;
 	top:27px;
-	background:url(images/front/timeline/exhib_date_left_bg.png) no-repeat right center;
+	background:url(/assets/front/timeline/exhib_date_left_bg.png) no-repeat right center;
 }
 .exhib_date_right {
 	right:-280px;
 	top:27px;
 	text-align:right;
-	background:url(images/front/timeline/exhib_date_left_bg_right.png) no-repeat left center;
+	background:url(/assets/front/timeline/exhib_date_left_bg_right.png) no-repeat left center;
 }
 /*.exhib_cont:hover .exhib_date_right, .exhib_cont:hover .exhib_date_left, .exhib_cont:hover .exhib_date_top {font-size:26px;
 }*/
 
-.exhib_cont:hover .exhib_date_top {background:url(images/front/timeline/exhib_date_top_bg_h.png) no-repeat left center;
+.exhib_cont:hover .exhib_date_top {background:url(/assets/front/timeline/exhib_date_top_bg_h.png) no-repeat left center;
 }
-.exhib_cont:hover .exhib_date_left {background:url(images/front/timeline/exhib_date_left_bg_h.png) no-repeat right center;
+.exhib_cont:hover .exhib_date_left {background:url(/assets/front/timeline/exhib_date_left_bg_h.png) no-repeat right center;
 }
-.exhib_cont:hover .exhib_date_right {background:url(images/front/timeline/exhib_date_left_bg_right_h.png) no-repeat left center;
+.exhib_cont:hover .exhib_date_right {background:url(/assets/front/timeline/exhib_date_left_bg_right_h.png) no-repeat left center;
 }
 
 
@@ -624,13 +624,13 @@ a.button:hover {cursor:pointer;text-decoration:none;
 }
 .portfolio_zoom {
   right:40px;
-  background-image:url(images/front/zoom.png);
+  background-image:url(/assets/front/zoom.png);
   background-position:0 0;
   z-index:302;
 }
 .portfolio_link {
   right:0px;
-  background-image:url(images/front/link.png);
+  background-image:url(/assets/front/link.png);
   background-position:0 0;
   z-index:303;
 }
@@ -706,7 +706,7 @@ a.button:hover {cursor:pointer;text-decoration:none;
 /* ____________________________________ Slide 10 ____________________________________ */
 
 #slide10 {
-	//background:url(images/front/slide_bg.jpg) repeat left top;
+	//background:url(/assets/front/slide_bg.jpg) repeat left top;
    background-color: #fffbc1;
 	padding:86px 0 0;
 }
