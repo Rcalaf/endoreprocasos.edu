@@ -290,7 +290,7 @@ a.button:hover {cursor:pointer;text-decoration:none;
 #binevenidos {
   /*background:url(../images/slide_bg.jpg) repeat left top;*/
   /*background-color: #fffbc1;*/
-	background: #fff;
+	background: #ffffff;
 	
 	width:100%;
 	padding:86px 0 69px;
@@ -319,6 +319,7 @@ a.button:hover {cursor:pointer;text-decoration:none;
 
 /* ____________________________________ Curso ____________________________________ */ 
 #curso {
+	//background:url(../images/slide_bg.jpg) repeat left top;
   background-color: #fffbc1;
 	width:100%;
 	padding:86px 0 69px;
@@ -330,7 +331,7 @@ a.button:hover {cursor:pointer;text-decoration:none;
 
 /* ____________________________________ Metodologia ____________________________________ */ 
 #metodologia {
-  	background: #f8e3c8;
+  	background: #f9f9f9;
 	width:100%;
 	padding:86px 0 69px;
 }
@@ -368,6 +369,7 @@ a.button:hover {cursor:pointer;text-decoration:none;
 .accordion h3 span {
 }
 .accordion h3.active span {
+//background:url(../images/h3_minus.png) no-repeat left top;
 }
 
 .accordion .accord_cont {
@@ -385,7 +387,7 @@ a.button:hover {cursor:pointer;text-decoration:none;
 
 /* ____________________________________ Temario ____________________________________ */ 
 #temario {
-  background-color: #fffbc1;
+  background-color: #ffffff;
 	width:100%;
 	padding:86px 0 69px;
 }
@@ -406,8 +408,7 @@ a.button:hover {cursor:pointer;text-decoration:none;
 
 /* ____________________________________ Profesores ____________________________________ */ 
 #profesores {
-   background-color: #fffbc1;
-//	background:url(../images/slide_bg.jpg) repeat left top;
+   background-color: #f9f9f9;
 	width:100%;
 	padding:86px 0 69px;
 }
@@ -452,8 +453,7 @@ a.button:hover {cursor:pointer;text-decoration:none;
 
 
 #slide6 {
-//	background:url(../images/slide_bg.jpg) repeat left top;
- background-color: #fffbc1;
+ 	background-color: #ffffff;
 	width:100%;
 	padding:86px 0 69px;
 }
@@ -690,6 +690,7 @@ a.button:hover {cursor:pointer;text-decoration:none;
 /* ____________________________________ Slide 9 ____________________________________ */ 
 
 #slide9{
+	//background-image:url(../images/slide7_bg.jpg);
 	background-size: cover !important;
 	width:100%;
 	text-align:center;
@@ -705,6 +706,7 @@ a.button:hover {cursor:pointer;text-decoration:none;
 /* ____________________________________ Slide 10 ____________________________________ */
 
 #slide10 {
+	//background:url(../images/slide_bg.jpg) repeat left top;
    background-color: #fffbc1;
 	padding:86px 0 0;
 }
