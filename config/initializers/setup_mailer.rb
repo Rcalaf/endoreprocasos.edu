@@ -6,7 +6,8 @@ ActionMailer::Base.smtp_settings = {
   :authentication => :plain,
   :user_name => 'postmaster@endoreprocasos.es',
   :password => 'HSP001',
-  :enable_starttls_auto => true
+  :enable_starttls_auto => true,
+  :openssl_verify_mode  => 'none'
 }
 
 ActionMailer::Base.default_url_options[:host] = "endoreprocasos.es"
