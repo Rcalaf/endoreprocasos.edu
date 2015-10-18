@@ -581,8 +581,8 @@ Trabajo en Equipo. </p>
 						</div>
 						<div class="grid_6 omega"><textarea name="message" id="message" placeholder="Escribe tu consulta"></textarea></div>
 						<div class="clear"></div>
-						<input type="reset" class="contact_btn" value="Clear Form" />
-						<input type="submit" class="contact_btn send_btn" value="Send" />
+						<input type="reset" class="contact_btn" value="Borrar Formulario" />
+						<input type="submit" class="contact_btn send_btn" value="enviar" />
 						<div class="clear"></div>
 					</form>
 				</div>
@@ -592,7 +592,7 @@ Trabajo en Equipo. </p>
     
     <div id="content">
     	<div id="map_block" class="grid_6">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3229.2285995020607!2d2.174551822091024!3d41.41394395807056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a2d105b682a3%3A0xf6aacc4955cd1d47!2sUAB+-+CASA+CONVALESC%C3%88NCIA!5e0!3m2!1sen!2sau!4v1445153804667" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe></div>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3229.2285995020607!2d2.174551822091024!3d41.41394395807056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a2d105b682a3%3A0xf6aacc4955cd1d47!2sUAB+-+CASA+CONVALESC%C3%88NCIA!5e0!3m2!1sen!2sau!4v1445153804667" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
       </div>
     	<div class="grid_6 omega">
         <p><b>SECRETARIA TORRES PARDO</b></p> 
@@ -616,7 +616,8 @@ Trabajo en Equipo. </p>
 
 <div id="footer">
 	<div class="container clearfix">
-		<div class="copyright"> | </div>
+		<%= raw RDiscount.new(@settings.front_footer).to_html%>
+		<%= image_tag(@settings.footer_logo.url(:big)) unless @settings.footer_logo.url == "/footer_logos/original/missing.png"%>
 		<div id="back_top"><a class="button" title="" data-slide="1">top</a></div>
 	</div>
 </div>
