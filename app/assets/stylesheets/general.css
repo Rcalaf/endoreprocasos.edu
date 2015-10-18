@@ -735,6 +735,10 @@ ul.pages-list li:last-child {
 	margin-bottom: 60px;
 }
 
+p.comment{
+  margin-left: 45px;
+  margin-top: 45px;
+}
 /*
 div.pages {
 	float: left;

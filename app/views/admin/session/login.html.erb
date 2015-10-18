@@ -9,7 +9,7 @@
 
 
 <%= form_tag login_url, :class => "user" do %>
-
+  <p class="comment">Introduce tu email y password para entrar en la intranet del curso.</p>
 	<div class="input_holder_short">
 		<p class="label">Email</p>
     <%=email_field_tag 'email','',:placeholder => "email",:class=>"header_edit"%>
@@ -31,7 +31,10 @@
 	<div class="margin-top-36">
   <%= hidden_field_tag "url", params[:url]%>
   <%= submit_tag 'Entrar',:class => "submit_button"%>
-  <%= link_to 'olvidaste tu clave',reset_password_url%>
+  <%= link_to raw('&larr; atrás'),root_url%><br />
+  <div class="clear"></div>
+  <%= link_to 'Olvidaste tu contraseña?',reset_password_url%>
+  
 	</div>
 <%end%>
 
