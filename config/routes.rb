@@ -167,8 +167,8 @@ EndoreprocasosEdu::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'front/pages#root'
-  root :to => 'front/new#test'
+   root :to => 'front/pages#root'
+  #root :to => 'front/new#test'
 
   # See how all your routes lay out with "rake routes"
 

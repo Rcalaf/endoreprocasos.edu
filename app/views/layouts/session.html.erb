@@ -38,12 +38,11 @@
 	   		<div class="site_content">
 			    <%= yield%>
 	   		</div>
-
-	   		
-	   		<div class="footer">
-				<%= raw RDiscount.new(@settings.footer).to_html%>
-				<%= image_tag(@settings.footer_logo.url(:big)) unless @settings.footer_logo.url == "/footer_logos/original/missing.png"%>
-			</div>
+		</div>
+    
+   	<div class="footer">
+			<%= raw RDiscount.new(@settings.footer).to_html%>
+			<%= image_tag(@settings.footer_logo.url(:big)) unless @settings.footer_logo.url == "/footer_logos/original/missing.png"%>
 		</div>
 	</body>
 </html>
