@@ -569,7 +569,7 @@ Trabajo en Equipo. </p>
 		</div>
     <div class="clear"></div>
 		
-		<div class="grid_12">
+		<div id="content" class="grid_12">
 			<p>Consulta lo que necesites a través del formulario, enviando un email o llamando al número facilitado de secretaría.</p>
 			<div class="contact_form">  
 				<div id="note"></div>
@@ -588,24 +588,38 @@ Trabajo en Equipo. </p>
 				</div>
 			</div>
 		</div>		
-		<div class="clear"></div>
+
     
-    <div id="content">
-    	<div id="map_block" class="grid_6">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3229.2285995020607!2d2.174551822091024!3d41.41394395807056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a2d105b682a3%3A0xf6aacc4955cd1d47!2sUAB+-+CASA+CONVALESC%C3%88NCIA!5e0!3m2!1sen!2sau!4v1445153804667" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
-      </div>
-    	<div class="grid_6 omega">
-        <p><b>SECRETARIA TORRES PARDO</b></p> 
+   <div id="content">
+   	<div class="grid_6">
+     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2992.8734347595478!2d2.172785750742343!3d41.39855490316436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a2e7d18aa5f9%3A0x833d4807b5fa32f5!2sCarrer+de+N%C3%A0pols%2C+187%2C+08013+Barcelona%2C+Spain!5e0!3m2!1sen!2sau!4v1445169268583" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+     </div>
+   	<div class="grid_6 omega">
+       <p><b>SECRETARIA TORRES PARDO</b></p> 
 
-          <p>Nàpols, 187 - 2n, 08013, Barcelona</p> 
-          <p>Tel. 93 246 35 66</p>
-          <p>Fax 93 231 79 88</p>
+         <p>Nàpols, 187 - 2n, 08013, Barcelona</p> 
+         <p>Tel. 93 246 35 66</p>
+         <p>Fax 93 231 79 88</p>
 
-          <p>p.lacruz@torrespardo.com</p>
-          <p>www.torrespardo.com</p>
-    	</div>
-    	<div class="clear"></div>
-    </div>
+         <p><a href="mailto:p.lacruz@torrespardo.com">p.lacruz@torrespardo.com</a></p>
+         <p><a href="www.torrespardo.com">www.torrespardo.com</a></p>
+   	</div>
+   	<div class="clear"></div>
+   </div>
+   
+   <div id="content">
+   	<div class="grid_6">
+     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3229.2285995020607!2d2.174551822091024!3d41.41394395807056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a2d105b682a3%3A0xf6aacc4955cd1d47!2sUAB+-+CASA+CONVALESC%C3%88NCIA!5e0!3m2!1sen!2sau!4v1445153804667" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+     </div>
+   	<div class="grid_6 omega">
+       <p><b>SEDE</b></p> 
+
+         <p>UAB - Casa Convalescència</p> 
+         <p>C/ Sant Antoni M. Claret, 171, 08041 Barcelona</p>
+   	</div>
+   	<div class="clear"></div>
+   </div>
+   
 
 	</div>
 	
@@ -618,6 +632,7 @@ Trabajo en Equipo. </p>
 	<div class="container clearfix">
 		<%= raw RDiscount.new(@settings.front_footer).to_html%>
 		<%= image_tag(@settings.footer_logo.url(:big)) unless @settings.footer_logo.url == "/footer_logos/original/missing.png"%>
-		<div id="back_top"><a class="button up" title="" data-slide="1"></a></div>
+       
+		<div id="back_top"><a class="button  up-arrow" title="" data-slide="1"></a></div>
 	</div>
 </div>
