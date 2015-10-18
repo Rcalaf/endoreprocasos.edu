@@ -1,5 +1,6 @@
 /*
 *= require reset
+*= require grid
 *= require jquery.fancybox
 *= require_self
 */ 
@@ -225,8 +226,8 @@ ul.content_menu a.active {
  **********************************/
 
 .menu {
-  position:relative;height:0 !important;
-	bottom:0;
+  position:fixed;
+	top:0;
 	width:100%;
 	height:76px;
 	background: #dd9c54;
