@@ -45,7 +45,7 @@
       		<div id="nav" class="fright">
       			<ul class="navigation">
 				
-  						<li><%=link_to "Casos",casos_url%></li>
+  						<li><%=link_to "Casos",casos_url,:class => params[:controller] == 'admin/casos' ? "active" : nil%></li>
   						<%if @user.status == 'admin'%>
   						<li><%=link_to "Usuarios", users_url,:class => params[:controller] == 'admin/users' && @user != @new_user ? "active" : nil%></li>
   						<!-- <li><%#link_to "Páginas", pages_url, :class => (params[:controller] == 'admin/pages' && @page.nil?) ? "active" : nil%></li> -->
@@ -54,7 +54,7 @@
   						<li><%=link_to "Alumnos",alumnos_url,:class => params[:controller] == 'admin/users' && params[:action] == 'alumnies' ? "active" : nil%></li>
   						<li><%=link_to "Profesores",profesores_url,:class => params[:controller] == 'admin/users' && params[:action] == 'profesores' ? "active" : nil%></li>
   						<%end%>
-              <li><%=link_to "#{'Dr/a.' if @user.status == 'professor'} #{@user.name.capitalize} #{@user.last_name.capitalize}", edit_user_url(@user),:class => "username #{(@user == @new_user ? 'active' : nil)}"%>	</li>
+              <li><%=link_to "Mi cuenta", edit_user_url(@user),:class => "username #{(@user == @new_user ? 'active' : nil)}"%>	</li>
               <li><%= link_to 'Salir', logout_url%></li>
   						
   					</ul>

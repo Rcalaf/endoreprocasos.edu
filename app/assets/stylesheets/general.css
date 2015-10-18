@@ -1468,7 +1468,7 @@ div.logout_zone input.submit_button {
 	height: 26px;
 	margin-left: 14px;	
 	border: 1px solid rgba(255, 255, 255, 0.4);
-	background-color: rgba(0, 58, 84, 0.9);
+	background-color: rgba(221, 156, 84, 0.9);
 	border-radius: 1px;	
 	outline: none;
 	font-family: lucida grande;
@@ -1483,7 +1483,7 @@ input.submit_button {
 	width: 152px;
 	height: 26px;	
 	border: 1px solid rgba(255, 255, 255, 0.4);
-	background-color: rgba(0, 58, 84, 0.9);
+	background-color: rgba(221, 156, 84, 0.9);
 	border-radius: 1px;	
 	outline: none;
 	font-family: lucida grande;
@@ -1498,7 +1498,7 @@ input.submit_button {
 	
 input.submit_button:hover {		
 	border: 1px solid rgba(255, 255, 255, 0.5);
-	background-color: rgba(0, 58, 84, 1);
+	background-color: rgba(221, 156, 84, 1);
 	cursor: pointer;
 	}	
 
@@ -1671,7 +1671,7 @@ a.submit_button {
 	width: 152px;
 	height: 26px;	
 	border: 1px solid rgba(255, 255, 255, 0.4);
-	background-color: rgba(0, 58, 84, 0.9);
+	background-color: rgba(221, 156, 84, 0.9);
 	border-radius: 1px;	
 	outline: none;
 	font-family: lucida grande;
@@ -1687,7 +1687,7 @@ a.submit_button {
 
 a.submit_button:hover {		
 	border: 1px solid rgba(255, 255, 255, 0.5);
-	background-color: rgba(0, 58, 84, 1);
+  background-color: rgba(221, 156, 84, 1);
 /*	cursor: pointer;*/
 }
 
