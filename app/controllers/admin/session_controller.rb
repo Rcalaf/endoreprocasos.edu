@@ -1,6 +1,8 @@
 # encoding: UTF-8
-class Admin::SessionController < Admin::AdminController
+class Admin::SessionController < ApplicationController
 
+  layout 'session'
+  
   def login
      if user = User.find_by_id(session[:admin_id])
        redirect_to pages_path
@@ -14,8 +16,10 @@ class Admin::SessionController < Admin::AdminController
             redirect_to params[:url].nil? || params[:url] == "" ? casos_url : params[:url] 
          else
              flash[:login] = data[:flash]
-             redirect_to root_url
+             redirect_to login_url
          end
+       else
+         render 'login'
        end
      end
    end 
@@ -25,7 +29,7 @@ class Admin::SessionController < Admin::AdminController
      @token = SecureRandom.hex(35)
      respond_to do |format|
        format.js { render :layout=>false }
-       #format.html 
+       format.html 
      end
    end
 
@@ -39,7 +43,7 @@ class Admin::SessionController < Admin::AdminController
       end
       respond_to do |format|
          format.js { render :layout=>false }
-         #format.html 
+         format.html 
       end
    end
 
