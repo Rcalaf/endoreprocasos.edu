@@ -221,6 +221,28 @@ ul.content_menu a.active {
 }
 
 /**********************************
+ * Menu Roger
+ **********************************/
+
+.menu {
+  position:relative;height:0 !important;
+	bottom:0;
+	width:100%;
+	height:76px;
+	background: #dd9c54;
+	z-index:9999;
+}
+#logo {
+	margin-bottom:0;
+	margin-left:0;
+}
+
+#logo img{
+    height: 64px;
+    margin-top: 6px;
+}
+
+/**********************************
  * Alumnes
  **********************************/
 
