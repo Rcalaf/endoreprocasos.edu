@@ -269,18 +269,18 @@ img.icon_img {
   -o-transition: all 0.2s ease-in-out;
 }
 */
-#slide1 a.button {
+/*#slide1 a.button {
     position:absolute;
     display:inline;
-	  z-index:101;
-	  background-image: url(/assets/front/arrow_down.png);
+    z-index:101;
+    background-image: url(/assets/front/arrow_down.png);
     display: block;
     height: 51px;
-	  margin:50px auto 0 auto;
+    margin:50px auto 0 auto;
     width: 152px;
-}
-a.button:hover {cursor:pointer;text-decoration:none;
-}
+}*/
+/*a.button:hover {cursor:pointer;text-decoration:none;
+}*/
 
 
 #slide1 .button_block {
