@@ -1224,6 +1224,20 @@ div.footer > ul {
 	margin-right: auto;
 
 }
+
+div.footer ul li{
+	/*width: 421px;*/
+	width: 295px;
+ 	float:left;
+}
+
+div.footer ul li ul li{
+	list-style-position: inside;
+}
+
+div.footer img{
+	margin:0px auto;
+}
 /**********************************
  * Inputs
  **********************************/	
