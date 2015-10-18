@@ -34,35 +34,52 @@
 		</script>     
 	</head>
     <body>
+      
+      <div class="menu">	
+      	<div class="container clearfix">
+
+      		<div id="logo" class="fleft">
+      			<a href="index.html"><img src="/assets/front/santpau_logo_white.png" /></a>
+      		</div>
+		
+      		<div id="nav" class="fright">
+      			<ul class="navigation">
+				
+  						<li><%=link_to "Casos",casos_url,:class => params[:controller] == 'admin/casos' ? "active" : nil%></li>
+  						<%if @user.status == 'admin'%>
+  						<li><%=link_to "Usuarios", users_url,:class => params[:controller] == 'admin/users' && @user != @new_user ? "active" : nil%></li>
+  						<!-- <li><%#link_to "Páginas", pages_url, :class => (params[:controller] == 'admin/pages' && @page.nil?) ? "active" : nil%></li> -->
+  						<li><%=link_to "Configuración", edit_settings_url, :class => (params[:controller] == 'admin/settings') ? "active" : nil%></li>	
+  						<%else%>
+  						<li><%=link_to "Alumnos",alumnos_url,:class => params[:controller] == 'admin/users' && params[:action] == 'alumnies' ? "active" : nil%></li>
+  						<li><%=link_to "Profesores",profesores_url,:class => params[:controller] == 'admin/users' && params[:action] == 'profesores' ? "active" : nil%></li>
+  						<%end%>
+              <li><%=link_to "#{'Dr/a.' if @user.status == 'professor'} #{@user.name.capitalize} #{@user.last_name.capitalize}", edit_user_url(@user),:class => "username #{(@user == @new_user ? 'active' : nil)}"%>	</li>
+              <li><%= link_to 'Salir', logout_url%></li>
+  						
+  					</ul>
+	
+      				<div class="clear"></div>
+      			</ul>
+      		</div>
+	
+      	</div>
+      </div>
+      
     	<div class="container_main">
-			<div class="top_head">
-				<div class="header">
-					<div class="logout_zone">
-						<%= link_to 'Salir', logout_url, :class => 'submit_button'%>
-						<%=link_to "#{'Dr/a.' if @user.status == 'professor'} #{@user.name.capitalize} #{@user.last_name.capitalize}", edit_user_url(@user),:class => "username #{(@user == @new_user ? 'active' : nil)}"%>	
-					</div>
-					<ul class="top_nav">
-						<li><%=link_to "Casos",casos_url,:class => params[:controller] == 'admin/casos' ? "active" : nil%></li>
-						<%if @user.status == 'admin'%>
-						<li><%=link_to "Usuarios", users_url,:class => params[:controller] == 'admin/users' && @user != @new_user ? "active" : nil%></li>
-						<!-- <li><%#link_to "Páginas", pages_url, :class => (params[:controller] == 'admin/pages' && @page.nil?) ? "active" : nil%></li> -->
-						<li><%=link_to "Configuración", edit_settings_url, :class => (params[:controller] == 'admin/settings') ? "active" : nil%></li>	
-						<%else%>
-						<li><%=link_to "Alumnos",alumnos_url,:class => params[:controller] == 'admin/users' && params[:action] == 'alumnies' ? "active" : nil%></li>
-						<li><%=link_to "Profesores",profesores_url,:class => params[:controller] == 'admin/users' && params[:action] == 'profesores' ? "active" : nil%></li>
-						<%end%>
-						<%# render(:partial => "admin/shared/menu_page", :collection => @admin_pages) if @user.status == 'alumne'%>
-					</ul>
-				</div>
-			</div>
+			
 	   		<div class="site_content">
 			<%= yield%>
 	   		</div>
 	   	
 		</div>
-   		<div class="footer">
+    <div class="clear"></div>
+    
+   	<div class="footer">
 			<%= raw RDiscount.new(@settings.footer).to_html%>
 			<%= image_tag(@settings.footer_logo.url(:big)) unless @settings.footer_logo.url == "/footer_logos/original/missing.png"%>
+      <div class="clear"></div>
 		</div>  
+    
 	</body>
 </html>

@@ -243,6 +243,39 @@ ul.content_menu a.active {
     margin-top: 6px;
 }
 
+#nav {
+	text-align: right;
+}
+.navigation{
+	float: right;
+	list-style: none;
+	margin: 0;
+}
+ul.navigation {
+	margin:0;
+	padding:0;
+}
+.navigation li{
+	float: left;
+	text-align:left;
+	padding:28px 0 25px;
+	margin-left:30px;
+	text-transform:uppercase;
+	background:none;
+	font-family: 'Raleway', sans-serif;
+	font-weight:400;
+	font-size:14px;
+	line-height:20px;
+	color:#fff;
+}
+.navigation li:first-child{margin-left:0;}
+.navigation li:hover,
+.navigation .active {
+	cursor:pointer;
+	border-bottom:3px solid #df4d58;
+}
+
+
 /**********************************
  * Alumnes
  **********************************/
