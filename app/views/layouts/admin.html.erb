@@ -39,22 +39,22 @@
       	<div class="container">
 
       		<div id="logo" class="fleft">
-      			<a href="index.html"><img src="/assets/front/santpau_logo_white.png" /></a>
+      			<a href="/casos"><img src="/assets/front/santpau_logo_white.png" /></a>
       		</div>
 		
       		<div id="nav" class="fright">
       			<ul class="navigation">
 				
-  						<li><%=link_to "Casos",casos_url,:class => params[:controller] == 'admin/casos' ? "active" : nil%></li>
+  						<li <%="class=active" if params[:controller] == 'admin/casos'%>><%=link_to "Casos",casos_url%></li>
   						<%if @user.status == 'admin'%>
-  						<li><%=link_to "Usuarios", users_url,:class => params[:controller] == 'admin/users' && @user != @new_user ? "active" : nil%></li>
+  						<li <%="class=active" if params[:controller] == 'admin/users' && params[:action] == 'index'%>><%=link_to "Usuarios", users_url%></li>
   						<!-- <li><%#link_to "Páginas", pages_url, :class => (params[:controller] == 'admin/pages' && @page.nil?) ? "active" : nil%></li> -->
-  						<li><%=link_to "Configuración", edit_settings_url, :class => (params[:controller] == 'admin/settings') ? "active" : nil%></li>	
+  						<li <%="class=active" if params[:controller] == 'admin/settings'%>><%=link_to "Configuración", edit_settings_url%></li>	
   						<%else%>
-  						<li><%=link_to "Alumnos",alumnos_url,:class => params[:controller] == 'admin/users' && params[:action] == 'alumnies' ? "active" : nil%></li>
-  						<li><%=link_to "Profesores",profesores_url,:class => params[:controller] == 'admin/users' && params[:action] == 'profesores' ? "active" : nil%></li>
+  						<li <%="class=active" if (params[:controller] == 'admin/users' && params[:action] == 'alumnies')%>><%=link_to "Alumnos",alumnos_url%></li>
+  						<li <%="class=active" if (params[:controller] == 'admin/users' && params[:action] == 'profesores')%>><%=link_to "Profesores",profesores_url%></li>
   						<%end%>
-              <li><%=link_to "Mi cuenta", edit_user_url(@user),:class => "username #{(@user == @new_user ? 'active' : nil)}"%>	</li>
+              <li <%="class=active" if params[:action] == 'edit_user'%>><%=link_to "Mi cuenta", edit_user_url(@user)%>	</li>
               <li><%= link_to 'Salir', logout_url%></li>
   						
   					</ul>
