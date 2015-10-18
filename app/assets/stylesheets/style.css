@@ -836,21 +836,59 @@ img.icon_img {
 /* ____________________________________ //Slide 8 ____________________________________ */
 
 /* ____________________________________ FOOTER ____________________________________ */
-#footer {
-	background:#535353;
-	padding:27px 0 23px;
+/*#footer {
+  background:#535353;
+  padding:27px 0 23px;
 }
-/*.copyright {
-  float:left;
-  text-transform:uppercase;
-  font-family: 'Raleway', sans-serif;
-  font-weight:300;
-  color:#e9e9e9;
-}*/
+
 .copyright a {
-	color:#df4d58;
+  color:#df4d58;
 }
 .copyright a:hover {text-decoration:none;color:#fff;
+}
+*/
+  div.footer {
+    background: #535353;
+    margin-top: 45px;
+    padding: 26px 0 23px;
+    color: #e9e9e9;
+    
+  }
+  /*.copyright {
+    float:left;
+    text-transform:uppercase;
+    font-family: 'Raleway', sans-serif;
+    font-weight:300;
+    color:#e9e9e9;
+  }*/
+  .copyright a {
+  	color:#df4d58;
+  }
+  .copyright a:hover {text-decoration:none;color:#fff;
+  }
+  
+div.footer > ul {
+	min-height: 100px;
+	text-align: justify;
+  width:900px;
+	font-size: 12px;
+	margin-left: auto;
+	margin-right: auto;
+
+}
+
+div.footer ul li{
+	/*width: 421px;*/
+	width: 295px;
+ 	float:left;
+}
+
+div.footer ul li ul li{
+	list-style-position: inside;
+}
+
+div.footer img{
+	margin:0px auto;
 }
 
 /* _____________ BACK_TOP ___________ */
