@@ -1171,16 +1171,34 @@ a.remove:hover {
 /**********************************
  * Footer
  **********************************/
-div.footer {
-	float: left;
-	background-color: rgba(200, 200, 200, 0.1);
-	width: 888px;
-	height: auto;
-	padding: 30px 46px;
-	margin-top: 46px;
-	margin-bottom: 100px;
-	}	
-
+/*div.footer {
+  float: left;
+  background-color: rgba(200, 200, 200, 0.1);
+  width: 888px;
+  height: auto;
+  padding: 30px 46px;
+  margin-top: 46px;
+  margin-bottom: 100px;
+  }
+*/
+  .footer {
+  	background:#535353;
+  	padding:27px 0 23px;
+    color:#e9e9e9;
+  }
+  /*.copyright {
+    float:left;
+    text-transform:uppercase;
+    font-family: 'Raleway', sans-serif;
+    font-weight:300;
+    color:#e9e9e9;
+  }*/
+  .copyright a {
+  	color:#df4d58;
+  }
+  .copyright a:hover {text-decoration:none;color:#fff;
+  }
+  
 div.footer ul {
 	min-height: 100px;
 	color: #333;
