@@ -217,6 +217,11 @@ ul.content_menu a.active {
 	padding: 0 14px;
 }
 
+.fright{float:right;
+}
+.fleft{float:left;
+}
+
 /**********************************
  * Menu Roger
  **********************************/
@@ -251,11 +256,20 @@ ul.navigation {
 	margin:0;
 	padding:0;
 }
-.navigation li{
+.navigation li {
 	float: left;
 	text-align:left;
 	padding:28px 0 25px;
 	margin-left:30px;
+}
+.navigation li:first-child{margin-left:0;}
+.navigation li:hover,
+.navigation .active {
+	cursor:pointer;
+	border-bottom:3px solid #df4d58;
+}
+
+.navigation li a{
 	text-transform:uppercase;
 	background:none;
 	font-family: 'Raleway', sans-serif;
@@ -263,12 +277,6 @@ ul.navigation {
 	font-size:14px;
 	line-height:20px;
 	color:#fff;
-}
-.navigation li:first-child{margin-left:0;}
-.navigation li:hover,
-.navigation .active {
-	cursor:pointer;
-	border-bottom:3px solid #df4d58;
 }
 
 
@@ -353,54 +361,52 @@ div.login_zone p{
 	line-height: 12px;
 }
 
-div.logout_zone{
-	float: right;
-	height: 28px;
-	width: 300px;
-	margin-top: 52px;
-	
+/*div.logout_zone{
+  float: right;
+  height: 28px;
+  width: 300px;
+  margin-top: 52px;
+
 }
 
 div.logout_zone p.username{
-	float: right;
-	color: #fff;
-	height: 28px;
-	line-height: 28px;
-	font-weight: 700;
-	cursor: default;
+  float: right;
+  color: #fff;
+  height: 28px;
+  line-height: 28px;
+  font-weight: 700;
+  cursor: default;
 }
 
 div.logout_zone a.username {
-	float: right;
-	font-weight: 800;
-	/*color: #fff; */
-	display: block;
-	line-height: 34px;
-	height: 34px;
-	min-width: 60px;
-	width: auto;
-	padding: 0 14px;
-	background-color: rgba(255, 255, 255, 0.1);
+  float: right;
+  font-weight: 800;
+display: block;
+  line-height: 34px;
+  height: 34px;
+  min-width: 60px;
+  width: auto;
+  padding: 0 14px;
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 div.logout_zone a.active {
-	background-color: rgba(255, 255, 255, 1);
-	cursor: pointer;
-	display: block;
-	color: #009EBC;
-	border-bottom: 2px solid #009EBC; /*NEW*/
-	/*border-bottom: 0px solid #fff;*/
-	line-height: 34px;
-	height: 34px;
-	min-width: 60px;
-	width: auto;
-	padding: 0 14px;
+  background-color: rgba(255, 255, 255, 1);
+  cursor: pointer;
+  display: block;
+  color: #009EBC;
+  border-bottom: 2px solid #009EBC; 
+  line-height: 34px;
+  height: 34px;
+  min-width: 60px;
+  width: auto;
+  padding: 0 14px;
 }
 
 div.logout_zone .submit_button{
-	margin-left: 1px;
-	margin-top: 3px;
-}
+  margin-left: 1px;
+  margin-top: 3px;
+}*/
 
 div.intro_zone{
 	margin-top: -46px;
