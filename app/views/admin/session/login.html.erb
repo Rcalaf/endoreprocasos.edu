@@ -28,12 +28,12 @@
 		<div class="clear"></div>
 	</div>
   
-	<div class="margin-top-36">
+	<div class="margin-top-36 margin-bottom-45">
   <%= hidden_field_tag "url", params[:url]%>
   <%= submit_tag 'Entrar',:class => "submit_button"%>
   <%= link_to raw('&larr; atrás'),root_url%><br />
   <div class="clear"></div>
-  <%= link_to 'Olvidaste tu contraseña?',reset_password_url%>
+  <%= link_to 'Olvidaste tu contraseña?',:class => "margin-left-45",reset_password_url%>
   
 	</div>
 <%end%>
