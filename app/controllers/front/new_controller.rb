@@ -8,10 +8,10 @@ class Front::NewController < ApplicationController
       @consulta = Consulta.create(params[:consulta])
       if @consulta.valid?
         Mailer.contact(@consulta).deliver
-        flash.now[:notice] = "Grácias por contactar con nosotros!"
+        flash[:notice] = "Grácias por contactar con nosotros!"
         @consulta = Consulta.new
       else
-        flash.now[:error] = "Pon un mensaje y un email para enviar el formulario"
+        flash[:error] = "Pon un mensaje y un email para enviar el formulario"
       end
       redirect_to root_url( :anchor => 'contacto')
    
