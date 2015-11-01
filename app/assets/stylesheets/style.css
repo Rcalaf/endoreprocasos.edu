@@ -766,6 +766,7 @@ img.icon_img {
 }
 
 .contact_form input[type="text"],
+.contact_form input[type="email"],
 .contact_form textarea {
 	width:93%;
 	margin:22px 0 0 0;
@@ -777,6 +778,8 @@ img.icon_img {
 	color:#929292;
 }
 .contact_form input[type="text"]:first-child {margin-top:0;
+}
+.contact_form input[type="email"]:first-child {margin-top:0;
 }
 .contact_form textarea {
 	resize: none;
