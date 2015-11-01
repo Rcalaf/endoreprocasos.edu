@@ -569,11 +569,14 @@ Trabajo en Equipo. </p>
 				<div id="fields">
 				  <!-- <form id="ajax-contact-form" action=""> -->
           <%= form_for @consulta,  :url => show_test_url(), :id=>"ajax-contact-form" do |f|%>
+    			<%if flash[:notice]%>
+    				<p class='green'><%= flash[:notice]%></p>
+    			<%elsif flash[:error]%>
+    				<p class='red'><%= flash[:error]%></p>
+    			<%else%>
 						<div class="grid_6">
               <%=f.text_field :name,:placeholder => "Nombre"%>
               <%=f.email_field :email,:placeholder => "Email"%>
-							<input type="text" name="name" value="" placeholder="Nombre" />
-							<input type="text" name="email" value="" placeholder="Email" />
 						</div>
 						<div class="grid_6 omega">
               	<%=f.text_area :mensaje,:rows => 6,:id => "message",:placeholder => 'Escribe tu consulta' %>
