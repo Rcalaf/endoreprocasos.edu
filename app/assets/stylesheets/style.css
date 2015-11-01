@@ -88,6 +88,15 @@ ul.navigation {
 	line-height:20px;
 	color:#fff;
 }
+
+.navigation li a{
+	font-family: 'Raleway', sans-serif;
+	font-weight:400;
+	font-size:14px;
+	line-height:20px;
+	color:#fff;
+}
+
 .navigation li:first-child{margin-left:0;}
 .navigation li:hover,
 .navigation .active {
