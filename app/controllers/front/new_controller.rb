@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class Front::NewController < ApplicationController
   layout 'new'
   
