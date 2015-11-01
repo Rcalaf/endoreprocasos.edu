@@ -8,7 +8,6 @@ class Front::NewController < ApplicationController
       if @consulta.valid?
         Mailer.contact(@consulta).deliver
         flash.now[:notice] = "Grácias por contactar con nosotros!"
-        @consulta = Consulta.new
       else
         flash.now[:error] = "Pon un mensaje y un email para enviar el formulario"
       end
