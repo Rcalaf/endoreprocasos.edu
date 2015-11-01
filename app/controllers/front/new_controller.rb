@@ -3,6 +3,7 @@ class Front::NewController < ApplicationController
   layout 'new'
   
   def test
+
     if request.post?
       @consulta = Consulta.create(params[:consulta])
       if @consulta.valid?
@@ -12,6 +13,8 @@ class Front::NewController < ApplicationController
       else
         flash.now[:error] = "Pon un mensaje y un email para enviar el formulario"
       end
+      redirect_to root_url( :anchor => 'contacto')
+   
     else
       @consulta = Consulta.new
     end
