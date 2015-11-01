@@ -203,6 +203,11 @@ img.icon_img {
 	font-weight:400;
 	text-shadow: 2px 2px 4px rgba(0,0,0,0.21);
 }
+
+#slide1 h1 span{
+  color: #535353;
+}
+
 .slogan_text {
 	display:inline-block;
 	padding:0 12px 120px;
