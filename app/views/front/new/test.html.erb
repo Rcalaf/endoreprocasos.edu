@@ -567,13 +567,14 @@ Trabajo en Equipo. </p>
 			<div class="contact_form">  
 				<div id="note"></div>
 				<div id="fields">
+    			
 				  <!-- <form id="ajax-contact-form" action=""> -->
           <%= form_for @consulta,  :url => show_test_url(), :id=>"ajax-contact-form" do |f|%>
-    			<%if flash[:notice]%>
-    				<p class='green'><%= flash[:notice]%></p>
-    			<%elsif flash[:error]%>
-    				<p class='red'><%= flash[:error]%></p>
-    			<%else%>
+      			<%if flash[:notice]%>
+      				<p class='green'><%= flash[:notice]%></p>
+      			<%elsif flash[:error]%>
+      				<p class='red'><%= flash[:error]%></p>
+            <%end%>
 						<div class="grid_6">
               <%=f.text_field :name,:placeholder => "Nombre"%>
               <%=f.email_field :email,:placeholder => "Email"%>
