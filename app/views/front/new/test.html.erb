@@ -567,20 +567,28 @@ Trabajo en Equipo. </p>
 			<div class="contact_form">  
 				<div id="note"></div>
 				<div id="fields">
-					<form id="ajax-contact-form" action="">
+				  <!-- <form id="ajax-contact-form" action=""> -->
+          <%= form_for @consulta,  :url => show_test_url(), :id=>"ajax-contact-form" do |f|%>
 						<div class="grid_6">
+              <%=f.text_field :name,:placeholder => "Nombre"%>
+              <%=f.email_field :email,:placeholder => "Email"%>
 							<input type="text" name="name" value="" placeholder="Nombre" />
 							<input type="text" name="email" value="" placeholder="Email" />
 						</div>
-						<div class="grid_6 omega"><textarea name="message" id="message" placeholder="Escribe tu consulta"></textarea></div>
+						<div class="grid_6 omega">
+              	<%=f.text_area :mensaje,:rows => 6,:id => "message",:placeholder => 'Escribe tu consulta' %>
+              </div>
 						<div class="clear"></div>
 						<input type="reset" class="contact_btn" value="Borrar Formulario" />
+            <%= f.submit "Enviar", :class => "submit_button general_save"%>
 						<input type="submit" class="contact_btn send_btn" value="enviar" />
 						<div class="clear"></div>
-					</form>
+          <%end%>
+		      <!-- </form> -->
 				</div>
 			</div>
 		</div>		
+  
 
     
    <div id="content">
