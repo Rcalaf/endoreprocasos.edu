@@ -11,7 +11,7 @@ class Cas < ActiveRecord::Base
   scope :active, where(:hidden => false) 
   
   validates :titol, :presence => {:presence => true,:message => "Escribe un título"}
-  validates :titol, :uniqueness => {:uniqueness => true,:message => "Éste título ya existe"}
+  #validates :titol, :uniqueness => {:uniqueness => true,:message => "Éste título ya existe"}
   validates :year, :presence => {:presence => true,:message => "Escoge un año"}  
   
   
