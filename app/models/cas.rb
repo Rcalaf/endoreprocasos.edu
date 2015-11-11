@@ -6,8 +6,8 @@ class Cas < ActiveRecord::Base
   has_many :documents, :dependent => :destroy
   has_many :contents, :dependent => :destroy, :order => 'position asc'
   
-  scope :this_year, where("created_at > ?", "#{Time.now.year}-1-1") 
-  scope :year_filter, lambda {|year| where("year = ?", "#{year}")} 
+  scope :this_year, where("created_at > ?", "#{Time.now.year}-1-1").order( 'titol ASC' ) 
+  scope :year_filter, lambda {|year| where("year = ?", "#{year}").order( 'titol ASC' )} 
   scope :active, where(:hidden => false) 
   
   validates :titol, :presence => {:presence => true,:message => "Escribe un título"}
