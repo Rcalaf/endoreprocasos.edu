@@ -2,7 +2,7 @@
 class Front::NewController < ApplicationController
   layout 'new'
   
-  def test
+  def front
 
     if request.post?
       @consulta = Consulta.create(params[:consulta])

@@ -112,7 +112,7 @@ EndoreprocasosEdu::Application.routes.draw do
    match "contacto" => "front/pages#contact", :as => "show_contact"
    match "profesores" => "front/pages#teachers", :as => "show_teachers"
    
-   match "test" => "front/new#test", :as => "show_test"
+   match "test" => "front/new#front", :as => "show_test"
   
    match ":slug" => "front/pages#show", :as => "show_page"
 
@@ -168,7 +168,7 @@ EndoreprocasosEdu::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   # root :to => 'front/pages#root'
-  root :to => 'front/new#test'
+  root :to => 'front/new#front'
 
   # See how all your routes lay out with "rake routes"
 
