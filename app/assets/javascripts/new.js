@@ -8,6 +8,7 @@
 //= require waypoints.min
 //= require timber.master.min
 //= require template-functions
+//= require jquery.fancybox.pack
 
 
 function sliderHeight(){
@@ -24,6 +25,18 @@ function mymargtop() {
 	$('.filtr_bg').css('margin-top', marg_top);
 	$('.filtr_bg').css('margin-bottom', marg_top);
 }
+
+$(document).ready(function() {
+    $(".box").fancybox({
+		 width: '500',
+          helpers: {
+              title : {
+                  type : 'float'
+				  
+              }
+          }
+      });
+});
 
 
 jQuery(document).ready(function ($) {
