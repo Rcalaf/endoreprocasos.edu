@@ -260,8 +260,11 @@ ul.navigation {
 	float: left;
 	text-align:left;
 	padding:28px 0 25px;
-	margin-left:30px;
+	margin-left:25px;
 }
+
+
+
 .navigation li:first-child{margin-left:0;}
 .navigation li:hover,
 .navigation .active {
@@ -277,6 +280,7 @@ ul.navigation {
 	font-size:14px;
 	line-height:20px;
 	color:#fff;
+	color:black;
 }
 
 
