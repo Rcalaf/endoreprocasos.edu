@@ -79,7 +79,21 @@ ul.navigation {
 	float: left;
 	text-align:left;
 	padding:28px 0 25px;
-	margin-left:30px;
+	margin-left:20px;
+	text-transform:uppercase;
+	background:none;
+	font-family: 'Raleway', sans-serif;
+	font-weight:400;
+	font-size:14px;
+	line-height:20px;
+	color:#fff;
+}
+
+#navigation-button a{
+	float: left;
+	text-align:left;
+	padding:28px 0 25px;
+	margin-left:20px;
 	text-transform:uppercase;
 	background:none;
 	font-family: 'Raleway', sans-serif;
