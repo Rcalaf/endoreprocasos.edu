@@ -42,7 +42,7 @@ jQuery(document).ready(function ($) {
 
     $(window).stellar();
 
-    var links = $('.navigation').find('li');
+    var links = $('.navigation').find('.top-menu');
 	console.log(links);
     slide = $('.slide');
     button = $('.button');
@@ -101,7 +101,7 @@ jQuery(document).ready(function ($) {
 
 
     links.click(function (e) {
-        //e.preventDefault();
+        e.preventDefault();
         dataslide = $(this).attr('data-slide');
         goToByScroll(dataslide);
     });
