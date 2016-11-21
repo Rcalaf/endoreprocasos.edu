@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
  # before_filter :authenticate
-  before_filter :load_main_data
+   before_filter :load_main_data
   
   def load_main_data
     @user = User.find_by_id(session[:user_id]) || User.find_by_token(params[:token])  

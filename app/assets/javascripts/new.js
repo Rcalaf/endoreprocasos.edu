@@ -9,6 +9,7 @@
 //= require timber.master.min
 //= require template-functions
 
+
 function sliderHeight(){
 		
 	wh = $(window).height();
@@ -24,7 +25,9 @@ function mymargtop() {
 	$('.filtr_bg').css('margin-bottom', marg_top);
 }
 
+
 jQuery(document).ready(function ($) {
+
 
 
     $(window).stellar();
