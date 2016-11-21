@@ -33,6 +33,7 @@ jQuery(document).ready(function ($) {
     $(window).stellar();
 
     var links = $('.navigation').find('li');
+	console.log(links);
     slide = $('.slide');
     button = $('.button');
     mywindow = $(window);
@@ -90,7 +91,7 @@ jQuery(document).ready(function ($) {
 
 
     links.click(function (e) {
-        e.preventDefault();
+        //e.preventDefault();
         dataslide = $(this).attr('data-slide');
         goToByScroll(dataslide);
     });
