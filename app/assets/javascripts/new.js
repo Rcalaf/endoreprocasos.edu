@@ -105,6 +105,10 @@ jQuery(document).ready(function ($) {
         dataslide = $(this).attr('data-slide');
         goToByScroll(dataslide);
     });
+	
+	$('.login-button').click(function(){
+	   window.location.href='/login';
+	})
 
     button.click(function (e) {
         e.preventDefault();
