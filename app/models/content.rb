@@ -11,6 +11,7 @@ class Content < ActiveRecord::Base
 
   has_attached_file :image, :styles => { :small => "265x", :big => "577x", :page => "640x" }, :convert_options => {:all => ["-strip"]}
   validates_attachment_size :image, :less_than => 5120000, :message => "Pesado demasiado (5 Mb máximo)", :if => :enable_image_validation
+  validates_attachment_content_type :document, :content_type => ["image/jpeg"], :message => "Solo se admiten archivos JPEG"
   validates_attachment_presence :image, :message => "Selecciona un archivo.", :if => :enable_image_validation
   validates :text, :presence => {:presence => true,:message => "Escribe un texto"},:if => :enable_text_validation
   validates :embed_code, :presence => {:presence => true,:message => "Escribe un fragmento de codigo"},:if => :enable_embed_validation
