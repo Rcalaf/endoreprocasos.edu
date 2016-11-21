@@ -5,6 +5,7 @@
 *= require grid
 *= require normalize
 *= require prettyPhoto
+*= require jquery.fancybox
 *= require_self
 */ 
 

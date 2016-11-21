@@ -26,7 +26,10 @@ function mymargtop() {
 	$('.filtr_bg').css('margin-bottom', marg_top);
 }
 
-$(document).ready(function() {
+
+
+jQuery(document).ready(function ($) {
+
     $(".box").fancybox({
 		 width: '500',
           helpers: {
@@ -36,12 +39,6 @@ $(document).ready(function() {
               }
           }
       });
-});
-
-
-jQuery(document).ready(function ($) {
-
-
 
     $(window).stellar();
 
