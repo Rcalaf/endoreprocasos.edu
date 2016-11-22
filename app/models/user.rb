@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
   has_attached_file :thumb, :styles => { :thumb => "100x100#", :big => '200x200#' }, 
                            # :convert_options => {:all => ["-strip"]},
                             :default_url => "/assets/images.jpg"
+
+  validates_attachment_content_type :thumb, :content_type => ["image/jpeg"," image/png"], :message => "Solo se admiten archivos JPEG y PNG"
    
 
   validates :email, :presence => {:presence => true,:message => "Escribe un email", :if => :enable_email_validations}
