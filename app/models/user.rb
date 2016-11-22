@@ -11,7 +11,8 @@ class User < ActiveRecord::Base
                            # :convert_options => {:all => ["-strip"]},
                             :default_url => "/assets/images.jpg"
 
-  validates_attachment_content_type :thumb, :content_type => ["image/jpeg"," image/png"], :message => "Solo se admiten archivos JPEG y PNG"
+  do_not_validate_attachment_file_type :thumb
+  #validates_attachment_content_type :thumb, :content_type => ["image/jpeg"," image/png"], :message => "Solo se admiten archivos JPEG y PNG"
    
 
   validates :email, :presence => {:presence => true,:message => "Escribe un email", :if => :enable_email_validations}
